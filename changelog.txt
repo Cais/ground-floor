@@ -1,0 +1,151 @@
+Changelog as of September 3, 2011
+= Version 1.8 =
+  - general code clean-up
+  - modified bns-login function to gf-login
+  - modified drop-down menu styles and added rounded corners to menu elements
+  - add conditional to not display comment(s) if post is password protected
+  - update bns_dynamic_copyright function
+  - update bns_theme_version function
+  - modified the site title creation code
+
+  ******************************
+  * Internet Browsers Reviewed *
+  * ========================== *
+  *                            *
+  * Apple Safari v5.1 (Mac)    *
+  * Apple Safari v5.1 (PC)     *
+  * Firefox v6.0.1 (Mac)       *  
+  * Firefox v6.0.1 (PC)        *
+  * Google Chrome v13.0        *
+  * Internet Explorer v9.0     *
+  * Opera v11.51               *
+  *                            *
+  ******************************
+
+= Version 1.7.1 =
+  - changed main background image to a smaller 'jpg' version (to address this post: http://wordpress.org/support/topic/huge-background-image-slow-loading)
+  - original background image will be retained (temporarily) for those that prefer a better quality
+  - added span id's to the `BNS Dynamic Copyright` and `BNS Theme Version` functions
+
+= Version 1.7 =
+  - released: March 27, 2011
+  - published: March 27, 2011
+  - removed 'hard-coded' links from sidebar
+  - added readme.txt file for additional information and other details
+  - added addtional 'required' WordPress style elements
+  - updated Theme copyright date
+  - additional minor changes
+  - edit Theme tags to be more appropriate
+
+= Version 1.6 =
+  - published: October 5, 2010
+  - released: October 2, 2010
+  - updated deprecated function calls
+  - correct typo in page.php template file - thanks to 'charlie' (http://buynowshop.com/themes/ground-floor/comment-page-1/#comment-1461)
+  - use `get_search_form()` in place of `include( TEMPLATEPATH . "/searchform.php" )`
+  - added unique namespace for theme functions 'gf_'
+  - added full `wp_nav_menu` support
+  - added multipage navigation to all template files using `the_content()`
+  - added post_thumbnail support to index.php, single,php, and page.php
+    
+= Version 1.5.1 =
+  - published: July 26, 2010
+  - released: July 5, 2010
+  - style updates for the `comment_form()` function
+
+= Version 1.5 =
+  - released: July 5, 2010
+  - cleaned up code to meet WP Standards
+  - adjusted content_width value
+  - fixed page with comments closed message
+  - removed feed links from header; using `add_theme_support( 'automatic-feed-links' );`
+  - removed `legacy.comments.php` file as it is no longer referenced.
+  - add the use of `comment_form()`
+
+= Version 1.4 =
+  - published: Apr 28, 2010
+  - released: Apr 23, 2010
+  - reviewed for compatibility with WordPress 3.0
+  - added revision / date reference to each file
+  - corrected dynamic_copyright function  
+  - removed legacy.comments.php and associated function calls
+  - CSS: added elements for the Calendar
+  - WP: add class and ID to function widget definition
+  - WP: minor clean up to widget functions
+  - WP: using `add_theme_support` added: `post-thumbnails`, `nav-menus`, and `automatic-feed-links`
+  - added BNS Modified Post function (requires WordPress 3.0)
+
+  - additional modifications to meet current guidelines as found at: http://codex.wordpress.org/Theme_Development_Checklist.
+
+= Version 1.3.1 =
+  - modified bns_login function to use wp-login.php to match the BNS Login plugin
+  - removed promotional link to the BNS Login plugin at WordPress.org
+
+= Version 1.3 =
+  - added "GPL2" license statement to style.css
+  - added YUI reset to CSS
+  - general clean-up of CSS file (removed most empty elements)
+  - added bns_dynamic_copyright()
+
+= Version 1.2.1 =
+  - moved theme version display to functions.php
+
+= Version 1.2 =
+  - added clearing div to the end of the_Loop
+  - fixed page navigation 'previous' and 'next' links display
+
+= Version 1.1.3 =
+  - minor change to comment count display -> "Closed" to "Comments Closed" on all pages
+
+= Version 1.1.2 =
+  - re-coded footer.php to address fopen() errors
+  - updated theme URL (to its own page)
+  - minor edit in "date.php" to change comments message from 'Closed' to 'Comments Closed'
+  - added the wp_link_pages() function to single.php
+  - CSS: .widget p {margin-bottom: 0;}
+  - CSS (edit): updated BNS Plugins section
+
+= Version 1.1 =
+  - re-work of the footer widget area into three (3) defined areas
+  -- removed the <table> structures
+  -- added BNS-Login plugin functionality to Middle Footer Widget as default.
+  - improved IE6 compatibility
+  - CSS: hr element -> edited properties: 'border: 1px solid black;' and 'background: #673000;'
+  - CSS (new): added BNS Plugins section at end of style.css
+
+= Version 1.0.3 =
+  - added <div id="page-content"> and <div id="page-meta"> to page.php for more style control
+  - CSS: .post-details -> added property 'padding-left: 18px'
+  - CSS: .post -> added properties 'padding-bottom: 9px' and 'border-bottom: thick double Black;'
+  - CSS (new): .post:hover -> semi-transparent background on all posts
+  - CSS (new): #page-content:hover -> semi-transparent background on all posts
+
+= Version 1.0.2.1 =
+  - Submission related changes:
+  * CSS: .widget -> adjusted 'padding-left' and 'padding-right' to 20px;
+  * CSS: .widget ul -> adjusted 'padding' to 0 (zero) in all quadrants 
+
+= Version 1.0.2 =
+  - edited post meta details to re-arrange positions
+  - CSS: blockquote -> add property 'padding-bottom: 8px;' to show entire "quotes" image on single line quotes.
+  - CSS: .hr, .groundfloor -> add properties 'border: none;' and 'background: none;' to correct all blank display of class="hr"
+  - Submission requested changes:
+    * CSS: body -> changed background color and muted tone of background image (original commented out in style.css)
+    * CSS: .post-details -> added properties to create viewable differences between the meta data and standard text
+
+= Version 1.0.1 =
+  - Submission requested changes:
+    * Removed title tag from the credit link
+    * Pages now display comments
+  
+= Version 1.0 =
+  - Initial Release
+
+Tested with all "current" major Internet browsers (in no particular order):
+- Internet Explorer 8.0
+- Firefox 3.5.2
+- Google 2.0
+- Safari 4.0.2 for both PC and Mac
+- Opera 9.64
+
+Support for (lte) IE6 may be limited to functionality only.
