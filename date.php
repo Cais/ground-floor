@@ -18,6 +18,7 @@
  */
 
 global $m;
+$display_date = '';
 if ( $m <> "" ) { /** works for default permalinks only */
     if ( strlen( $m ) == 8 ) {
         $display_date = strftime( "%d %B %Y", strtotime( $m ) );
