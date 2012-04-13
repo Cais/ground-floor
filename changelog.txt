@@ -2,6 +2,7 @@
 == Version 1.9 ==
 Changelog: April 13, 2012
 = Code =
+* Improve code quality
 = CSS =
 = Miscellaneous =
 = Internet Browsers Reviewed =
