@@ -1,17 +1,17 @@
 <?php
-    /**
-     * Footer Template
-     *
-     * @package     GroundFloor
-     * @since       1.0
-     *
-     * @link        http://buynowshop.com/themes/ground-floor/
-     * @link        https://github.com/Cais/ground-floor/
-     * @link        http://wordpress.org/extend/themes/ground-floor/
-     *
-     * @author      Edward Caissie <edward.caissie@gmail.com>
-     * @copyright   Copyright (c) 2009-2012, Edward Caissie
-     */
+/**
+ * Footer Template
+ *
+ * @package     GroundFloor
+ * @since       1.0
+ *
+ * @link        http://buynowshop.com/themes/ground-floor/
+ * @link        https://github.com/Cais/ground-floor/
+ * @link        http://wordpress.org/extend/themes/ground-floor/
+ *
+ * @author      Edward Caissie <edward.caissie@gmail.com>
+ * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ */
 ?>
 </div><!-- #head2toe -->
 <div id="footer">
