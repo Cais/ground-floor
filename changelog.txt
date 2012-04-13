@@ -4,6 +4,7 @@ Changelog: April 13, 2012
 = Code =
 * Improve code quality
 = CSS =
+* Dropped direct support for older versions of Internet Explorer
 = Miscellaneous =
 = Internet Browsers Reviewed =
 
