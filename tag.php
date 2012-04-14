@@ -1,8 +1,9 @@
 <?php
 /**
- * Single Template
+ * Tags Template
  *
- * Displays single view of posts
+ * Displays tags archive index page using a "mullet loop" of two full-style
+ * content posts and the balance as excerpts of the remaining posts.
  *
  * @package     GroundFloor
  * @since       1.0
@@ -13,6 +14,10 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
+ * Last revised April 14, 2012
+ * @version     1.9
+ * Updated 'tag-title' block with better i18n support
  */
 
 get_header();
@@ -27,10 +32,8 @@ $curr_tag = single_tag_title( '', false ); ?>
             $tag_link = '<span id="tag-name"><a href="' . get_home_url( '/?tag=' ) . $curr_tag .'" title="' . $curr_tag . '">' . $curr_tag . '</a></span>';
             if ( $paged < 2 ) {
                 printf( __( 'First page of the %1$s archive.', 'groundfloor' ), $tag_link );
-                /** _e( 'First page of the', 'groundfloor' ); ?> <span id="tag-name"><?php single_tag_title(); ?></span> <?php _e( 'archive.', 'groundfloor' ); */
             } else {
                 printf( __( 'Page %1$s of the %2$s archive.', 'groundfloor' ), $paged, $tag_link );
-                /** _e( 'Page', 'groundfloor' ); } ?> <?php _e( $paged, 'groundfloor' ); ?> <?php _e( 'of the', 'groundfloor' ); ?> <span id="tag-name"><a href="<?php echo home_url( '/' ) . "?tag=" . $curr_tag ); ?>" title="<?php echo $curr_tag; ?>"><?php single_tag_title(); ?></a></span> <?php _e( 'archive.', 'groundfloor' ); */
             } ?>
         </div><!-- #tag-title -->
 
