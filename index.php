@@ -39,6 +39,8 @@
  *
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @todo Change no title posts to use `gf_use_posted`
  */
 get_header(); ?>
 <div id="main-blog">
@@ -50,14 +52,14 @@ get_header(); ?>
                     <div class="post-details">
                         <?php printf( __( 'Posted by %1$s on %2$s', 'groundfloor' ), get_the_author(), get_the_time( get_option( 'date_format' ) ) );
                         if ( ! post_password_required() ) { /** Hide Comment (and "no title" link) if password required to read post */
-                            _e( 'with', 'groundfloor' );
+                            echo ' ';
                             if ( get_the_title() == "" ) { /** for posts without titles - creates a permalink using the comments reference as the anchor text and reference the post ID */ ?>
                                 <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent link to untitled post ', 'groundfloor' ); the_id(); ?>"><?php comments_popup_link( __( 'No Comments', 'groundfloor' ), __( '1 Comment', 'groundfloor' ), __( '% Comments', 'groundfloor' ), '', __( 'Comments Closed', 'groundfloor' ) ); ?></a>
                             <?php } else {
-                                comments_popup_link( __( 'No Comments', 'groundfloor' ), __( '1 Comment', 'groundfloor' ), __( '% Comments', 'groundfloor' ), '', __( 'Comments Closed', 'groundfloor' ) );
+                                comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
                             }
                         } /** password protected post test */
-                        edit_post_link( __( 'Edit', 'groundfloor' ), __( '&#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
+                        edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
                         _e( '<br />in ', 'groundfloor' );?><?php the_category( ', ' ) ?><br />
                         <?php the_tags( __( 'as ', 'groundfloor' ), ', ', '' ); ?><br />
                     </div> <!-- .post-details -->

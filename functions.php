@@ -1,5 +1,25 @@
 <?php
 /**
+ * Author Template
+ *
+ * Displays author page is required to be displayed
+ *
+ * @package     GroundFloor
+ * @since       1.0
+ *
+ * @link        http://buynowshop.com/themes/ground-floor/
+ * @link        https://github.com/Cais/ground-floor/
+ * @link        http://wordpress.org/extend/themes/ground-floor/
+ *
+ * @author      Edward Caissie <edward.caissie@gmail.com>
+ * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
+ * Last modified April 15, 2012
+ * @version     1.9
+ * Added `gf_use_posted` function to be implemented with "no title" posts
+ */
+
+/**
  * Ground Floor Login - adds link to login|Dashboard
  * @todo Review for optimization
  */
@@ -204,6 +224,32 @@ if ( ! function_exists( 'ground_floor_setup' ) ):
             require_once( $locale_file );
     }
 endif;
+
+/**
+ * Ground Floor Use Posted
+ *
+ * This returns a URL to the post using the anchor text 'Posted' in the meta
+ * details with the post excerpt as the URL title; or, returns the word 'Posted'
+ * if the post title exists
+ *
+ * @package     GroundFloor
+ * @since       1.9
+ *
+ * @internal    Adapted from `dmm_use_posted` as found in Desk Mess Mirrored 2.0
+ *
+ * @return      string - URL|Posted
+ */
+if ( ! function_exists( 'gf_use_posted' ) ) {
+    function gf_use_posted() {
+        $gf_no_title = get_the_title();
+        empty( $gf_no_title )
+            ? $gf_no_title = '<span class="no-title"><a href="' . get_permalink() . '" title="' . get_the_excerpt() . '">' . __( 'Posted', 'groundfloor' ) . '</span></a>'
+            : $gf_no_title = __( 'Posted', 'groundfloor' );
+        $gf_no_title = apply_filters( 'dmm_use_posted', $gf_no_title );
+        return $gf_no_title;
+    }
+}
+// End: DMM Use Posted
 
 /**
  * BNS Modified Post
