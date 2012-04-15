@@ -3,9 +3,13 @@
 Changelog: April 13, 2012
 = Code =
 * Improve code quality
+
 = CSS =
-* Dropped direct support for older versions of Internet Explorer
+* Adjust CSS on sticky posts to provide better contrast
+
 = Miscellaneous =
+* Dropped direct support for older versions of Internet Explorer
+
 = Internet Browsers Reviewed =
 
 /** ------------------------------------------------------------------------- */

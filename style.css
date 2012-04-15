@@ -313,7 +313,7 @@ ul.nav-menu ul.sub-menu li, ul.nav-menu ul.children li, ul.nav-menu ul, ul.nav-m
 }
 
 .sticky a { color: #000; }
-.sticky a:hover { color: #a64212; }
+.sticky a:hover { color: #eccfa0; }
 
 #page-content:hover { background: url( images/bg50.png ); }
 
@@ -334,7 +334,10 @@ ul.nav-menu ul.sub-menu li, ul.nav-menu ul.children li, ul.nav-menu ul, ul.nav-m
     padding-top: 9px;
 }
 
-.post:hover { background: url( images/bg50.png ); }
+.post:hover {
+    background: url( images/bg50.png );
+    color: #eccfa0;
+}
 
 .post-comments { padding-bottom: 10px; }
 
