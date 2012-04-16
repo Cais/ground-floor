@@ -21,4 +21,5 @@ Updated July 20, 2011 at version 1.8
 * http://themes.trac.wordpress.org/ticket/278
 * http://themes.trac.wordpress.org/ticket/1363
 * http://themes.trac.wordpress.org/ticket/3374
-* http://themes.trac.wordpress.org/ticket/4165
+* http://themes.trac.wordpress.org/ticket/4165 - version 1.7.1
+* http://themes.trac.wordpress.org/ticket/5143 - version 1.8
