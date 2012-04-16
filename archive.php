@@ -13,6 +13,10 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
+ * Last revised April 16, 2012
+ * @version     1.9
+ * Implement `gf_use_posted`
  */
 
 get_header(); ?>
@@ -23,9 +27,12 @@ get_header(); ?>
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'groundfloor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                     <div class="post-details">
-                        <?php _e( 'Posted by ', 'groundfloor' ); the_author(); _e( ' on ', 'groundfloor' ); the_time( get_option( 'date_format' ) );
-                        _e( 'with ', 'groundfloor' ); comments_popup_link( __( 'No Comments', 'groundfloor' ), __( '1 Comment', 'groundfloor' ), __( '% Comments', 'groundfloor' ), '', __( 'Comments Closed', 'groundfloor' ) );
-                        edit_post_link( __( 'Edit', 'groundfloor' ), __( '&#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
+                        <?php printf( __( '%1$s by %2$s on %3$s', 'groundfloor' ), gf_use_posted(), get_the_author(), get_the_time( get_option( 'date_format' ) ) );
+                        if ( ! post_password_required() ) { /** Hide Comment(s) if password required to read post */
+                            echo ' ';
+                            comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
+                        } /** password protected post test */
+                        edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
                         _e( '<br />in ', 'groundfloor' );?><?php the_category( ', ' ) ?><br />
                         <?php the_tags( __( 'as ', 'groundfloor' ), ', ', '' ); ?><br />
                     </div> <!-- .post-details -->

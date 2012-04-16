@@ -41,7 +41,9 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Last revised April 16, 2012
- * @todo Change no title posts to use `gf_use_posted`
+ * @version     1.9
+ * Implement the use of `gf_use_posted`
+ *
  * @todo Review addition of standard post formats
  */
 get_header(); ?>
@@ -52,19 +54,15 @@ get_header(); ?>
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'groundfloor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                     <div class="post-details">
-                        <?php printf( __( 'Posted by %1$s on %2$s', 'groundfloor' ), get_the_author(), get_the_time( get_option( 'date_format' ) ) );
-                        if ( ! post_password_required() ) { /** Hide Comment (and "no title" link) if password required to read post */
+                        <?php printf( __( '%1$s by %2$s on %3$s', 'groundfloor' ), gf_use_posted(), get_the_author(), get_the_time( get_option( 'date_format' ) ) );
+                        if ( ! post_password_required() ) { /** Hide Comment(s) if password required to read post */
                             echo ' ';
-                            if ( get_the_title() == "" ) { /** for posts without titles - creates a permalink using the comments reference as the anchor text and reference the post ID */ ?>
-                                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent link to untitled post ', 'groundfloor' ); the_id(); ?>"><?php comments_popup_link( __( 'No Comments', 'groundfloor' ), __( '1 Comment', 'groundfloor' ), __( '% Comments', 'groundfloor' ), '', __( 'Comments Closed', 'groundfloor' ) ); ?></a>
-                            <?php } else {
-                                comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
-                            }
+                            comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
                         } /** password protected post test */
                         edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
                         _e( '<br />in ', 'groundfloor' );?><?php the_category( ', ' ) ?><br />
                         <?php the_tags( __( 'as ', 'groundfloor' ), ', ', '' ); ?><br />
-                    </div> <!-- .post-details -->
+                    </div><!-- .post-details -->
                     <?php if ( has_post_thumbnail() ) {
                         the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
                     }
