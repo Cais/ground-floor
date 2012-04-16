@@ -40,7 +40,9 @@
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
+ * Last revised April 16, 2012
  * @todo Change no title posts to use `gf_use_posted`
+ * @todo Review addition of standard post formats
  */
 get_header(); ?>
 <div id="main-blog">

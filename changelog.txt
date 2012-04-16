@@ -2,7 +2,6 @@
 == Version 1.9 ==
 Changelog: April 16, 2012
 = Code =
-* Improve code quality
 * Changed `bns_modified_post` to `gf_modified_post`
 * Changed `bns_theme_version` to `gf_theme_version`
 * Changed `bns_dynamic_copyright` to `gf_dynamic_copyright`
@@ -13,9 +12,15 @@ Changelog: April 16, 2012
 * Adjust CSS on sticky posts to provide better contrast
 
 = Miscellaneous =
+* Improved code quality via better and more consistent structure and format
 * Dropped direct support for older versions of Internet Explorer
 
 = Internet Browsers Reviewed =
+* Chrome v18.0
+* Firefox v11.0
+* Internet Explorer v9.0
+* Opera v11.61
+* Safari v5.1.5
 
 /** ------------------------------------------------------------------------- */
 
@@ -28,20 +33,6 @@ Changelog as of September 3, 2011
   - update bns_dynamic_copyright function
   - update bns_theme_version function
   - modified the site title creation code
-
-  ******************************
-  * Internet Browsers Reviewed *
-  * ========================== *
-  *                            *
-  * Apple Safari v5.1 (Mac)    *
-  * Apple Safari v5.1 (PC)     *
-  * Firefox v6.0.1 (Mac)       *  
-  * Firefox v6.0.1 (PC)        *
-  * Google Chrome v13.0        *
-  * Internet Explorer v9.0     *
-  * Opera v11.51               *
-  *                            *
-  ******************************
 
 = Version 1.7.1 =
   - changed main background image to a smaller 'jpg' version (to address this post: http://wordpress.org/support/topic/huge-background-image-slow-loading)
