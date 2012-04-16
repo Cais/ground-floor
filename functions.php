@@ -41,10 +41,17 @@ function gf_login() {
 }
 
 /**
- * Widgetizing
+ * Widget Area Definitions
+ * Creating three (3) "sidebar" widget areas and three (3) "footer" widget areas
+ *
+ * @since   1.0
+ *
+ * Last modified April 16, 2012
+ * @version 1.9
+ * Added 'description' paramters for each sidebar definition
  */
 register_sidebars( 3, array(
-    'description'   => 'Widget area found in sidebar of theme.',
+    'description'   => __( 'Widget area found in sidebar of theme.', 'groundfloor' ),
     'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
     'before_title'  => '<h2 class="widget-title">',
@@ -53,6 +60,7 @@ register_sidebars( 3, array(
 
 register_sidebar( array(
     'name'          => 'Footer Left',
+    'description'   => __( 'Footer widget area found at the bottom of the theme on the left side.', 'groundfloor' ),
     'id'            => 'footer-left',
     'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
     'after_widget'  => '</div><!-- .footer-widget --><div class="widget-bottom"></div>',
@@ -62,6 +70,7 @@ register_sidebar( array(
 
 register_sidebar( array(
     'name'          => 'Footer Middle',
+    'description'   => __( 'Footer widget area found at the bottom of the theme in the middle.', 'groundfloor' ),
     'id'            => 'footer-middle',
     'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
     'after_widget'  => '</div><!-- .footer-widget --><div class="widget-bottom"></div>',
@@ -71,6 +80,7 @@ register_sidebar( array(
 
 register_sidebar( array(
     'name'          => 'Footer Right',
+    'description'   => __( 'Footer widget area found at the bottom of the theme on the right side.', 'groundfloor' ),
     'id'            => 'footer-right',
     'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
     'after_widget'  => '</div><!--.footer-widget --><div class="widget-bottom"></div>',
@@ -78,23 +88,25 @@ register_sidebar( array(
     'after_title'   => '</h2>',
 ) );
 
-if ( ! function_exists( 'bns_dynamic_copyright' ) ) {
+if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
     /**
-     * BNS Dynamic Copyright
+     * Ground Floor Dynamic Copyright
      *
      * Outputs a copyright notice with a beginning and ending date based on published posts.
      *
      * @param string $args
-     * @todo re-namespace to be relevant to the theme's name
+     *
+     * Last modified April 16, 2012
+     * Changed from `bns_dynamic_copyright` to `gf_dynamic_copyright`
      */
-    function bns_dynamic_copyright( $args = '' ) {
+    function gf_dynamic_copyright( $args = '' ) {
         /** Initialize variables */
         $initialize_values = array( 'start' => '', 'copy_years' => '', 'url' => '', 'end' => '' );
         $args = wp_parse_args( $args, $initialize_values );
         $output = '';
 
         /** Start common copyright notice */
-        empty( $args['start'] ) ? $output .= sprintf( __('Copyright', 'groundfloor') ) : $output .= $args['start'];
+        empty( $args['start'] ) ? $output .= sprintf( __( 'Copyright', 'groundfloor' ) ) : $output .= $args['start'];
 
         /* Calculate Copyright Years; and, prefix with Copyright Symbol */
         if ( empty( $args['copy_years'] ) ) {
@@ -125,30 +137,58 @@ if ( ! function_exists( 'bns_dynamic_copyright' ) ) {
         /** End common copyright notice */
         empty( $args['end'] ) ? $output .= ' ' . sprintf( __( 'All rights reserved.', 'groundfloor' ) ) : $output .= ' ' . $args['end'];
         /** Construct and sprintf the copyright notice */
-        $output = sprintf( __( '<span id="bns-dynamic-copyright"> %1$s </span><!-- #bns-dynamic-copyright -->', 'groundfloor' ), $output );
+        $output = sprintf( __( '<span id="gf-dynamic-copyright"> %1$s </span><!-- #gf-dynamic-copyright -->', 'groundfloor' ), $output );
 
-        echo apply_filters( 'bns_dynamic_copyright', $output, $args );
+        echo apply_filters( 'gf_dynamic_copyright', $output, $args );
     }
 }
 
-if ( ! function_exists( 'bns_theme_version' ) ) {
+if ( ! function_exists( 'gf_theme_version' ) ) {
     /**
-     * BNS Theme Version
+     * Ground Floor Theme Version
      *
      * Outputs the theme version and relevant details; if it is a Child-Theme it also outputs the Parent-Theme details
-     * @todo re-namespace to be relevant to the theme's name
-     * @todo Address deprecated function call `get_theme_data`
+     *
+     * Last revised April 16, 2012
+     * @version 1.9
+     * Changed from `bns_theme_version` to `gf_theme_version`
+     * Addressed deprecated function calls to `get_theme_data`
+     *
+     * @todo Remove code for calls to deprecated function `get_theme_data` after the release of WordPress 3.4
      */
-    function bns_theme_version () {
-        /** Get details of the theme / child theme */
-        $blog_css_url = get_stylesheet_directory() . '/style.css';
-        $my_theme_data = get_theme_data( $blog_css_url );
-        $parent_blog_css_url = get_template_directory() . '/style.css';
-        $parent_theme_data = get_theme_data( $parent_blog_css_url );
-        if ( is_child_theme() ) {
-            printf( __( '<br /><span id="bns-theme-version">%1$s version %2$s a child of the %3$s version %4$s theme from <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'groundfloor' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
+    function gf_theme_version () {
+        global $wp_version;
+        /** Check WordPress version before using `wp_get_theme` for collecting theme data */
+        if ( version_compare( $wp_version, "3.4-alpha", "<" ) ) {
+            /** Get details of the theme / child theme */
+            $blog_css_url = get_stylesheet_directory() . '/style.css';
+            $my_theme_data = get_theme_data( $blog_css_url );
+            $parent_blog_css_url = get_template_directory() . '/style.css';
+            $parent_theme_data = get_theme_data( $parent_blog_css_url );
+            if ( is_child_theme() ) {
+                printf( __( '<br /><span id="gf-theme-version">%1$s version %2$s a child of the %3$s version %4$s theme from <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'groundfloor' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
+            } else {
+                printf( __( '<br /><span id="gf-theme-version">%1$s version %2$s theme from <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'groundfloor' ), $my_theme_data['Name'], $my_theme_data['Version'] );
+            }
         } else {
-            printf( __( '<br /><span id="bns-theme-version">%1$s version %2$s theme from <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'groundfloor' ), $my_theme_data['Name'], $my_theme_data['Version'] );
+            /** @var $active_theme_data - array object containing the current theme's data */
+            $active_theme_data = wp_get_theme();
+            if ( is_child_theme() ) {
+                /** @var $parent_theme_data - array object containing the Parent Theme's data */
+                $parent_theme_data = $active_theme_data->parent();
+                /** @noinspection PhpUndefinedMethodInspection - IDE commentary */
+                printf( __( '<br /><span id="gf-theme-version">%1$s theme, version %2$s, a Child-Theme of %3$s theme, version %4$s, from %5$s.</span>', 'groundfloor' ),
+                    $active_theme_data['Name'],
+                    $active_theme_data['Version'],
+                    $parent_theme_data['Name'],
+                    $parent_theme_data['Version'],
+                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+            } else {
+                printf( __( '<br /><span id="gf-theme-version">%1$s theme, version %2$s, from %3$s.</span>', 'groundfloor' ),
+                    $active_theme_data['Name'],
+                    $active_theme_data['Version'],
+                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+            }
         }
     }
 }
@@ -165,17 +205,26 @@ add_action( 'after_setup_theme', 'ground_floor_setup' );
 if ( ! function_exists( 'ground_floor_setup' ) ):
     /**
      * Ground Floor Setup - adds various core functionality to the theme
-     * @todo Address deprecated function call `add_custom_background`
+     * @todo Remove code for call to deprecated function `add_custom_background` after the release of WordPress 3.4
      */
     function ground_floor_setup(){
+        global $wp_version;
         /** This theme uses post thumbnails */
         add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
         /** Add default posts and comments RSS feed links to head */
         add_theme_support( 'automatic-feed-links' );
         /** Add theme support for editor-style */
         add_editor_style();
+
         /** This theme allows users to set a custom background */
-        add_custom_background();
+        if ( version_compare( $wp_version, "3.4-alpha", "<" ) ) {
+            add_custom_background();
+        } else {
+            add_theme_support( 'custom-background' /*, array(
+                'default-color' => '673000',
+                'default-image' => get_stylesheet_directory_uri() . '/images/wood-floor-background.jpg'
+            )*/ );
+        }
 
         if ( ! function_exists( 'gf_nav_menu' ) ) {
             /** Ground Floor Navigation Menu - adds wp_nav_menu() custom menu support */
@@ -252,19 +301,25 @@ if ( ! function_exists( 'gf_use_posted' ) ) {
 // End: DMM Use Posted
 
 /**
- * BNS Modified Post
+ * Ground Floor Modified Post
  *
  * Outputs the modifying author name and date the post was modified if the post
  * date and the last modified date are different.
  *
- * @todo To be implemented ...
+ * @internal    Not currently implemented by default
+ *
+ * Last revised April 16, 2012
+ * @version     1.9
+ * Changed name to `gf_modified_post`
+ *
+ * @todo To be implemented ... 2.0?
  */
-function bns_modified_post(){
+function gf_modified_post(){
     /**  */
     if ( get_the_date() <> get_the_modified_date() ) {
-        echo '<div class="bns-modified-post">'; /* CSS wrapper for modified date details */
+        echo '<div class="gf-modified-post">'; /* CSS wrapper for modified date details */
         echo 'Last modified by ' . get_the_modified_author() . ' on ' . get_the_modified_date();
-        echo '</div><!-- .bns-modified-post -->';
+        echo '</div><!-- .gf-modified-post -->';
     }
 }
 

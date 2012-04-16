@@ -1,8 +1,13 @@
 === Ground Floor ===
 == Version 1.9 ==
-Changelog: April 15, 2012
+Changelog: April 16, 2012
 = Code =
 * Improve code quality
+* Changed `bns_modified_post` to `gf_modified_post`
+* Changed `bns_theme_version` to `gf_theme_version`
+* Changed `bns_dynamic_copyright` to `gf_dynamic_copyright`
+* Addressed deprecated function call to `add_custom_background`
+* Addressed deprecated function calls to `get_theme_data`
 
 = CSS =
 * Adjust CSS on sticky posts to provide better contrast
@@ -156,12 +161,3 @@ Changelog as of September 3, 2011
   
 = Version 1.0 =
   - Initial Release
-
-Tested with all "current" major Internet browsers (in no particular order):
-- Internet Explorer 8.0
-- Firefox 3.5.2
-- Google 2.0
-- Safari 4.0.2 for both PC and Mac
-- Opera 9.64
-
-Support for (lte) IE6 may be limited to functionality only.

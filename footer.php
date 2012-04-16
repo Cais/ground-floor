@@ -43,8 +43,8 @@
     <div id="footer-widgets-below"></div>
     <div id="footer-middle">
         <p>
-            <?php bns_dynamic_copyright();
-            bns_theme_version(); ?>
+            <?php gf_dynamic_copyright();
+            gf_theme_version(); ?>
         </p>
     </div><!-- #footer-middle -->
     <div id="footer-bottom">
