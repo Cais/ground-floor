@@ -25,3 +25,4 @@ Updated April 19, 2012 at version 1.9
 * http://themes.trac.wordpress.org/ticket/4165 - version 1.7.1
 * http://themes.trac.wordpress.org/ticket/5143 - version 1.8
 * http://themes.trac.wordpress.org/ticket/7445 - version 1.9
+* http://themes.trac.wordpress.org/ticket/7446 - version 1.9.1
