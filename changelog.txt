@@ -1,6 +1,6 @@
 === Ground Floor ===
 == Version 1.9 ==
-Changelog: April 16, 2012
+Changelog: April 19, 2012
 = Code =
 * Changed `bns_modified_post` to `gf_modified_post`
 * Changed `bns_theme_version` to `gf_theme_version`
@@ -10,6 +10,7 @@ Changelog: April 16, 2012
 
 = CSS =
 * Adjust CSS on sticky posts to provide better contrast
+* Added CSS to better display more uniform images in galleries greater than four columns
 
 = Miscellaneous =
 * Improved code quality via better and more consistent structure and format

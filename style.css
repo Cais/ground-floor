@@ -450,6 +450,17 @@ p img {
     padding: 0;
 }
 
+/* Gallery columns up to four (4) are handled by default in the theme.
+ * Five (5) or more columns requires a maximum width be set for the image
+ * thumbnail; also note the height is set to 'auto' to maintain a square shape.
+ **/
+.gallery-columns-5 img { height: auto; max-width: 110px; }
+.gallery-columns-6 img { height: auto; max-width: 95px; }
+.gallery-columns-7 img { height: auto; max-width: 82px; }
+.gallery-columns-8 img { height: auto; max-width: 70px; }
+.gallery-columns-9 img { height: auto; max-width: 64px; }
+.gallery-columns-10 img { height: auto; max-width: 58px; }
+
 /*-- Captions --*/
 .wp-caption img.size-full { max-width: 628px; height: auto; }
 .wp-caption.aligncenter { max-width: 638px; margin: 0 auto; }
