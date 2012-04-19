@@ -14,9 +14,9 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
- * Last modified April 15, 2012
- * @version     1.9
- * Added `gf_use_posted` function to be implemented with "no title" posts
+ * Last modified April 19, 2012
+ * @version     2.0
+ * Changed TEMPLATEPATH to `get_template_directory()`
  */
 
 /**
@@ -265,10 +265,13 @@ if ( ! function_exists( 'ground_floor_setup' ) ):
     	/**
          * Make theme available for translation.
          * Translation files must be placed in the /languages/ directory
+         *
+         * Last revised April 19, 2012
+         * @version 2.0 - changed TEMPLATEPATH to `get_template_directory()`
          */
-    	load_theme_textdomain( 'groundfloor', TEMPLATEPATH . '/languages' );
+    	load_theme_textdomain( 'groundfloor', get_template_directory() . '/languages' );
     	$locale = get_locale();
-    	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+    	$locale_file = get_template_directory() . "/languages/$locale.php";
     	if ( is_readable( $locale_file ) )
             require_once( $locale_file );
     }

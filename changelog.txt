@@ -3,6 +3,7 @@
 Changelog: April 19, 2012
 = Code =
 * Addressed `_e` and other output / i18n issues
+* Changed TEMPLATEPATH to `get_template_directory()`
 
 /** ------------------------------------------------------------------------- */
 
