@@ -1,4 +1,11 @@
 === Ground Floor ===
+== Version 2.0 ==
+Changelog: April 19, 2012
+= Code =
+* Addressed `_e` and other output / i18n issues
+
+/** ------------------------------------------------------------------------- */
+
 == Version 1.9 ==
 Changelog: April 19, 2012
 = Code =

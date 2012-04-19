@@ -14,11 +14,11 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
- * Last revised April 16, 2012
- * @version     1.9
- * Implement the use of `gf_use_posted`
+ * Last revised April 19, 2012
+ * @version     2.0
+ * Addressed `_e` and other output / i18n issues
  *
- * @todo Address `_e` and other output / i18n issues
+ * @todo Address all `_e` and other output / i18n issues
  */
 
 global $m;
@@ -42,9 +42,9 @@ get_header(); ?>
             <?php
             global $paged;
             if ( $paged < 2 ) {
-                _e( 'Posts by date', 'groundfloor' ); echo $display_date;
+                printf( __( 'Posts by date %1$s', 'groundfloor' ), $display_date );
             } else {
-                _e( 'Page ', 'groundfloor' ); _e( $paged, 'groundfloor' ); _e( ' of posts by date', 'groundfloor' ); echo $display_date;
+                printf( __( 'Page %1$s of posts by date %2$s.', 'groundfloor' ), $paged, $display_date );
             } ?>
         </div><!-- #date-title -->
 

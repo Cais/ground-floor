@@ -14,11 +14,11 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
- * Last revised April 16, 2012
- * @version     1.9
- * Implemented `gf_use_posted`
+ * Last revised April 19, 2012
+ * @version     2.0
+ * Addressed `_e` and other output / i18n issues
  *
- * @todo Address `_e` and other output / i18n issues
+ * @todo Address all `_e` and other output / i18n issues
  */
 
 get_header();
@@ -32,9 +32,9 @@ $category_link = get_category_link ( $cat_id );
         <div id="category-title">
             <?php global $paged;
             if ( $paged < 2 ) {
-                _e( 'First page of the', 'groundfloor' ); ?> <span id="category-name"><?php single_cat_title(); ?></span> <?php _e( 'archive.', 'groundfloor' );
+                printf( __( 'First page of the %1$s archive.', 'groundfloor' ), '<span id="category-name"><a href="' . $category_link . '" title="' . $curr_cat . '">' . single_cat_title( '', FALSE ) . '</a></span>' );
             } else {
-                _e( 'Page', 'groundfloor' );?> <?php _e( $paged, 'groundfloor' ); ?> <?php _e( 'of the', 'groundfloor' ); ?> <span id="category-name"><a href="<?php echo $category_link; ?>" title="<?php echo $curr_cat; ?>"><?php single_cat_title(); ?></a></span> <?php _e( 'archive.', 'groundfloor' );
+                printf( __( 'Page %1$s of the %2$s archive.', 'groundfloor' ), $paged, '<span id="category-name"><a href="' . $category_link . '" title="' . $curr_cat . '">' . single_cat_title( '', FALSE ) . '</a></span>' );
             } ?>
         </div><!-- #category-title -->
         <div id="category-description">
