@@ -552,13 +552,18 @@ ul.children {
     background-color: #922e0c;
     margin-top: 1px;
 }
+
+/* Sample when User_ID == 2 */
 .user-id-2 {
-    /* sample User_ID == 2 styling */
     /* margin-top: 1px; */
     /* background-color: #888844; */
 }
-.user-id-3 {}
-.user-id-4 {} /* etc ... or "comment-author-authorname gets added for specific registered users" by default for comments */
+
+/* Additional comment/author classes */
+.editor {}
+.contributor {}
+.subscriber {}
+.guest {}
 
 .nocomments {
     margin: 0;

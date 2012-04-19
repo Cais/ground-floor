@@ -18,23 +18,33 @@
  * @version     1.9
  * Implemented `gf_use_posted`
  * Added conditionals to display website (with email) and biography only if information has been entered into the user fields
+ * Addressed deprecated call to `get_userdatabyloogin`
  */
 
 get_header();
-/**
- * This sets the $curauth variable
- * @todo Address deprecated call to `get_userdatabyloogin`
- */
-if(isset( $_GET['author_name'] ) ) :
-    $curauth = get_userdatabylogin( $author_name );
-else :
-    $curauth = get_userdata( intval( $author ) );
-endif; ?>
+/** Set the $curauth variable */
+$curauth = ( get_query_var( 'author_name ' ) ) ? get_user_by( 'id', get_query_var( 'author_name' ) ) : get_userdata( get_query_var( 'author' ) ); ?>
 <div id="main-blog">
     <div id="content">
-        <div id="author" class="<?php if ( ( get_userdata( intval( $author ) )->ID ) == '1' ) echo 'administrator';
-            /** elseif ((get_userdata(intval($author))->ID) == '2') echo 'user-id-2'; */ /** sample */
-            /** add additional user_id following above example, echo the 'CSS element' you want to use for styling */ ?>">
+        <div id="author" class="<?php
+                /** Add class as related to the user role (see 'Role:' drop-down in User options) */
+                if ( user_can( $curauth->ID, 'administrator' ) ) {
+                    echo 'administrator';
+                } elseif ( user_can( $curauth->ID, 'editor' ) ) {
+                    echo 'editor';
+                } elseif ( user_can( $curauth->ID, 'contributor' ) ) {
+                    echo 'contributor';
+                } elseif ( user_can( $curauth->ID, 'subscriber' ) ) {
+                    echo 'subscriber';
+                } else {
+                    echo 'guest';
+                }
+                /** Add user classes by ID */
+                /** First user/administrator */
+                if ( ( $curauth->ID ) == '1' ) echo ' administrator-prime';
+                /** Additional Example */
+                /** elseif ( ( $curauth->ID ) == '2' ) echo ' user-id-2 jellybeen'; */
+                ?>">
             <h2><?php _e( 'About ', 'groundfloor' ); ?><?php echo $curauth->display_name; ?></h2>
             <ul>
                 <?php if ( ! empty( $curauth->user_url ) ) { ?>
