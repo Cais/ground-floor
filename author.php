@@ -17,6 +17,7 @@
  * Last revised April 16, 2012
  * @version     1.9
  * Implemented `gf_use_posted`
+ * Added conditionals to display website (with email) and biography only if information has been entered into the user fields
  */
 
 get_header();
@@ -36,8 +37,13 @@ endif; ?>
             /** add additional user_id following above example, echo the 'CSS element' you want to use for styling */ ?>">
             <h2><?php _e( 'About ', 'groundfloor' ); ?><?php echo $curauth->display_name; ?></h2>
             <ul>
-                <li><?php _e( 'Website', 'groundfloor' ); ?>: <a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a> <?php _e('or', 'groundfloor'); ?> <a href="mailto:<?php echo $curauth->user_email; ?>"><?php _e( 'email', 'groundfloor' ); ?></a></li>
-                <li><?php _e( 'Biography', 'groundfloor' ); ?>: <?php echo $curauth->user_description; ?></li>
+                <?php if ( ! empty( $curauth->user_url ) ) { ?>
+                    <li><?php _e( 'Website', 'groundfloor' ); ?>: <a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a> <?php _e('or', 'groundfloor'); ?> <a href="mailto:<?php echo $curauth->user_email; ?>"><?php _e( 'email', 'groundfloor' ); ?></a></li>
+                <?php
+                }
+                if ( ! empty( $curauth->user_description ) ) { ?>
+                    <li><?php _e( 'Biography', 'groundfloor' ); ?>: <?php echo $curauth->user_description; ?></li>
+                <?php } ?>
             </ul>
         </div> <!-- #author -->
         <h2><?php _e( 'Posts by ', 'groundfloor' ); ?><?php echo $curauth->display_name; ?>:</h2>

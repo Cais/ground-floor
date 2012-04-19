@@ -1,5 +1,5 @@
 ==== readme.txt ====
-Updated July 20, 2011 at version 1.8
+Updated April 19, 2012 at version 1.9
 
 === Contents ===
 * Items of Note
@@ -8,9 +8,10 @@ Updated July 20, 2011 at version 1.8
 
 === Items of Note ===
 * This Theme does not use Custom Header Images
-* functions prefixed with 'bns_' are common to all themes created by myself and are representative of their home pages at http://BuyNowShop.com/themes/
+* Functions prefixed with 'bns_' are common to all themes created by myself and are representative of their home pages at http://BuyNowShop.com/themes/
 * Posts without titles can be reached by clicking on the linked 'Comment' reference
-* Posts without titles and password protected will not have a direct link to the single view of the post.  
+* Posts without titles and password protected will not have a direct link to the single view of the post.
+* Author email link will only appear on 'author.php' rendered pages if their website URL has been added to their profile.
 
 === TO-DO ===
 [ ] Review internationalization for proper support or possible removal (remove 'translation-ready' tag until decided)
