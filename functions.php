@@ -1,6 +1,6 @@
 <?php
 /**
- * Author Template
+ * Functions
  *
  * Displays author page is required to be displayed
  *
