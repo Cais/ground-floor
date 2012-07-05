@@ -387,7 +387,7 @@ add_filter( 'wp_title', 'gf_wp_title', 10, 3 );
  * @todo Review comments_open conditional ... what if there are threaded comments and the comments are closed?
  */
 if ( ! function_exists( 'gf_enqueue_comment_reply' ) ) {
-    function gr_enqueue_comment_reply() {
+    function gf_enqueue_comment_reply() {
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script( 'comment-reply' );
         }
