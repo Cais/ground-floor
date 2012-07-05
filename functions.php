@@ -14,9 +14,8 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
- * Last modified April 19, 2012
  * @version     2.0
- * Changed TEMPLATEPATH to `get_template_directory()`
+ * @date        July 5, 2012
  */
 
 /**
@@ -191,8 +190,29 @@ add_action( 'after_setup_theme', 'ground_floor_setup' );
 
 if ( ! function_exists( 'ground_floor_setup' ) ):
     /**
-     * Ground Floor Setup - adds various core functionality to the theme
-     * @todo Remove code for call to deprecated function `add_custom_background` after the release of WordPress 3.4
+     * Ground Floor Setup
+     * Adds various core functionality to the theme
+     *
+     * @package GroundFloor
+     *
+     * @uses    add_action
+     * @uses    add_theme_support
+     * @uses    get_locale
+     * @uses    get_template_directory
+     * @uses    get_template_directory_uri
+     * @uses    gf_nav_menu
+     * @uses    gf_list_pages
+     * @uses    is_home
+     * @uses    is_front_page
+     * @uses    load_theme_textdomain
+     * @uses    register_gf_menu
+     * @uses    register_nav_menu
+     * @uses    wp_list_pages
+     *
+     * @version 2.0
+     * @date    July 5, 2012
+     * Removed code for call to deprecated function `add_custom_background`
+     * Updated inline documentation
      */
     function ground_floor_setup(){
         global $wp_version;
@@ -204,14 +224,11 @@ if ( ! function_exists( 'ground_floor_setup' ) ):
         add_editor_style();
 
         /** This theme allows users to set a custom background */
-        if ( version_compare( $wp_version, "3.4-alpha", "<" ) ) {
-            add_custom_background();
-        } else {
-            add_theme_support( 'custom-background' /*, array(
-                'default-color' => '673000',
-                'default-image' => get_stylesheet_directory_uri() . '/images/wood-floor-background.jpg'
-            )*/ );
-        }
+        /** NB: Use the wf31.png for a higher definition (and larger) background image */
+        add_theme_support( 'custom-background', array(
+            'default-color' => '673000',
+            'default-image' => get_template_directory_uri() . '/images/wood-floor-background.jpg'
+        ) );
 
         if ( ! function_exists( 'gf_nav_menu' ) ) {
             /** Ground Floor Navigation Menu - adds wp_nav_menu() custom menu support */

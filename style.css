@@ -67,8 +67,6 @@ img.alignright, img.right { display: inline; margin: 0 0 8px 8px; }
 
 /*= The Starting Line - Edit after this point =*/
 body {
-  /* background: #673000 url(images/wf31.png) fixed top center; */ /* Higher quality image; to use: uncomment this line; and, comment out the 'background' line below. */
-  background: #673000 url( images/wood-floor-background.jpg ) fixed top center;
   color: #f5e5c5;
   font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
   font-size: 18px;
