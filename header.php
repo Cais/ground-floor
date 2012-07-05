@@ -22,9 +22,7 @@
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-    <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-    wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>

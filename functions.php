@@ -369,5 +369,31 @@ if ( ! function_exists( 'gf_wp_title' ) ) {
 }
 add_filter( 'wp_title', 'gf_wp_title', 10, 3 );
 
+/**
+ * Enqueue Comment Reply Script
+ *
+ * If the page being viewed is a single post/page; and, comments are open; and,
+ * threaded comments are turned on then enqueue the built-in comment-reply
+ * script.
+ *
+ * @package GroundFloor
+ * @since   2.0
+ *
+ * @uses    comments_open
+ * @uses    get_option
+ * @uses    is_singular
+ * @uses    wp_enqueue_script
+ *
+ * @todo Review comments_open conditional ... what if there are threaded comments and the comments are closed?
+ */
+if ( ! function_exists( 'gf_enqueue_comment_reply' ) ) {
+    function gr_enqueue_comment_reply() {
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
+    }
+}
+add_action( 'comment_form_before', 'gf_enqueue_comment_reply' );
+
 /** Set the content width based on the theme's design and stylesheet, see #main-blog element in style.css */
 if ( ! isset( $content_width ) ) $content_width = 640;

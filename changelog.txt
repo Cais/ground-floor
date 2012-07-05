@@ -5,6 +5,7 @@ Changelog: July 5, 2012
 * Addressed `_e` and other output / i18n issues
 * Changed TEMPLATEPATH to `get_template_directory()`
 * Refactored `wp_title` usage
+* Refactored script enqueue of threaded comments
 * Removed code for call to deprecated function `add_custom_background`
 * Removed code for call to deprecated function `get_theme_data`
 
