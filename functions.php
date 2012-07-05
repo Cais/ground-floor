@@ -48,7 +48,7 @@ function gf_login() {
  *
  * Last modified April 16, 2012
  * @version 1.9
- * Added 'description' paramters for each sidebar definition
+ * Added 'description' parameters for each sidebar definition
  */
 register_sidebars( 3, array(
     'description'   => __( 'Widget area found in sidebar of theme.', 'groundfloor' ),
@@ -146,49 +146,36 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 if ( ! function_exists( 'gf_theme_version' ) ) {
     /**
      * Ground Floor Theme Version
-     *
      * Outputs the theme version and relevant details; if it is a Child-Theme it also outputs the Parent-Theme details
      *
-     * Last revised April 16, 2012
-     * @version 1.9
-     * Changed from `bns_theme_version` to `gf_theme_version`
-     * Addressed deprecated function calls to `get_theme_data`
+     * @package GroundFloor
      *
-     * @todo Remove code for calls to deprecated function `get_theme_data` after the release of WordPress 3.4
+     * @uses    is_child_theme
+     * @uses    parent
+     * @uses    wp_get_theme
+     *
+     * @version 2.0
+     * @date    July 5, 2012
+     * Removed code for calls to deprecated function `get_theme_data`
      */
     function gf_theme_version () {
-        global $wp_version;
-        /** Check WordPress version before using `wp_get_theme` for collecting theme data */
-        if ( version_compare( $wp_version, "3.4-alpha", "<" ) ) {
-            /** Get details of the theme / child theme */
-            $blog_css_url = get_stylesheet_directory() . '/style.css';
-            $my_theme_data = get_theme_data( $blog_css_url );
-            $parent_blog_css_url = get_template_directory() . '/style.css';
-            $parent_theme_data = get_theme_data( $parent_blog_css_url );
-            if ( is_child_theme() ) {
-                printf( __( '<br /><span id="gf-theme-version">%1$s version %2$s a child of the %3$s version %4$s theme from <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'groundfloor' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
-            } else {
-                printf( __( '<br /><span id="gf-theme-version">%1$s version %2$s theme from <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'groundfloor' ), $my_theme_data['Name'], $my_theme_data['Version'] );
-            }
+        /** @var $active_theme_data - array object containing the current theme's data */
+        $active_theme_data = wp_get_theme();
+        if ( is_child_theme() ) {
+            /** @var $parent_theme_data - array object containing the Parent Theme's data */
+            $parent_theme_data = $active_theme_data->parent();
+            /** @noinspection PhpUndefinedMethodInspection - IDE commentary */
+            printf( __( '<br /><span id="gf-theme-version">%1$s theme, version %2$s, a Child-Theme of %3$s theme, version %4$s, from %5$s.</span>', 'groundfloor' ),
+                $active_theme_data['Name'],
+                $active_theme_data['Version'],
+                $parent_theme_data['Name'],
+                $parent_theme_data['Version'],
+                '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
         } else {
-            /** @var $active_theme_data - array object containing the current theme's data */
-            $active_theme_data = wp_get_theme();
-            if ( is_child_theme() ) {
-                /** @var $parent_theme_data - array object containing the Parent Theme's data */
-                $parent_theme_data = $active_theme_data->parent();
-                /** @noinspection PhpUndefinedMethodInspection - IDE commentary */
-                printf( __( '<br /><span id="gf-theme-version">%1$s theme, version %2$s, a Child-Theme of %3$s theme, version %4$s, from %5$s.</span>', 'groundfloor' ),
-                    $active_theme_data['Name'],
-                    $active_theme_data['Version'],
-                    $parent_theme_data['Name'],
-                    $parent_theme_data['Version'],
-                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
-            } else {
-                printf( __( '<br /><span id="gf-theme-version">%1$s theme, version %2$s, from %3$s.</span>', 'groundfloor' ),
-                    $active_theme_data['Name'],
-                    $active_theme_data['Version'],
-                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
-            }
+            printf( __( '<br /><span id="gf-theme-version">%1$s theme, version %2$s, from %3$s.</span>', 'groundfloor' ),
+                $active_theme_data['Name'],
+                $active_theme_data['Version'],
+                '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
         }
     }
 }
