@@ -19,20 +19,7 @@
 ?>
 <head profile="http://gmpg.org/xfn/11">
     <meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
-    <title><?php /** ... as influenced by Twenty Ten and Twenty Eleven */
-        global $page, $paged;
-        wp_title( '|', true, 'right' ); bloginfo( 'name' );
-
-        /** Add the blog description (tagline) for the home/front page. */
-        $site_tagline = get_bloginfo( 'description', 'display' );
-        if ( $site_tagline && ( is_home() || is_front_page() ) )
-            echo " | $site_tagline";
-
-        /** Add a page number if necessary: */
-        if ( $paged >= 2 || $page >= 2 )
-            echo ' | ' . sprintf( __( 'Page %s', 'ground-floor' ), max( $paged, $page ) ); ?>
-    </title>
-
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
