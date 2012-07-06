@@ -14,7 +14,7 @@
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
  * @version     2.0
- * @date        July 5, 2012
+ * @date        July 6, 2012
  */
 
 /**
@@ -209,8 +209,8 @@ if ( ! function_exists( 'ground_floor_setup' ) ):
      * @uses    wp_list_pages
      *
      * @version 2.0
-     * @date    July 5, 2012
-     * Removed code for call to deprecated function `add_custom_background`
+     * @date    July 6, 2012
+     * Removed code for calls to deprecated functions
      * Updated inline documentation
      */
     function ground_floor_setup(){
@@ -232,14 +232,11 @@ if ( ! function_exists( 'ground_floor_setup' ) ):
         if ( ! function_exists( 'gf_nav_menu' ) ) {
             /** Ground Floor Navigation Menu - adds wp_nav_menu() custom menu support */
             function gf_nav_menu() {
-                if ( function_exists( 'wp_nav_menu' ) )
-                    wp_nav_menu( array(
-                        'menu_class'        => 'nav-menu',
-                        'theme_location'    => 'top-menu',
-                        'fallback_cb'       => 'gf_list_pages'
-                    ) );
-                else
-                    gf_list_pages();
+                wp_nav_menu( array(
+                    'menu_class'        => 'nav-menu',
+                    'theme_location'    => 'top-menu',
+                    'fallback_cb'       => 'gf_list_pages'
+                ) );
             }
         }
         if ( ! function_exists( 'gf_list_pages' ) ) {
