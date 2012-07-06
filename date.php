@@ -17,8 +17,6 @@
  * Last revised April 19, 2012
  * @version     2.0
  * Addressed `_e` and other output / i18n issues
- *
- * @todo Address all `_e` and other output / i18n issues
  */
 
 global $m;
@@ -93,4 +91,4 @@ get_header(); ?>
     </div><!-- #content -->
 </div><!-- #main-blog -->
 <?php get_sidebar();
-get_footer(); ?>
+get_footer();

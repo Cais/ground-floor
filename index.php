@@ -16,7 +16,8 @@
  * @internal    REQUIRES WordPress version 3.0
  * @internal    Tested up to WordPress version 3.4
  *
- * @version     1.9.1
+ * @version     2.0
+ * @date        July 6, 2012
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
@@ -39,10 +40,6 @@
  *
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Last revised April 16, 2012
- * @version     1.9
- * Implement the use of `gf_use_posted`
  *
  * @todo Review addition of standard post formats
  */

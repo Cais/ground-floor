@@ -727,7 +727,7 @@ table#wp-calendar thead tr th { text-align: center; }
     padding-right: 20px;
 }
 
-.footer widget a { color: #eccfa0; }
+.footer .widget a { color: #eccfa0; }
 
 .footer-widget h2 { text-align: center; }
 .footer-widget h6 {
@@ -772,9 +772,23 @@ div#footer-bottom { text-align: center; }
 #gf-logged-out { font-weight: lighter; }
 /*-= End Footer =-*/
 
-/*-- WordPress' plugin stylings --*/
+/*-- WordPress' plugin styles --*/
 img#wpstats { display: none; }
 #akismetstats { margin: 0 auto; }
+/** Calendar */
+table#wp-calendar tbody tr td#today { outline: 1px solid; }
+/** RSS */
+li.widget_rss ul li cite { font-style: italic; }
+li.widget_rss ul li cite:before { content: '~ '; }
+/** Text Widgets */
+div.textwidget p {
+    overflow: hidden;
+}
+div.widget div.textwidget div.wp-caption { margin: 0; }
+div.widget div.textwidget div.wp-caption a img {
+    height: auto;
+    width: 98%;
+}
 
 /* WordPress 3.0 Navigation Menu core widget */
 .widget_nav_menu .menu { margin: 0; }

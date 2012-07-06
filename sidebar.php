@@ -11,13 +11,18 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
+ * @version     2.0
+ * @date        July 6, 2012
+ * Removed `function_exists` checks as should not be needed with current
+ * WordPress version
  */
 ?>
 <div id="sidebar">
     <div id="sidebar-inside">
 
         <div id="sidebar-1">
-            <?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( 'sidebar-1' ) ) : else : ?>
+            <?php if ( dynamic_sidebar( 'sidebar-1' ) ) : else : ?>
                 <div class="widget-top"></div>
                 <div class="widget">
                     <ul id="search">
@@ -76,11 +81,11 @@
         </div><!-- #sidebar-1 -->
 
         <div id="sidebar-2">
-            <?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( 'sidebar-2' ) ) : else : endif; ?>
+            <?php if ( dynamic_sidebar( 'sidebar-2' ) ) : else : endif; ?>
         </div><!-- #sidebar-2 -->
 
         <div id="sidebar-3">
-            <?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( 'sidebar-3' ) ) : else : endif; ?>
+            <?php if ( dynamic_sidebar( 'sidebar-3' ) ) : else : endif; ?>
         </div><!-- #sidebar-3 -->
 
     </div><!-- #sidebar-inside -->

@@ -17,8 +17,6 @@
  * Last revised April 19, 2012
  * @version     2.0
  * Addressed `_e` and other output / i18n issues
- *
- * @todo Address all `_e` and other output / i18n issues
  */
 
 get_header();
@@ -86,4 +84,4 @@ $category_link = get_category_link ( $cat_id );
     </div><!-- #content -->
 </div><!-- #main-blog -->
 <?php get_sidebar();
-get_footer(); ?>
+get_footer();

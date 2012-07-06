@@ -15,6 +15,10 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
+ * @version     2.0
+ * @date        July 5, 2012
+ * Updated HTML title tag
  */
 ?>
 <head profile="http://gmpg.org/xfn/11">

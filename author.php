@@ -101,4 +101,4 @@ $curauth = ( get_query_var( 'author_name ' ) ) ? get_user_by( 'id', get_query_va
     </div> <!-- #content -->
 </div> <!-- #main-blog -->
 <?php get_sidebar();
-get_footer();?>
+get_footer();

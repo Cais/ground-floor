@@ -1,8 +1,7 @@
 <?php
 /**
  * Functions
- *
- * Displays author page is required to be displayed
+ * General functions used with the Ground Floor theme.
  *
  * @package     GroundFloor
  * @since       1.0

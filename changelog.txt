@@ -1,6 +1,6 @@
 === Ground Floor ===
 == Version 2.0 ==
-Changelog: July 5, 2012
+Changelog: July 6, 2012
 = Code =
 * Addressed `_e` and other output / i18n issues
 * Changed TEMPLATEPATH to `get_template_directory()`
@@ -8,6 +8,10 @@ Changelog: July 5, 2012
 * Refactored script enqueue of threaded comments
 * Removed code for call to deprecated function `add_custom_background`
 * Removed code for call to deprecated function `get_theme_data`
+* Removed `function_exists( 'dynamic-sidebar' )` checks - should not be needed
+
+= Miscellaneous =
+* Various inline documentation updates and corrections
 
 = Internet Browsers Reviewed =
 * Apple Safari v5.1.7
