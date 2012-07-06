@@ -12,6 +12,7 @@ Changelog: July 6, 2012
 
 = Miscellaneous =
 * Various inline documentation updates and corrections
+* Dropped widget-map image file from package
 
 = Internet Browsers Reviewed =
 * Apple Safari v5.1.7

@@ -14,7 +14,7 @@ Updated April 19, 2012 at version 1.9
 * Author email link will only appear on 'author.php' rendered pages if their website URL has been added to their profile.
 
 === TO-DO ===
-[ ] Review internationalization for proper support or possible removal (remove 'translation-ready' tag until decided)
+[x] Review internationalization for proper support or possible removal (remove 'translation-ready' tag until decided)
 [ ] Review stylesheet for editor style (as needed?)
 [ ] Review posts without title and password protected ... expect as a very rare use-case and not an immediate requirement at this time
 
