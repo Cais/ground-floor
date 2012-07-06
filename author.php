@@ -14,11 +14,9 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
- * Last revised April 16, 2012
- * @version     1.9
- * Implemented `gf_use_posted`
- * Added conditionals to display website (with email) and biography only if information has been entered into the user fields
- * Addressed deprecated call to `get_userdatabyloogin`
+ * @version     2.0
+ * @date        July 6, 2012
+ * Updates to i18n support
  */
 
 get_header();
@@ -45,18 +43,22 @@ $curauth = ( get_query_var( 'author_name ' ) ) ? get_user_by( 'id', get_query_va
                 /** Additional Example */
                 /** elseif ( ( $curauth->ID ) == '2' ) echo ' user-id-2 jellybeen'; */
                 ?>">
-            <h2><?php _e( 'About ', 'groundfloor' ); ?><?php echo $curauth->display_name; ?></h2>
+            <h2><?php printf( __( 'About %1$s', 'groundfloor' ), $curauth->display_name ); ?></h2>
             <ul>
                 <?php if ( ! empty( $curauth->user_url ) ) { ?>
-                    <li><?php _e( 'Website', 'groundfloor' ); ?>: <a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a> <?php _e('or', 'groundfloor'); ?> <a href="mailto:<?php echo $curauth->user_email; ?>"><?php _e( 'email', 'groundfloor' ); ?></a></li>
+                    <li><?php printf( __( 'Website: %1$s or %2$s', 'groundfloor' ),
+                        '<a href="' . $curauth->user_url . '">' . $curauth->user_url . '</a>',
+                        '<a href="mailto:' . $curauth->user_email . '">' . __( 'email', 'groundfloor' ) . '</a>'
+                        ); ?>
+                    </li>
                 <?php
                 }
                 if ( ! empty( $curauth->user_description ) ) { ?>
-                    <li><?php _e( 'Biography', 'groundfloor' ); ?>: <?php echo $curauth->user_description; ?></li>
+                    <li><?php printf( __( 'Biography: %1$s', 'groundfloor' ), $curauth->user_description ); ?></li>
                 <?php } ?>
             </ul>
         </div> <!-- #author -->
-        <h2><?php _e( 'Posts by ', 'groundfloor' ); ?><?php echo $curauth->display_name; ?>:</h2>
+        <h2><?php printf( __( 'Posts by %1$s:', 'groundfloor' ), $curauth->display_name ); ?></h2>
 
         <?php /** Start the_Loop */
         if ( have_posts() ) :

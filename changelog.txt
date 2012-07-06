@@ -9,6 +9,7 @@ Changelog: July 6, 2012
 * Removed code for call to deprecated function `add_custom_background`
 * Removed code for call to deprecated function `get_theme_data`
 * Removed `function_exists( 'dynamic-sidebar' )` checks - should not be needed
+* Updates to i18n support
 
 = Miscellaneous =
 * Various inline documentation updates and corrections
