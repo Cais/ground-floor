@@ -17,6 +17,7 @@
  * @date        December 7, 2012
  * Removed gf_login function in favor of using its parent plugin BNS Login at
  * http://wordpress.org/extend/plugins/bns-login
+ * Removed duplicate `content width` entry
  */
 
 /**
@@ -191,12 +192,6 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
         }
     }
 }
-
-/**
- * Set the content width based on the theme's design and stylesheet
- * Calculated from: Main Blog Layout section in style.css
- */
-if ( !isset( $content_width ) ) $content_width = 620;
 
 /** Tell WordPress to run ground_floor_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'ground_floor_setup' );
@@ -402,5 +397,8 @@ if ( ! function_exists( 'gf_enqueue_comment_reply' ) ) {
 }
 add_action( 'comment_form_before', 'gf_enqueue_comment_reply' );
 
-/** Set the content width based on the theme's design and stylesheet, see #main-blog element in style.css */
-if ( ! isset( $content_width ) ) $content_width = 640;
+/**
+ * Set the content width based on the theme's design and stylesheet
+ * Calculated from: #main-blog element in style.css
+ */
+if ( !isset( $content_width ) ) $content_width = 620;
