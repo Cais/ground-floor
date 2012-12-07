@@ -23,7 +23,7 @@
  * Widget Area Definitions
  * Creating three (3) "sidebar" widget areas and three (3) "footer" widget areas
  *
- * @package Ground_Floor
+ * @package GroundFloor
  * @since   1.0
  *
  * @version 1.9
@@ -95,8 +95,16 @@ register_sidebar( array(
 if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
     /**
      * Ground Floor Dynamic Copyright
-     *
      * Outputs a copyright notice with a beginning and ending date based on published posts.
+     *
+     * @package GroundFloor
+     *
+     * @uses    apply_filters
+     * @uses    get_bloginfo
+     * @uses    get_posts
+     * @uses    home_url
+     * @uses    post_date_gmt
+     * @uses    wp_parse_args
      *
      * @param string $args
      *
@@ -285,7 +293,6 @@ endif;
 
 /**
  * Ground Floor Use Posted
- *
  * This returns a URL to the post using the anchor text 'Posted' in the meta
  * details with the post excerpt as the URL title; or, returns the word 'Posted'
  * if the post title exists
@@ -310,7 +317,6 @@ if ( ! function_exists( 'gf_use_posted' ) ) {
 
 /**
  * Ground Floor Modified Post
- *
  * Outputs the modifying author name and date the post was modified if the post
  * date and the last modified date are different.
  *
@@ -334,7 +340,6 @@ function gf_modified_post(){
 if ( ! function_exists( 'gf_wp_title' ) ) {
     /**
      * Ground Floor WP Title
-     *
      * Utilizes the `wp_title` filter to add text to the default output
      *
      * @package GroundFloor
@@ -372,7 +377,6 @@ add_filter( 'wp_title', 'gf_wp_title', 10, 3 );
 
 /**
  * Enqueue Comment Reply Script
- *
  * If the page being viewed is a single post/page; and, comments are open; and,
  * threaded comments are turned on then enqueue the built-in comment-reply
  * script.

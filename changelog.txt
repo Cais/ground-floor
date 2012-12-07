@@ -10,6 +10,7 @@ Changelog: December 7, 2012
 
 = Miscellaneous =
 * Minor code updates and corrections
+* More complete PHPDocs style documentation added
 
 = Current Internet Browsers Reviewed =
 * Apple Safari
