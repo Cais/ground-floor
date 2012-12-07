@@ -379,11 +379,13 @@ add_filter( 'wp_title', 'gf_wp_title', 10, 3 );
  * @uses    is_singular
  * @uses    wp_enqueue_script
  *
- * @todo Review comments_open conditional ... what if there are threaded comments and the comments are closed?
+ * @version 2.1
+ * @date    December 7, 2012
+ * Addressed conditional to display threaded comments if they are open or closed
  */
 if ( ! function_exists( 'gf_enqueue_comment_reply' ) ) {
     function gf_enqueue_comment_reply() {
-        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        if ( is_singular() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script( 'comment-reply' );
         }
     }
