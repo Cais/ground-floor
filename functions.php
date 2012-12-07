@@ -23,14 +23,39 @@
  * Widget Area Definitions
  * Creating three (3) "sidebar" widget areas and three (3) "footer" widget areas
  *
+ * @package Ground_Floor
  * @since   1.0
  *
- * Last modified April 16, 2012
  * @version 1.9
+ * @date    April 16, 2012
  * Added 'description' parameters for each sidebar definition
+ *
+ * @version 2.1
+ * @date    December 7, 2012
+ * Refactored sidebar definitions to include names and descriptions
  */
-register_sidebars( 3, array(
-    'description'   => __( 'Widget area found in sidebar of theme.', 'groundfloor' ),
+
+register_sidebar( array(
+    'name'          => __( 'Sidebar 1', 'groundfloor' ),
+    'description'   => __( 'The first sidebar widget area. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'groundfloor' ),
+    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+) );
+
+register_sidebar( array(
+    'name'          => __( 'Sidebar 2', 'groundfloor' ),
+    'description'   => __( 'The second sidebar widget area. This is empty by default.', 'groundfloor' ),
+    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+) );
+
+register_sidebar( array(
+    'name'          => __( 'Sidebar 3', 'groundfloor' ),
+    'description'   => __( 'The third sidebar widget area. This is empty by default.', 'groundfloor' ),
     'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
     'before_title'  => '<h2 class="widget-title">',

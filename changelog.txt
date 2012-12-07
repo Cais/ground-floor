@@ -3,6 +3,7 @@
 Changelog: December 7, 2012
 = Code =
 * Addressed conditional to display threaded comments if they are open or closed
+* Refactored sidebar definitions to include names and descriptions
 * Removed gf_login function in favor of using its parent plugin BNS Login
 
 = CSS =
