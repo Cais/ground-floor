@@ -21,14 +21,12 @@
     <div id="footer-widgets">
 
         <div id="fw-middle" class="fw-column">
-            <?php if ( dynamic_sidebar( "footer-middle" ) ) : else : ?>
-                <div class="widget-top"></div>
-                <div class="footer-widget">
-                    <!-- Middle Footer Widget -->
-                    <?php gf_login(); ?>
-                </div>
-                <div class="widget-bottom"></div>
-            <?php endif; ?>
+            <?php if ( dynamic_sidebar( "footer-middle" ) ) : else :
+            /**
+             * Removed the gf_login function in favor or using it parent plugin
+             * see BNS Login at http://wordpress.org/extend/plugins/bns-login
+             */
+            endif; ?>
         </div><!-- #fw-middle -->
 
         <div id="fw-left" class="fw-column">

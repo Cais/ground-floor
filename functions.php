@@ -13,30 +13,11 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
- * @version     2.0
- * @date        July 6, 2012
+ * @version     2.1
+ * @date        December 7, 2012
+ * Removed gf_login function in favor of using its parent plugin BNS Login at
+ * http://wordpress.org/extend/plugins/bns-login
  */
-
-/**
- * Ground Floor Login - adds link to login|Dashboard
- * @todo Review for optimization
- */
-function gf_login() {
-    $login_url = home_url() . '/wp-admin/';
-    if ( is_user_logged_in() ) {
-        echo '<div id="gf-logged-in" class="gf-login">' . __( 'You are logged in! ', 'groundfloor' );
-        if ( function_exists( 'get_current_site' ) ) {
-            $current_site = get_current_site();
-            $home_domain = 'http://' . $current_site->domain . $current_site->path;
-            echo '<a href="' . wp_logout_url( $home_domain ) . '" title="' . __( 'Logout', 'groundfloor' ) . '">' . __( 'Logout', 'groundfloor' ) . '</a>';
-        } else {
-            echo '<a href="' . wp_logout_url( home_url() ) . '" title="' . __( 'Logout', 'groundfloor' ) . '">' . __( 'Logout', 'groundfloor' ) . '</a>';
-        }
-        echo __( ' or go to the ', 'groundfloor' ) . '<a href="' . $login_url . '" title="' . __( 'dashboard', 'groundfloor' ) . '">' . __( 'dashboard', 'groundfloor' ) . '</a>.</div>';
-    } else {
-        echo '<div id="gf-logged-out" class="gf-login"><a href="' . $login_url . '" title="' . __( 'Log in here', 'groundfloor' ) . '">' . __( 'Log in here!', 'groundfloor' ) . '</a></div>';
-    }
-}
 
 /**
  * Widget Area Definitions

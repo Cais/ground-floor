@@ -765,14 +765,6 @@ div#footer-middle p span.copyright strong {
 }
 
 div#footer-bottom { text-align: center; }
-
-/* Ground Floor Login function */
-.gf-login {
-    font-style: italic;
-    text-align: center;
-}
-#gf-logged-in { font-weight: bold; }
-#gf-logged-out { font-weight: lighter; }
 /*-= End Footer =-*/
 
 /*-- WordPress' plugin styles --*/
