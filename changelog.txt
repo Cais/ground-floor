@@ -1,4 +1,21 @@
 === Ground Floor ===
+== Version 2.1 ==
+Changelog: December 7, 2012
+= Code =
+
+= CSS =
+
+= Miscellaneous =
+* Minor code updates and corrections
+
+= Current Internet Browsers Reviewed =
+* Apple Safari
+* Firefox
+* Google Chrome
+* Internet Explorer
+* Opera
+
+/** ------------------------------------------------------------------------- */
 == Version 2.0 ==
 Changelog: July 6, 2012
 = Code =
@@ -14,13 +31,6 @@ Changelog: July 6, 2012
 = Miscellaneous =
 * Various inline documentation updates and corrections
 * Dropped widget-map image file from package
-
-= Internet Browsers Reviewed =
-* Apple Safari v5.1.7
-* Firefox v13.0.1
-* Google Chrome v20.0
-* Internet Explorer v9.0
-* Opera v12.0
 
 /** ------------------------------------------------------------------------- */
 == Version 1.9 ==

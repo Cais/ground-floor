@@ -301,7 +301,6 @@ if ( ! function_exists( 'gf_use_posted' ) ) {
         return $gf_no_title;
     }
 }
-// End: DMM Use Posted
 
 /**
  * Ground Floor Modified Post

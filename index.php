@@ -9,17 +9,15 @@
  * @package     GroundFloor
  * @since       1.0
  *
+ * @author      Edward Caissie <edward.caissie@gmail.com>
+ * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/fround-floor/
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @internal    REQUIRES WordPress version 3.0
  * @internal    Tested up to WordPress version 3.4
- *
- * @version     2.0
- * @date        July 6, 2012
- * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
@@ -40,6 +38,9 @@
  *
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @version 2.1
+ * @date    December 7, 2012
  *
  * @todo Review addition of standard post formats
  */
@@ -85,4 +86,4 @@ get_header(); ?>
     </div> <!-- #content -->
 </div> <!-- #main-blog -->
 <?php get_sidebar();
-get_footer(); ?>
+get_footer();

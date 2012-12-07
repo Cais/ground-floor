@@ -2,36 +2,39 @@
 Theme Name: Ground Floor
 Theme URI: http://buynowshop.com/themes/ground-floor/
 Description: Richly toned wood floor background with bare-earth colored widgetized sidebar and footer (six widget areas in total). A strong theme to begin with; grow into; and, build on.
-Version: 2.0
+Version: 2.1
 Author: Edward Caissie
 Author URI: http://edwardcaissie.com/
 Tags: black, brown, red, tan, light, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post, custom-background, custom-menu, editor-style
 WordPress Required Version: 3.4
-Tested Up To: 3.4
+Tested Up To: 3.5
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-/*  Copyright 2009-2012  Edward Caissie  (email : edward.caissie@gmail.com)
-    
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License version 2,
-    as published by the Free Software Foundation.
-    
-    You may NOT assume that you can use any other version of the GPL.
-    
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-    
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-    
-    The license for this software can also likely be found here:
-    http://www.gnu.org/licenses/gpl-2.0.html
-*/
+/**
+ * Copyright 2009-2012  Edward Caissie  (email : edward.caissie@gmail.com)
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2, as published by the
+ * Free Software Foundation.
+ *
+ * You may NOT assume that you can use any other version of the GPL.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, write to the
+ *
+ *      Free Software Foundation, Inc.
+ *      51 Franklin St, Fifth Floor
+ *      Boston, MA  02110-1301  USA
+ *
+ * The license for this software can also likely be found here:
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 /*-- YUI Reset: Start --*/
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin:0; padding:0; }
