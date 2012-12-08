@@ -14,10 +14,11 @@
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
  * @version     2.1
- * @date        December 7, 2012
- * Removed gf_login function in favor of using its parent plugin BNS Login at
+ * @date        December 8, 2012
+ * Removed `gf_login` function in favor of using its parent plugin BNS Login at
  * http://wordpress.org/extend/plugins/bns-login
  * Removed duplicate `content width` entry
+ * Removed `gf_modified_post` as unused code ... may re-introduce later
  */
 
 /**
@@ -307,28 +308,6 @@ if ( ! function_exists( 'gf_use_posted' ) ) {
             : $gf_no_title = __( 'Posted', 'groundfloor' );
         $gf_no_title = apply_filters( 'dmm_use_posted', $gf_no_title );
         return $gf_no_title;
-    }
-}
-
-/**
- * Ground Floor Modified Post
- * Outputs the modifying author name and date the post was modified if the post
- * date and the last modified date are different.
- *
- * @internal    Not currently implemented by default
- *
- * Last revised April 16, 2012
- * @version     1.9
- * Changed name to `gf_modified_post`
- *
- * @todo To be implemented ... 2.0?
- */
-function gf_modified_post(){
-    /**  */
-    if ( get_the_date() <> get_the_modified_date() ) {
-        echo '<div class="gf-modified-post">'; /* CSS wrapper for modified date details */
-        echo 'Last modified by ' . get_the_modified_author() . ' on ' . get_the_modified_date();
-        echo '</div><!-- .gf-modified-post -->';
     }
 }
 
