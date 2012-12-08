@@ -2,8 +2,10 @@
 == Version 2.1 ==
 Changelog: December 8, 2012
 = Code =
+* Added filters to allow the theme version text to be completely overwritten
 * Addressed conditional to display threaded comments if they are open or closed
 * Refactored sidebar definitions to include names and descriptions
+* Reworded the theme version texts
 * Removed duplicate `content width` entry
 * Removed `gf_login` function in favor of using its parent plugin BNS Login
 * Removed `gf_modified_post` as unused code ... may re-introduce in a later version
@@ -11,7 +13,7 @@ Changelog: December 8, 2012
 = CSS =
 
 = Miscellaneous =
-* Minor code updates and corrections
+* Minor code/documentation updates and corrections
 * More complete PHPDocs style documentation added
 
 = Current Internet Browsers Reviewed =

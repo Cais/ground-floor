@@ -171,6 +171,11 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
      * @version 2.0
      * @date    July 5, 2012
      * Removed code for calls to deprecated function `get_theme_data`
+     *
+     * @version 2.1
+     * @date    December 8, 2012
+     * Reworded the theme version texts
+     * Added filters to allow the text to be completely overwritten
      */
     function gf_theme_version () {
         /** @var $active_theme_data - array object containing the current theme's data */
@@ -179,17 +184,20 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
             /** @var $parent_theme_data - array object containing the Parent Theme's data */
             $parent_theme_data = $active_theme_data->parent();
             /** @noinspection PhpUndefinedMethodInspection - IDE commentary */
-            printf( __( '<br /><span id="gf-theme-version">%1$s theme, version %2$s, a Child-Theme of %3$s theme, version %4$s, from %5$s.</span>', 'groundfloor' ),
-                $active_theme_data['Name'],
-                $active_theme_data['Version'],
-                $parent_theme_data['Name'],
-                $parent_theme_data['Version'],
-                '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+            echo apply_filters( 'gf_child_theme_version_text',
+                sprintf( __( '<br /><span id="gf-theme-version">The %1$s (v%2$s) theme is built on the %3$s theme (v%4$s) by %5$s.</span>', 'groundfloor' ),
+                    $active_theme_data['Name'],
+                    $active_theme_data['Version'],
+                    $parent_theme_data['Name'],
+                    $parent_theme_data['Version'],
+                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' ) );
         } else {
-            printf( __( '<br /><span id="gf-theme-version">%1$s theme, version %2$s, from %3$s.</span>', 'groundfloor' ),
-                $active_theme_data['Name'],
-                $active_theme_data['Version'],
-                '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+            echo apply_filters( 'gf_parent_theme_version_text',
+                sprintf( __( '<br /><span id="gf-theme-version">Made with the %1$s theme (v%2$s) from %3$s.</span>', 'groundfloor' ),
+                    $active_theme_data['Name'],
+                    $active_theme_data['Version'],
+                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' )
+            );
         }
     }
 }

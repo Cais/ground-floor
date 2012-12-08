@@ -40,9 +40,7 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @version 2.1
- * @date    December 7, 2012
- *
- * @todo Review addition of standard post formats
+ * @date    December 8, 2012
  */
 get_header(); ?>
 <div id="main-blog">
