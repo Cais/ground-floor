@@ -99,7 +99,7 @@ hr {
 }
 
 .clear { clear: both; }
-.hidden { /* display: none; */ }
+.hidden { display: none; }
 
 /* -= Elements =- */
 a { color: #f5e5c5; }
@@ -621,7 +621,7 @@ form#commentform p.form-submit input#submit {
 /*-= Sidebar =-*/
 
 /*-- Search / Forms --*/
-input#s { width: 200px; }
+input#s { width: 100%; }
 
 /*-- Widgets --*/
 .widget {

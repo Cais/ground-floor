@@ -1,6 +1,6 @@
 === Ground Floor ===
 == Version 2.1 ==
-Changelog: December 8, 2012
+Changelog: December 9, 2012
 = Code =
 * Added filters to allow the theme version text to be completely overwritten
 * Addressed conditional to display threaded comments if they are open or closed
@@ -11,6 +11,8 @@ Changelog: December 8, 2012
 * Removed `gf_modified_post` as unused code ... may re-introduce in a later version
 
 = CSS =
+* Adjusted search box input field to fill width
+* Hid search buttons by un-commenting the `hidden` class properties
 
 = Miscellaneous =
 * Minor code/documentation updates and corrections
