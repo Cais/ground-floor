@@ -202,6 +202,65 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
     }
 }
 
+if ( ! function_exists( 'gf_custom_background_cb' ) ) {
+    /**
+     * Ground Floor Custom Background Callback
+     * Used specifically to set the CSS `background-attachment` property to
+     * `fixed` by default.
+     *
+     * @package GroundFloor
+     * @since   2.1
+     *
+     * @internal from `..\wp-includes\themes.php: _custom_background_cb()`
+     * @internal the callback function writes the `body.custom-background` CSS
+     * element and therefore required the entire "default" function structure
+     * from core.
+     *
+     * @uses    get_background_image
+     * @uses    get_theme_mod
+     * @uses    set_url_scheme
+     */
+    function gf_custom_background_cb() {
+        // $background is the saved custom image, or the default image.
+        $background = set_url_scheme( get_background_image() );
+
+        // $color is the saved custom color.
+        // A default has to be specified in style.css. It will not be printed here.
+        $color = get_theme_mod( 'background_color' );
+
+        if ( ! $background && ! $color )
+            return;
+
+        $style = $color ? "background-color: #$color;" : '';
+
+        if ( $background ) {
+            $image = " background-image: url('$background');";
+
+            $repeat = get_theme_mod( 'background_repeat', 'repeat' );
+            if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+                $repeat = 'repeat';
+            $repeat = " background-repeat: $repeat;";
+
+            $position = get_theme_mod( 'background_position_x', 'left' );
+            if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
+                $position = 'left';
+            $position = " background-position: top $position;";
+
+            $attachment = get_theme_mod( 'background_attachment', 'fixed' );
+            if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+                $attachment = 'fixed';
+            $attachment = " background-attachment: $attachment;";
+
+            $style .= $image . $repeat . $position . $attachment;
+        }
+        ?>
+    <style type="text/css" id="custom-background-css">
+        body.custom-background { <?php echo trim( $style ); ?> }
+    </style>
+    <?php
+    }
+}
+
 /** Tell WordPress to run ground_floor_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'ground_floor_setup' );
 
@@ -243,8 +302,9 @@ if ( ! function_exists( 'ground_floor_setup' ) ):
         /** This theme allows users to set a custom background */
         /** NB: Use the wf31.png for a higher definition (and larger) background image */
         add_theme_support( 'custom-background', array(
-            'default-color' => '673000',
-            'default-image' => get_template_directory_uri() . '/images/wood-floor-background.jpg'
+            'default-color'     => '673000',
+            'default-image'     => get_template_directory_uri() . '/images/wood-floor-background.jpg',
+            'wp-head-callback'  => 'gf_custom_background_cb',
         ) );
 
         if ( ! function_exists( 'gf_nav_menu' ) ) {
