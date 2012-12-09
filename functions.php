@@ -14,11 +14,11 @@
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
  * @version     2.1
- * @date        December 8, 2012
- * Removed `gf_login` function in favor of using its parent plugin BNS Login at
- * http://wordpress.org/extend/plugins/bns-login
- * Removed duplicate `content width` entry
- * Removed `gf_modified_post` as unused code ... may re-introduce later
+ * @date        December 9, 2012
+ * Added 'Ground Floor Custom Background Callback' function
+ * Removed duplicate `content_width` conditional set
+ * Removed `gf_login` function
+ * Removed `gf_modified_post` function
  */
 
 /**

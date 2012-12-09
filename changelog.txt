@@ -3,13 +3,14 @@
 Changelog: December 9, 2012
 = Code =
 * Added filters to allow the theme version text to be completely overwritten
+* Added 'Ground Floor Custom Background Callback' to specifically set the CSS `background-attachment` property to `fixed` by default.
 * Addressed conditional to display threaded comments if they are open or closed
 * Fixed spacing issue in meta details if post has no tags
 * Refactored sidebar definitions to include names and descriptions
 * Reworded the theme version texts
 * Removed duplicate `content width` entry
 * Removed `gf_login` function in favor of using its parent plugin BNS Login
-* Removed `gf_modified_post` as unused code ... may re-introduce in a later version
+* Removed `gf_modified_post` as unused code (may re-introduce in a later version)
 
 = CSS =
 * Adjusted search box input field to fill width
@@ -18,7 +19,8 @@ Changelog: December 9, 2012
 * Hid search buttons by un-commenting the `hidden` class properties
 
 = Miscellaneous =
-* Minor code/documentation updates and corrections
+* Minor code reformatting
+* Documentation updates and corrections
 * More complete PHPDocs style documentation added
 
 = Current Internet Browsers Reviewed =
