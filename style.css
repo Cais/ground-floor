@@ -418,6 +418,9 @@ td {}
     color: #eccfa0;
     text-decoration: underline;
 }
+.current_page_item ul li.menu-item a {
+    text-decoration: none;
+}
 
 /*-- Category, Tag, and Date pages --*/
 #category-title { font-size: 28px; }

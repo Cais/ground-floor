@@ -12,6 +12,7 @@ Changelog: December 9, 2012
 
 = CSS =
 * Adjusted search box input field to fill width
+* Fixed aesthetics of the menu for the current page
 * Hid search buttons by un-commenting the `hidden` class properties
 
 = Miscellaneous =
