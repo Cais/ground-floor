@@ -4,6 +4,7 @@ Changelog: December 9, 2012
 = Code =
 * Added filters to allow the theme version text to be completely overwritten
 * Addressed conditional to display threaded comments if they are open or closed
+* Fixed spacing issue in meta details if post has no tags
 * Refactored sidebar definitions to include names and descriptions
 * Reworded the theme version texts
 * Removed duplicate `content width` entry

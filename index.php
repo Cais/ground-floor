@@ -40,7 +40,8 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @version 2.1
- * @date    December 8, 2012
+ * @date    December 9, 2012
+ * Fixed spacing issue in meta details if post has no tags
  */
 get_header(); ?>
 <div id="main-blog">
@@ -56,8 +57,13 @@ get_header(); ?>
                             comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
                         } /** password protected post test */
                         edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
-                        _e( '<br />in ', 'groundfloor' );?><?php the_category( ', ' ) ?><br />
-                        <?php the_tags( __( 'as ', 'groundfloor' ), ', ', '' ); ?><br />
+                        _e( '<br />in ', 'groundfloor' );?><?php the_category( ', ' ) ?>
+                        <?php
+                        $gf_post_tags = get_the_tags();
+                        if ( $gf_post_tags ) { ?>
+                            <br />
+                            <?php the_tags( __( 'as ', 'groundfloor' ), ', ', '' ); } ?>
+                        <br />
                     </div><!-- .post-details -->
                     <?php if ( has_post_thumbnail() ) {
                         the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
