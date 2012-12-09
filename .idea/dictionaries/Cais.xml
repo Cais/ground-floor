@@ -2,6 +2,7 @@
   <dictionary name="Cais">
     <words>
       <w>templatepath</w>
+      <w>userdatabylogin</w>
     </words>
   </dictionary>
 </component>

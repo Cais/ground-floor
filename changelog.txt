@@ -12,6 +12,7 @@ Changelog: December 9, 2012
 
 = CSS =
 * Adjusted search box input field to fill width
+* Change `font-size` properties to percentage based values with base font-size set to 100%
 * Fixed aesthetics of the menu for the current page
 * Hid search buttons by un-commenting the `hidden` class properties
 
@@ -92,7 +93,7 @@ Changelog as of September 3, 2011
   - published: March 27, 2011
   - removed 'hard-coded' links from sidebar
   - added readme.txt file for additional information and other details
-  - added addtional 'required' WordPress style elements
+  - added additional 'required' WordPress style elements
   - updated Theme copyright date
   - additional minor changes
   - edit Theme tags to be more appropriate
@@ -105,7 +106,7 @@ Changelog as of September 3, 2011
   - use `get_search_form()` in place of `include( TEMPLATEPATH . "/searchform.php" )`
   - added unique namespace for theme functions 'gf_'
   - added full `wp_nav_menu` support
-  - added multipage navigation to all template files using `the_content()`
+  - added multi-page navigation to all template files using `the_content()`
   - added post_thumbnail support to index.php, single,php, and page.php
     
 = Version 1.5.1 =

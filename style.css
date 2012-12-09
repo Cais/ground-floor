@@ -59,10 +59,10 @@ img.alignleft, img.left { display: inline; margin: 0 8px 8px 0; }
 img.alignright, img.right { display: inline; margin: 0 0 8px 8px; }
 .wp-caption { border: 1px solid #ddd; text-align: center; background-color: #f3f3f3; padding-top: 4px; margin: 10px;
 /* optional rounded corners for browsers that support it */
-  -moz-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .wp-caption p.wp-caption-text { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0; }
@@ -70,24 +70,24 @@ img.alignright, img.right { display: inline; margin: 0 0 8px 8px; }
 
 /*= The Starting Line - Edit after this point =*/
 body {
-  color: #f5e5c5;
-  font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
-  font-size: 18px;
+    color: #f5e5c5;
+    font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+    font-size: 100%;
 }
 
-h1 { font-size: 27px; margin-bottom: 9px; }
-h2 { font-size: 24px; margin-bottom: 8px; }
-h3 { font-size: 21px; margin-bottom: 7px; }
-h4 { font-size: 18px; margin-bottom: 6px; }
-h5 { font-size: 15px; margin-bottom: 5px; }
-h6 { font-size: 12px; margin-bottom: 4px; }
+h1 { font-size: 170%; margin-bottom: 9px; }
+h2 { font-size: 150%; margin-bottom: 8px; }
+h3 { font-size: 130%; margin-bottom: 7px; }
+h4 { font-size: 115%; margin-bottom: 6px; }
+h5 { font-size: 95%; margin-bottom: 5px; }
+h6 { font-size: 75%; margin-bottom: 4px; }
 
 hr {
-  background: #673000;
-  border: 1px solid black;
-  height: 5px;
-  margin: 2px auto;
-  width: 620px;
+    background: #673000;
+    border: 1px solid black;
+    height: 5px;
+    margin: 2px auto;
+    width: 620px;
 }
 
 .hr, .groundfloor {
@@ -116,14 +116,10 @@ p { margin: 9px 0; }
 
 strong { font-weight: bold; }
 
-.widget select { width:100%; }
+.widget select { width: 100%; }
 
-sup { /* Superscripts */
-  font-size: 80%;
-}
-sub { /* Subscripts */
-  font-size: 80%;
-}
+sup { /* Superscripts */ font-size: 80%; }
+sub { /* Subscripts */ font-size: 80%; }
 
 /* =- End Elements -= */
 
@@ -145,9 +141,9 @@ sub { /* Subscripts */
 
 /*-= Header =-*/
 #header-top {
-  background: #784800 url( images/fw-top-bg.png ) no-repeat;
-  height: 20px;
-  margin-top: 10px;
+    background: #784800 url( images/fw-top-bg.png ) no-repeat;
+    height: 20px;
+    margin-top: 10px;
 }
 
 #header-middle { background: #784800 url( images/fw-wrapper-bg.png ); }
@@ -159,7 +155,7 @@ sub { /* Subscripts */
 
 #blog-title {
     color: #eccfa0;
-    font-size: 30px;
+    font-size: 200%;
     font-variant: small-caps;
     font-weight: bold;
     padding-bottom: 5px;
@@ -170,7 +166,7 @@ sub { /* Subscripts */
 
 #blog-description {
     color: #eccfa0;
-    font-size: 22px;
+    font-size: 150%;
     padding-bottom: 10px;
 }
 
@@ -371,7 +367,6 @@ pre {
     background-image: url( images/pre-bg.png );
     border: 2px inset;
     color: #000;
-    font-size: 16px;
     font-style: italic;
     margin: 0;
     overflow: auto;
@@ -423,22 +418,22 @@ td {}
 }
 
 /*-- Category, Tag, and Date pages --*/
-#category-title { font-size: 28px; }
-#category-name { font-size: 32px; }
+#category-title { font-size: 180%; }
+#category-name { font-size: 200%; }
 #category-description {
     font-style: italic;
     padding-left: 10px;
 }
 
-#tag-title { font-size: 28px; }
-#tag-name { font-size: 32px; }
+#tag-title { font-size: 180%; }
+#tag-name { font-size: 200%; }
 #tag-description {
     font-style: italic;
     padding-left: 10px;
 }
 
 #date-title {
-    font-size: 28px;
+    font-size: 180%;
     padding-bottom: 14px;
 }
 /*-- End Category, Tag, and Date pages --*/
@@ -471,14 +466,14 @@ p img {
 
 .wp-caption p.wp-caption-text {
     color: #000000;
-    font-size: 12px;
+    font-size: 75%;
     padding: 2px 4px;
 }
 
 .caption {
     background: #E5F2FF;
     border: 1px solid #E5E5FF;
-    font-size:90%;
+    font-size: 90%;
     margin: 5px;
     padding: 5px;
 }
@@ -588,7 +583,7 @@ p.form-allowed-tags { font-size:90%; }
 
 .form-allowed-tags code {
     color: #f5e5c5;
-    font-size: 14px;
+    font-size: 90%;
     text-align: justify;
 }
 
@@ -762,7 +757,7 @@ table#wp-calendar thead tr th { text-align: center; }
 }
 
 div#footer-middle p span.copyright strong {
-    font-size: 20px;
+    font-size: 125%;
     font-style: italic;
     font-weight: bold;
 }
