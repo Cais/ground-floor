@@ -1,5 +1,5 @@
 ==== readme.txt ====
-Updated July 6, 2012 at version 2.0
+Updated December 9, 2012 at version 2.1
 
 === Contents ===
 * Items of Note
@@ -27,3 +27,4 @@ Updated July 6, 2012 at version 2.0
 * http://themes.trac.wordpress.org/ticket/7445 - version 1.9
 * http://themes.trac.wordpress.org/ticket/7446 - version 1.9.1
 * http://themes.trac.wordpress.org/ticket/8516 - version 2.0
+* http://themes.trac.wordpress.org/ticket/10292 - version 2.1
