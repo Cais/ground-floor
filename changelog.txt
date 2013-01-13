@@ -1,4 +1,19 @@
 === Ground Floor ===
+== Version 2.2 ==
+Changelog: January 13, 2013
+= Code =
+
+= CSS =
+* Changed size of archive titles to a much smaller more aesthetic size
+
+= Current Internet Browsers Reviewed =
+* Apple Safari
+* Firefox
+* Google Chrome
+* Internet Explorer
+* Opera
+
+/** ------------------------------------------------------------------------- */
 == Version 2.1 ==
 Changelog: December 9, 2012
 = Code =
@@ -22,13 +37,6 @@ Changelog: December 9, 2012
 * Minor code reformatting
 * Documentation updates and corrections
 * More complete PHPDocs style documentation added
-
-= Current Internet Browsers Reviewed =
-* Apple Safari
-* Firefox
-* Google Chrome
-* Internet Explorer
-* Opera
 
 /** ------------------------------------------------------------------------- */
 == Version 2.0 ==
