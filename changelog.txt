@@ -1,10 +1,16 @@
 === Ground Floor ===
+Changelog as of March 11, 2013
 == Version 2.2 ==
-Changelog: January 13, 2013
 = Code =
+* Refactored code formatting and code block termination comments
+* Refactored post meta to be more i18n compatible
 
 = CSS =
 * Changed size of archive titles to a much smaller more aesthetic size
+
+= Miscellaneous
+* Change 'style.css' header texts to reflect core trac ticket #16868
+* Updated copyright year
 
 = Current Internet Browsers Reviewed =
 * Apple Safari
