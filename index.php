@@ -131,9 +131,10 @@ get_header(); ?>
             </h2>
             <p><?php _e( 'Sorry, but you are looking for something that is not here.', 'groundfloor' ); ?></p>
 
-            <?php get_search_form(); ?>
+            <?php
+            get_search_form();
 
-        <?php } /** End if - have posts */ ?>
+        } /** End if - have posts */ ?>
 
     </div><!-- #content -->
 
