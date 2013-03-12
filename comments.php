@@ -15,7 +15,7 @@
  * @version     2.2
  * @date        March 11, 2013
  * Refactored code formatting and code block termination comments
- * Refactored post meta to be more i18n compatible
+ * Refactored yo be more i18n compatible
  */
 
 /** Do not delete these lines */
