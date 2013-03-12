@@ -4,6 +4,7 @@ Changelog as of March 12, 2013
 = Code =
 * Refactored code formatting and code block termination comments
 * Refactored to be more i18n compatible
+* Updated DOCTYPE and other related header elements
 
 = CSS =
 * Changed size of archive titles to a much smaller more aesthetic size
