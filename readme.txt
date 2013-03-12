@@ -3,6 +3,7 @@ Updated December 9, 2012 at version 2.1
 
 === Contents ===
 * Items of Note
+* F.A.Q.
 * TO-DO
 * Review Tickets
 
@@ -12,6 +13,10 @@ Updated December 9, 2012 at version 2.1
 * Posts without titles can be reached by clicking on the linked 'Comment' reference
 * Posts without titles and password protected will not have a direct link to the single view of the post.
 * Author email link will only appear on 'author.php' rendered pages if their website URL has been added to their profile.
+
+=== F.A.Q. ===
+Q: Why is the theme not using the WordPress core search form since Ground Floor version 2.1?
+The update routine for WordPress themes overwrites the existing files with the files found in the updated version of the theme. If a file is removed in an update it must be manually removed from the website afterward. This does not affect new (re-)installation of the theme.
 
 === TO-DO ===
 [x] Review internationalization for proper support or possible removal (remove 'translation-ready' tag until decided)

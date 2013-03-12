@@ -12,6 +12,7 @@ Changelog as of March 12, 2013
 = Miscellaneous
 * Change 'style.css' header texts to reflect core trac ticket #16868
 * Updated copyright year
+* Updated 'readme' with new F.A.Q. section and answer regarding the removal of the theme version of 'searchform.php'
 
 = Current Internet Browsers Reviewed =
 * Apple Safari
