@@ -11,7 +11,7 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ * @copyright   Copyright (c) 2009-2013, Edward Caissie
  *
  * @version     2.1
  * @date        December 9, 2012
@@ -19,6 +19,11 @@
  * Removed duplicate `content_width` conditional set
  * Removed `gf_login` function
  * Removed `gf_modified_post` function
+ *
+ * @version 2.2
+ * @date    March 12, 2013
+ * Refactored code formatting and code block termination comments
+ * Refactored to be more i18n compatible
  */
 
 /**
@@ -120,7 +125,9 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
         $output = '';
 
         /** Start common copyright notice */
-        empty( $args['start'] ) ? $output .= sprintf( __( 'Copyright', 'groundfloor' ) ) : $output .= $args['start'];
+        empty( $args['start'] )
+            ? $output .= sprintf( __( 'Copyright', 'groundfloor' ) )
+            : $output .= $args['start'];
 
         /* Calculate Copyright Years; and, prefix with Copyright Symbol */
         if ( empty( $args['copy_years'] ) ) {
@@ -134,28 +141,35 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
             $first_year = substr( $first_date, 0, 4 );
             if ( $first_year == '' ) {
                 $first_year = date( 'Y' );
-            }
+            } /** End if - first year */
             /** Add to output string */
             if ( $first_year == date( 'Y' ) ) {
                 /** Only use current year if no posts in previous years */
                 $output .= ' &copy; ' . date( 'Y' );
             } else {
                 $output .= ' &copy; ' . $first_year . "-" . date( 'Y' );
-            }
+            } /** End if - first year - date */
         } else {
             $output .= ' &copy; ' . $args['copy_years'];
-        }
+        } /** End if - empty copy years */
 
         /** Create URL to link back to home of website */
-        empty( $args['url'] ) ? $output .= ' <a href="' . home_url( '/' ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name', 'display' ) .'</a>  ' : $output .= ' ' . $args['url'];
+        empty( $args['url'] )
+            ? $output .= ' <a href="' . home_url( '/' ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name', 'display' ) .'</a>  '
+            : $output .= ' ' . $args['url'];
         /** End common copyright notice */
-        empty( $args['end'] ) ? $output .= ' ' . sprintf( __( 'All rights reserved.', 'groundfloor' ) ) : $output .= ' ' . $args['end'];
+        empty( $args['end'] )
+            ? $output .= ' ' . sprintf( __( 'All rights reserved.', 'groundfloor' ) )
+            : $output .= ' ' . $args['end'];
         /** Construct and sprintf the copyright notice */
         $output = sprintf( __( '<span id="gf-dynamic-copyright"> %1$s </span><!-- #gf-dynamic-copyright -->', 'groundfloor' ), $output );
 
         echo apply_filters( 'gf_dynamic_copyright', $output, $args );
-    }
-}
+
+    } /** End function - dynamic copyright */
+
+} /** End if - function exists */
+
 
 if ( ! function_exists( 'gf_theme_version' ) ) {
     /**
@@ -198,9 +212,10 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
                     $active_theme_data['Version'],
                     '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' )
             );
-        }
-    }
-}
+        } /** End if - is child theme */
+    } /** End function - theme version */
+} /** End if - function exists */
+
 
 if ( ! function_exists( 'gf_custom_background_cb' ) ) {
     /**
@@ -221,50 +236,68 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
      * @uses    set_url_scheme
      */
     function gf_custom_background_cb() {
-        // $background is the saved custom image, or the default image.
+        /** @var $background - custom image, or the default image. */
         $background = set_url_scheme( get_background_image() );
 
-        // $color is the saved custom color.
         // A default has to be specified in style.css. It will not be printed here.
+        /** @var $color - custom color. */
         $color = get_theme_mod( 'background_color' );
 
-        if ( ! $background && ! $color )
+        if ( ! $background && ! $color ) {
             return;
+        } /** End if - no background or color */
 
-        $style = $color ? "background-color: #$color;" : '';
+        /** @var $style - color setting */
+        $style = $color
+            ? "background-color: #$color;"
+            : '';
 
         if ( $background ) {
             $image = " background-image: url('$background');";
 
+            /** @var $repeat - background repeat value*/
             $repeat = get_theme_mod( 'background_repeat', 'repeat' );
-            if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+            if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ) {
                 $repeat = 'repeat';
+            } /** End if - repeat value */
+
+            /** @var $repeat */
             $repeat = " background-repeat: $repeat;";
 
+            /** @var $position - position value */
             $position = get_theme_mod( 'background_position_x', 'left' );
-            if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
+            if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) ) {
                 $position = 'left';
+            } /** End if - default position */
+
+            /** @var $position */
             $position = " background-position: top $position;";
 
+            /** @var $attachment - default attachment */
             $attachment = get_theme_mod( 'background_attachment', 'fixed' );
-            if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+            if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
                 $attachment = 'fixed';
+            } /** End if - default attachment */
+
+            /** @var $attachment */
             $attachment = " background-attachment: $attachment;";
 
             $style .= $image . $repeat . $position . $attachment;
-        }
-        ?>
+        } /** End if - background */ ?>
+
     <style type="text/css" id="custom-background-css">
         body.custom-background { <?php echo trim( $style ); ?> }
     </style>
+
     <?php
-    }
-}
+    } /** End function - custom background */
+} /** End if - function exists */
+
 
 /** Tell WordPress to run ground_floor_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'ground_floor_setup' );
 
-if ( ! function_exists( 'ground_floor_setup' ) ):
+if ( ! function_exists( 'ground_floor_setup' ) ) {
     /**
      * Ground Floor Setup
      * Adds various core functionality to the theme
@@ -316,7 +349,7 @@ if ( ! function_exists( 'ground_floor_setup' ) ):
                     'fallback_cb'       => 'gf_list_pages'
                 ) );
             }
-        }
+        } /** End if - function exists */
         if ( ! function_exists( 'gf_list_pages' ) ) {
             /** Ground Floor List Pages - used as callback function `gf_nav_menu` */
             function gf_list_pages() {
@@ -329,15 +362,15 @@ if ( ! function_exists( 'ground_floor_setup' ) ):
                         <li><a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Home', 'groundfloor' ) ?></a></li>
                         <?php wp_list_pages( 'title_li=' ); ?>
                     </ul>
-                <?php }
-            }
-        }
+                <?php } /** End of - is home */
+            } /** End function - list pages */
+        } /** End if - function exists */
         if ( ! function_exists( 'register_gf_menu' ) ) {
             /** Register Ground Floor Menu location name */
             function register_gf_menu() {
                 register_nav_menu( 'top-menu', __( 'Top Menu', 'groundfloor' ) );
-            }
-        }
+            } /** End function - register menu */
+        } /** End if - function exists */
         add_action( 'init', 'register_gf_menu' );
 
     	/**
@@ -350,10 +383,12 @@ if ( ! function_exists( 'ground_floor_setup' ) ):
     	load_theme_textdomain( 'groundfloor', get_template_directory() . '/languages' );
     	$locale = get_locale();
     	$locale_file = get_template_directory() . "/languages/$locale.php";
-    	if ( is_readable( $locale_file ) )
+    	if ( is_readable( $locale_file ) ) {
             require_once( $locale_file );
-    }
-endif;
+        } /** End if - is readable */
+    } /** End function - setup */
+} /** End if - function exists */
+
 
 /**
  * Ground Floor Use Posted
@@ -375,9 +410,11 @@ if ( ! function_exists( 'gf_use_posted' ) ) {
             ? $gf_no_title = '<span class="no-title"><a href="' . get_permalink() . '" title="' . get_the_excerpt() . '">' . __( 'Posted', 'groundfloor' ) . '</span></a>'
             : $gf_no_title = __( 'Posted', 'groundfloor' );
         $gf_no_title = apply_filters( 'dmm_use_posted', $gf_no_title );
+
         return $gf_no_title;
-    }
-}
+    } /** End function - use posted */
+} /** End if - function exists */
+
 
 if ( ! function_exists( 'gf_wp_title' ) ) {
     /**
@@ -405,17 +442,20 @@ if ( ! function_exists( 'gf_wp_title' ) ) {
 
         /** Add the blog description (tagline) for the home/front page */
         $site_tagline = get_bloginfo( 'description', 'display' );
-        if ( $site_tagline && ( is_home() || is_front_page() ) )
+        if ( $site_tagline && ( is_home() || is_front_page() ) ) {
             $gf_title_text .= "$sep$site_tagline";
+        } /** End if - site tagline */
 
         /** Add a page number if necessary */
-        if ( $paged >= 2 || $page >= 2 )
+        if ( $paged >= 2 || $page >= 2 ) {
             $gf_title_text .= $sep . sprintf( __( 'Page %s', 'groundfloor' ), max( $paged, $page ) );
+        } /** End if - paged */
 
         return $gf_title_text;
-    }
-}
+    } /** End function - title */
+} /** End if - function exists */
 add_filter( 'wp_title', 'gf_wp_title', 10, 3 );
+
 
 /**
  * Enqueue Comment Reply Script
@@ -439,13 +479,16 @@ if ( ! function_exists( 'gf_enqueue_comment_reply' ) ) {
     function gf_enqueue_comment_reply() {
         if ( is_singular() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script( 'comment-reply' );
-        }
-    }
-}
+        } /** End if - is singular */
+    } /** End function - enqueue comment reply */
+} /** End if - function exists */
 add_action( 'comment_form_before', 'gf_enqueue_comment_reply' );
+
 
 /**
  * Set the content width based on the theme's design and stylesheet
  * Calculated from: #main-blog element in style.css
  */
-if ( !isset( $content_width ) ) $content_width = 620;
+if ( !isset( $content_width ) ) {
+    $content_width = 620;
+} /** End if - not is set */

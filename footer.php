@@ -10,23 +10,22 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2012, Edward Caissie
- */
-?>
+ * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ */ ?>
+
 </div><!-- #head2toe -->
+
 <div id="footer">
+
     <div id="footer-top"></div>
+
     <div id="footer-widgets-above"></div>
+
     <!-- NB: It is very important to maintain the order of the following widget code to insure the formatting and style does not break!!! -->
     <div id="footer-widgets">
 
         <div id="fw-middle" class="fw-column">
-            <?php if ( dynamic_sidebar( "footer-middle" ) ) : else :
-            /**
-             * Removed the gf_login function in favor or using it parent plugin
-             * see BNS Login at http://wordpress.org/extend/plugins/bns-login
-             */
-            endif; ?>
+            <?php if ( dynamic_sidebar( "footer-middle" ) ) : else : endif; ?>
         </div><!-- #fw-middle -->
 
         <div id="fw-left" class="fw-column">
@@ -38,17 +37,22 @@
         </div><!-- #fw-right -->
 
     </div><!-- #footer-widgets -->
+
     <div id="footer-widgets-below"></div>
+
     <div id="footer-middle">
         <p>
             <?php gf_dynamic_copyright();
             gf_theme_version(); ?>
         </p>
     </div><!-- #footer-middle -->
+
     <div id="footer-bottom">
         <?php wp_footer(); ?>
     </div>
+
 </div><!-- #footer -->
+
 </div><!-- #outside -->
 </body>
 </html>
