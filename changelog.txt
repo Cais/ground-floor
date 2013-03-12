@@ -2,6 +2,7 @@
 Changelog as of March 12, 2013
 == Version 2.2 ==
 = Code =
+* Dropped the "subscribe" link from the post meta in the 'single' template
 * Refactored code formatting and code block termination comments
 * Refactored to be more i18n compatible
 * Updated DOCTYPE and other related header elements

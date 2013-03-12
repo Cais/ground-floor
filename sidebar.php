@@ -10,14 +10,14 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ * @copyright   Copyright (c) 2009-2013, Edward Caissie
  *
  * @version     2.0
  * @date        July 6, 2012
  * Removed `function_exists` checks as should not be needed with current
  * WordPress version
- */
-?>
+ */ ?>
+
 <div id="sidebar">
     <div id="sidebar-inside">
 
