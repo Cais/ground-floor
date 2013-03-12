@@ -4,11 +4,14 @@ Changelog as of March 12, 2013
 = Code =
 * Dropped the "subscribe" link from the post meta in the 'single' template
 * Refactored code formatting and code block termination comments
+* Refactored widget area definitions into `gf_widgets` function and hooked into `widget_init`
 * Refactored to be more i18n compatible
+* Removed 'searchform.php' in favor of using WordPress core version
 * Updated DOCTYPE and other related header elements
 
 = CSS =
 * Changed size of archive titles to a much smaller more aesthetic size
+* Change search input field width in sidebar (see 'searchform.php' removal)
 
 = Miscellaneous
 * Change 'style.css' header texts to reflect core trac ticket #16868

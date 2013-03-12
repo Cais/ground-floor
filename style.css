@@ -619,7 +619,9 @@ form#commentform p.form-submit input#submit {
 /*-= Sidebar =-*/
 
 /*-- Search / Forms --*/
-input#s { width: 100%; }
+div.widget ul#search li form#searchform div input#s {
+    width: 75%;
+}
 
 /*-- Widgets --*/
 .widget {

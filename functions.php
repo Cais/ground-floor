@@ -24,10 +24,11 @@
  * @date    March 12, 2013
  * Refactored code formatting and code block termination comments
  * Refactored to be more i18n compatible
+ * Refactored widget area definitions into `gf_widgets` function and hooked into `widget_init`
  */
 
 /**
- * Widget Area Definitions
+ * Ground Floor Widgets
  * Creating three (3) "sidebar" widget areas and three (3) "footer" widget areas
  *
  * @package GroundFloor
@@ -41,63 +42,65 @@
  * @date    December 7, 2012
  * Refactored sidebar definitions to include names and descriptions
  */
+function gf_widgets() {
+    register_sidebar( array(
+        'name'          => __( 'Sidebar 1', 'groundfloor' ),
+        'description'   => __( 'The first sidebar widget area. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'groundfloor' ),
+        'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 
-register_sidebar( array(
-    'name'          => __( 'Sidebar 1', 'groundfloor' ),
-    'description'   => __( 'The first sidebar widget area. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'groundfloor' ),
-    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-) );
+    register_sidebar( array(
+        'name'          => __( 'Sidebar 2', 'groundfloor' ),
+        'description'   => __( 'The second sidebar widget area. This is empty by default.', 'groundfloor' ),
+        'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 
-register_sidebar( array(
-    'name'          => __( 'Sidebar 2', 'groundfloor' ),
-    'description'   => __( 'The second sidebar widget area. This is empty by default.', 'groundfloor' ),
-    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-) );
+    register_sidebar( array(
+        'name'          => __( 'Sidebar 3', 'groundfloor' ),
+        'description'   => __( 'The third sidebar widget area. This is empty by default.', 'groundfloor' ),
+        'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 
-register_sidebar( array(
-    'name'          => __( 'Sidebar 3', 'groundfloor' ),
-    'description'   => __( 'The third sidebar widget area. This is empty by default.', 'groundfloor' ),
-    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-) );
+    register_sidebar( array(
+        'name'          => 'Footer Left',
+        'description'   => __( 'Footer widget area found at the bottom of the theme on the left side.', 'groundfloor' ),
+        'id'            => 'footer-left',
+        'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div><!-- .footer-widget --><div class="widget-bottom"></div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 
-register_sidebar( array(
-    'name'          => 'Footer Left',
-    'description'   => __( 'Footer widget area found at the bottom of the theme on the left side.', 'groundfloor' ),
-    'id'            => 'footer-left',
-    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-    'after_widget'  => '</div><!-- .footer-widget --><div class="widget-bottom"></div>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-) );
+    register_sidebar( array(
+        'name'          => 'Footer Middle',
+        'description'   => __( 'Footer widget area found at the bottom of the theme in the middle.', 'groundfloor' ),
+        'id'            => 'footer-middle',
+        'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div><!-- .footer-widget --><div class="widget-bottom"></div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 
-register_sidebar( array(
-    'name'          => 'Footer Middle',
-    'description'   => __( 'Footer widget area found at the bottom of the theme in the middle.', 'groundfloor' ),
-    'id'            => 'footer-middle',
-    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-    'after_widget'  => '</div><!-- .footer-widget --><div class="widget-bottom"></div>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-) );
-
-register_sidebar( array(
-    'name'          => 'Footer Right',
-    'description'   => __( 'Footer widget area found at the bottom of the theme on the right side.', 'groundfloor' ),
-    'id'            => 'footer-right',
-    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-    'after_widget'  => '</div><!--.footer-widget --><div class="widget-bottom"></div>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-) );
+    register_sidebar( array(
+        'name'          => 'Footer Right',
+        'description'   => __( 'Footer widget area found at the bottom of the theme on the right side.', 'groundfloor' ),
+        'id'            => 'footer-right',
+        'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div><!--.footer-widget --><div class="widget-bottom"></div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+} /** End function - widgets */
+add_action( 'widget_init', 'gf_widgets' );
 
 if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
     /**
