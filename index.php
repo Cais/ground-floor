@@ -46,7 +46,8 @@
  * Fixed spacing issue in meta details if post has no tags
  *
  * @version 2.2
- * @date    March 11, 2013
+ * @date    March 13, 2013
+ * Added 'search' results template
  * Refactored code formatting and code block termination comments
  * Refactored post meta to be more i18n compatible
  * Removed 'searchform.php' in favor of using WordPress core version

@@ -2,6 +2,7 @@
 Changelog as of March 12, 2013
 == Version 2.2 ==
 = Code =
+* Added 'search' results template
 * Dropped the "subscribe" link from the post meta in the 'single' template
 * Refactored code formatting and code block termination comments
 * Refactored widget area definitions into `gf_widgets` function and hooked into `widget_init`
