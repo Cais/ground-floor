@@ -100,7 +100,7 @@ function gf_widgets() {
         'after_title'   => '</h2>',
     ) );
 } /** End function - widgets */
-add_action( 'widget_init', 'gf_widgets' );
+add_action( 'widgets_init', 'gf_widgets' );
 
 if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
     /**

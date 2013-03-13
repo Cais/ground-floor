@@ -623,6 +623,10 @@ div.widget ul#search li form#searchform div input#s {
     width: 75%;
 }
 
+div.widget form#searchform div input#s {
+    width: 75%;
+}
+
 /*-- Widgets --*/
 .widget {
     background: #784800 url( images/sw-wrapper-bg.png );
@@ -773,8 +777,13 @@ img#wpstats { display: none; }
 /** Calendar */
 table#wp-calendar tbody tr td#today { outline: 1px solid; }
 /** RSS */
-li.widget_rss ul li cite { font-style: italic; }
-li.widget_rss ul li cite:before { content: '~ '; }
+div.widget_rss ul li cite {
+    border-bottom: none;
+}
+div.widget_rss ul li cite:before {
+    content: '~';
+}
+
 /** Text Widgets */
 div.textwidget p {
     overflow: hidden;

@@ -13,8 +13,6 @@
  * @link        https://github.com/Cais/fround-floor/
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
- * @version     2.2
- * @date        March 2013
  * @internal    REQUIRES WordPress version 3.4
  * @internal    Tested up to WordPress version 3.5.1
  *
@@ -39,6 +37,9 @@
  *
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @version     2.2
+ * @date        March 13, 2013
  */
 
 get_header(); ?>
