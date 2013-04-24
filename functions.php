@@ -110,6 +110,7 @@ function gf_widgets() {
 } /** End function - widgets */
 add_action( 'widgets_init', 'gf_widgets' );
 
+
 if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
     /**
      * Ground Floor Dynamic Copyright
@@ -219,13 +220,16 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
                     $active_theme_data['Version'],
                     $parent_theme_data['Name'],
                     $parent_theme_data['Version'],
-                    '<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>' ) );
+                    '<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>'
+                )
+            );
         } else {
             echo apply_filters( 'gf_parent_theme_version_text',
                 sprintf( __( '<br /><span id="gf-theme-version">Made with the %1$s theme (v%2$s) from %3$s.</span>', 'groundfloor' ),
                     $active_theme_data['Name'],
                     $active_theme_data['Version'],
-                    '<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>' )
+                    '<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>'
+                )
             );
         } /** End if - is child theme */
     } /** End function - theme version */
@@ -307,10 +311,12 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
     <?php
     } /** End function - custom background */
 } /** End if - function exists */
-
-
-/** Tell WordPress to run ground_floor_setup() when the 'after_setup_theme' hook is run. */
+/**
+ * Tell WordPress to run ground_floor_setup() when the 'after_setup_theme' hook
+ * is run.
+ */
 add_action( 'after_setup_theme', 'ground_floor_setup' );
+
 
 if ( ! function_exists( 'ground_floor_setup' ) ) {
     /**
