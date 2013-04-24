@@ -51,6 +51,9 @@
  * Refactored code formatting and code block termination comments
  * Refactored post meta to be more i18n compatible
  * Removed 'searchform.php' in favor of using WordPress core version
+ *
+ * @version 2.2.1
+ * @date    April 24, 2013
  */
 
 get_header(); ?>

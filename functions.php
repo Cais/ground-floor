@@ -25,7 +25,15 @@
  * Refactored code formatting and code block termination comments
  * Refactored to be more i18n compatible
  * Refactored widget area definitions into `gf_widgets` function and hooked into `widget_init`
+ *
+ * @version 2.2.1
+ * @date    April 24, 2013
+ * Added constant 'GF_HOME_URL'
  */
+
+
+define( 'GF_HOME_URL', 'BuyNowShop.com');
+
 
 /**
  * Ground Floor Widgets
@@ -193,6 +201,10 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
      * @date    December 8, 2012
      * Reworded the theme version texts
      * Added filters to allow the text to be completely overwritten
+     *
+     * @version 2.2.1
+     * @date    April 24, 2013
+     * Applied 'GF_HOME_URL' as appropriate
      */
     function gf_theme_version () {
         /** @var $active_theme_data - array object containing the current theme's data */
@@ -207,13 +219,13 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
                     $active_theme_data['Version'],
                     $parent_theme_data['Name'],
                     $parent_theme_data['Version'],
-                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' ) );
+                    '<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>' ) );
         } else {
             echo apply_filters( 'gf_parent_theme_version_text',
                 sprintf( __( '<br /><span id="gf-theme-version">Made with the %1$s theme (v%2$s) from %3$s.</span>', 'groundfloor' ),
                     $active_theme_data['Name'],
                     $active_theme_data['Version'],
-                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' )
+                    '<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>' )
             );
         } /** End if - is child theme */
     } /** End function - theme version */
