@@ -343,6 +343,10 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
      * @date    July 6, 2012
      * Removed code for calls to deprecated functions
      * Updated inline documentation
+     *
+     * @version 2.2.1
+     * @date    April 24, 2013
+     * Simplified custom menu support code
      */
     function ground_floor_setup(){
         global $wp_version;
@@ -386,13 +390,7 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
                 <?php } /** End of - is home */
             } /** End function - list pages */
         } /** End if - function exists */
-        if ( ! function_exists( 'register_gf_menu' ) ) {
-            /** Register Ground Floor Menu location name */
-            function register_gf_menu() {
-                register_nav_menu( 'top-menu', __( 'Top Menu', 'groundfloor' ) );
-            } /** End function - register menu */
-        } /** End if - function exists */
-        add_action( 'init', 'register_gf_menu' );
+        register_nav_menu( 'top-menu', __( 'Top Menu', 'groundfloor' ) );
 
     	/**
          * Make theme available for translation.

@@ -2,6 +2,9 @@
 Changelog as of April 24, 2013
 == Version 2.2.1 ==
 = Code =
+* Added constant 'GF_HOME_URL'
+* Applied 'GF_HOME_URL' as appropriate
+* Simplified custom menu support code
 
 = Current Internet Browsers Reviewed =
 * Apple Safari
