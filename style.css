@@ -633,6 +633,10 @@ form#commentform p.form-submit input#submit {
 /*-= Sidebar =-*/
 
 /*-- Search / Forms --*/
+label.screen-reader-text {
+    display: none;
+}
+
 div.widget ul#search li form#searchform div input#s {
     width: 75%;
 }

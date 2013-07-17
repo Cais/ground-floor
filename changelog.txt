@@ -9,6 +9,7 @@ Changelog as of July 17, 2013, 2013
 * Simplified custom menu support code
 
 = CSS =
+* Added 'display: none;' for `screen reader text` labels
 * Adjusted galleries CSS to provide a larger thumbnail view where space is available
 * Adjusted `img` properties related to the Featured Image
 
