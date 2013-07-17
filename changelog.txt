@@ -12,6 +12,7 @@ Changelog as of July 17, 2013, 2013
 * Added 'display: none;' for `screen reader text` labels
 * Adjusted galleries CSS to provide a larger thumbnail view where space is available
 * Adjusted `img` properties related to the Featured Image
+* Keep Featured Images to width of container with `wp-post-image` properties
 
 /** ------------------------------------------------------------------------- */
 == Version 2.2 ==

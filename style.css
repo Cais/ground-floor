@@ -434,12 +434,13 @@ tr.even { background: none; }
 /*=- End Posts and Pages -=*/
 
 /*-= Images =-*/
-img {
+img.wp-smiley { display: none; }
+
+/** Keeps Featured Images to width of container */
+img.wp-post-image {
     height: auto;
     width: 100%;
-    font-size: 75%;
 }
-img.wp-smiley { display: none; }
 
 p img {
     height: auto;
