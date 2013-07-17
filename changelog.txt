@@ -4,11 +4,13 @@ Changelog as of July 17, 2013, 2013
 = Code =
 * Added constant 'GF_HOME_URL'
 * Applied 'GF_HOME_URL' as appropriate
+* Change Featured Image to centered and full size from left aligned thumbnail
 * General code cleanup
 * Simplified custom menu support code
 
 = CSS =
-* Adjust galleries CSS to provide a larger thumbnail view where space is available
+* Adjusted galleries CSS to provide a larger thumbnail view where space is available
+* Adjusted `img` properties related to the Featured Image
 
 /** ------------------------------------------------------------------------- */
 == Version 2.2 ==

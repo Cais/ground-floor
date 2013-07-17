@@ -105,7 +105,7 @@ get_header(); ?>
 
                     <?php
                     if ( has_post_thumbnail() ) {
-                        the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
+                        the_post_thumbnail( 'full', array( 'class' => 'aligncenter' ) );
                     } /** End if - has post thumbnail */
 
                     the_content( __( 'Read more... ', 'groundfloor' ) );
