@@ -3,15 +3,22 @@ Editor Style for ...
 Theme Name: Ground Floor
 Theme URI: http://buynowshop.com/themes/ground-floor/
 Description: Richly toned wood floor background with bare-earth colored widgetized sidebar and footer (six widget areas in total, as shown on the included widget-map.png). A strong theme to begin with; grow into; and, build on. 
-Version: 2.1
+Version: 2.2.1
 Author: Edward Caissie
 Author URI: http://edwardcaissie.com/
 Tags: black, brown, red, tan, light, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post, custom-background, custom-menu
 WordPress Required Version: 3.4
-WordPress Tested Version: 3.5.1
+WordPress Tested Version: 3.6
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
+
+/**
+ * @version 2.2.1
+ * @date    July 17, 2013
+ * Cleaned out empty elements
+ */
+
 html .mceContentBody { max-width: 640px; }
 
 h1 { font-size: 27px; margin-bottom: 9px; }
@@ -75,7 +82,7 @@ pre {
     padding: 5px;
     text-align: left;
     overflow: auto;
-    overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+    overflow-x: auto; /* Use horizontal scroll if needed; for Firefox 2, not needed in Firefox 3 */
     white-space: pre-wrap; /* css-3 */
     word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
@@ -93,9 +100,5 @@ code {
 
 /*-- Tables --*/
 table { width:98%; }
-tbody {}
-tr {}
 tr.even { background: none; }
-th {}
-td {}
 /*-- End Tables --*/

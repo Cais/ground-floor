@@ -31,7 +31,7 @@
  * Added constant 'GF_HOME_URL'
  */
 
-
+/** Constants */
 define( 'GF_HOME_URL', 'BuyNowShop.com');
 
 
@@ -311,11 +311,6 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
     <?php
     } /** End function - custom background */
 } /** End if - function exists */
-/**
- * Tell WordPress to run ground_floor_setup() when the 'after_setup_theme' hook
- * is run.
- */
-add_action( 'after_setup_theme', 'ground_floor_setup' );
 
 
 if ( ! function_exists( 'ground_floor_setup' ) ) {
@@ -407,6 +402,7 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
         } /** End if - is readable */
     } /** End function - setup */
 } /** End if - function exists */
+add_action( 'after_setup_theme', 'ground_floor_setup' );
 
 
 /**
@@ -508,6 +504,6 @@ add_action( 'comment_form_before', 'gf_enqueue_comment_reply' );
  * Set the content width based on the theme's design and stylesheet
  * Calculated from: #main-blog element in style.css
  */
-if ( !isset( $content_width ) ) {
+if ( ! isset( $content_width ) ) {
     $content_width = 620;
-} /** End if - not is set */
+} /** End if - not isset */
