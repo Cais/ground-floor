@@ -82,7 +82,6 @@ pre {
     padding: 5px;
     text-align: left;
     overflow: auto;
-    overflow-x: auto; /* Use horizontal scroll if needed; for Firefox 2, not needed in Firefox 3 */
     white-space: pre-wrap; /* css-3 */
     word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
