@@ -11,8 +11,6 @@ Changelog as of November 16, 2013
 * Added better list element styles
 * Basic clean up of old and/or duplicated properties
 
-= Miscellaneous =
-
 /** ------------------------------------------------------------------------- */
 == Version 2.2.1 ==
 = Code =
