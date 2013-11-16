@@ -444,11 +444,14 @@ if ( ! function_exists( 'gf_wp_title' ) ) {
      *
      * @param   string $old_title - default title text
      * @param   string $sep - separator character
-     * @param   string $sep_location - left|right - separator placement in relationship to title
      *
      * @return  string - new title text
+     *
+     * @version 2.2.2
+     * @date    November 16, 2013
+     * Removed unused `$sep_location` parameter
      */
-    function gf_wp_title( $old_title, $sep, $sep_location ) {
+    function gf_wp_title( $old_title, $sep ) {
         global $page, $paged;
         /** Set initial title text */
         $gf_title_text = $old_title . get_bloginfo( 'name' );
@@ -469,7 +472,7 @@ if ( ! function_exists( 'gf_wp_title' ) ) {
         return $gf_title_text;
     } /** End function - title */
 } /** End if - function exists */
-add_filter( 'wp_title', 'gf_wp_title', 10, 3 );
+add_filter( 'wp_title', 'gf_wp_title', 10, 2 );
 
 
 /**

@@ -398,7 +398,11 @@ code {
 }
 
 /*-- Tables --*/
-table { width: 98%; }
+table {
+    margin: 0 auto;
+    width: 98%;
+}
+
 tr.even { background: none; }
 /*-- End Tables --*/
 
