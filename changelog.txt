@@ -7,6 +7,7 @@ Changelog as of November 16, 2013
 = CSS =
 * Added some basic list element styles for sub-elements
 * Added some minor aesthetic changes to some elements
+* Added `word-wrap` properties for pages and posts
 * Basic clean up of old and/or duplicated properties
 
 = Miscellaneous =
