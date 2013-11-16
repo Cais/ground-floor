@@ -1,5 +1,11 @@
 === Ground Floor ===
-Changelog as of July 17, 2013, 2013
+Changelog as of November 16, 2013
+== Version 2.2.2 ==
+= Code =
+= CSS =
+= Miscellaneous =
+
+/** ------------------------------------------------------------------------- */
 == Version 2.2.1 ==
 = Code =
 * Added constant 'GF_HOME_URL'
