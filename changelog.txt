@@ -3,6 +3,7 @@ Changelog as of November 16, 2013
 == Version 2.2.2 ==
 = Code =
 = CSS =
+* Added some basic list element styles for sub-elements
 * Basic clean up of old and/or duplicated properties
 
 = Miscellaneous =
