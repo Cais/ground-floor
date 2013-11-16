@@ -3,6 +3,8 @@ Changelog as of November 16, 2013
 == Version 2.2.2 ==
 = Code =
 = CSS =
+* Basic clean up of old and/or duplicated properties
+
 = Miscellaneous =
 
 /** ------------------------------------------------------------------------- */

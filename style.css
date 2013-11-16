@@ -66,7 +66,6 @@ img.alignright, img.right { display: inline; margin: 0 0 8px 8px; }
     -moz-border-radius: 3px;
     -khtml-border-radius: 3px;
     -webkit-border-radius: 3px;
-    border-radius: 3px;
 }
 .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .wp-caption p.wp-caption-text { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0; }
@@ -288,7 +287,6 @@ ul.nav-menu ul.sub-menu li, ul.nav-menu ul.children li, ul.nav-menu ul, ul.nav-m
     -moz-border-radius: 3px;
     -khtml-border-radius: 3px;
     -webkit-border-radius: 3px;
-    border-radius: 3px;
 }
 
 /* WordPress 3.0 Navigation Menu default widget */
@@ -367,7 +365,6 @@ pre {
     font-style: italic;
     margin: 0;
     overflow: auto;
-    overflow-x: auto; /* Use horizontal scroll if needed; for Firefox 2, not needed in Firefox 3 */
     padding: 5px;
     text-align: left;
     white-space: pre-wrap; /* css-3 */
@@ -610,7 +607,6 @@ form#commentform p.form-submit input#submit {
     -moz-border-radius: 13px;
     -khtml-border-radius: 13px;
     -webkit-border-radius: 13px;
-    border-radius: 13px;
 }
 /*-= End Comments =-*/
 
