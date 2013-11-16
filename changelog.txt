@@ -1,5 +1,11 @@
 === Ground Floor ===
 Changelog as of November 16, 2013
+== Version 2.2.3-alpha ==
+= Code =
+= CSS =
+= Miscellaneous =
+
+/** ------------------------------------------------------------------------- */
 == Version 2.2.2 ==
 = Code =
 * Removed unused variables and parameters as part of code clean-up

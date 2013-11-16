@@ -1,5 +1,5 @@
 ==== readme.txt ====
-Updated July 17, 2013 at version 2.2.1
+Updated November 16, 2013
 
 === Contents ===
 * Items of Note
@@ -35,3 +35,4 @@ The update routine for WordPress themes overwrites the existing files with the f
 * http://themes.trac.wordpress.org/ticket/10292 - version 2.1
 * http://themes.trac.wordpress.org/ticket/11663 - version 2.2 - March 2013
 * http://themes.trac.wordpress.org/ticket/13433 - version 2.2.1 - July 2013
+* http://themes.trac.wordpress.org/ticket/15297 - version 2.2.2 - November 2013
