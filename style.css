@@ -113,15 +113,21 @@ abbr, acronym { cursor: help; }
 em { font-style: italic; }
 
 /** List elements */
-ul { list-style: disc inside none; }
+ul,
+ol li ul li,
+ul li ol li ul li {
+    list-style: disc inside none;
+}
 ul li ul li { list-style: circle inside none; }
 ul li ul li ul li { list-style: square inside none; }
 
-ol { list-style: decimal inside none; }
+ol,
+ul li ol li,
+ol li ul li ol li {
+    list-style: decimal inside none;
+}
 ol li ol li { list-style: upper-alpha inside none; }
 ol li ol li ol li { list-style: lower-roman inside none; }
-
-ul { list-style: disc inside none; }
 
 p { margin: 9px 0; }
 
