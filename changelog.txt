@@ -2,7 +2,7 @@
 Changelog as of November 16, 2013
 == Version 2.2.2 ==
 = Code =
-* Removed unused `$sep_location` parameter
+* Removed unused variables and parameters as part of code clean-up
 
 = CSS =
 * Added some basic list element styles for sub-elements

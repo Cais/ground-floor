@@ -342,9 +342,12 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
      * @version 2.2.1
      * @date    April 24, 2013
      * Simplified custom menu support code
+     *
+     * @version 2.2.2
+     * @date    November 16, 2013
+     * Removed call to global `$wp_version`
      */
     function ground_floor_setup(){
-        global $wp_version;
         /** This theme uses post thumbnails */
         add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
         /** Add default posts and comments RSS feed links to head */
