@@ -1,5 +1,5 @@
 ==== readme.txt ====
-Updated November 16, 2013
+Updated April 13, 2014
 
 === Contents ===
 * Items of Note
@@ -17,6 +17,9 @@ Updated November 16, 2013
 === F.A.Q. ===
 Q: Why is the theme not using the WordPress core search form since Ground Floor version 2.1?
 The update routine for WordPress themes overwrites the existing files with the files found in the updated version of the theme. If a file is removed in an update it must be manually removed from the website afterward. This does not affect new (re-)installation of the theme.
+
+Q: Why are not all of the archive posts showing an excerpt only?
+The archive templates are created to show as "mullet" loops where the first few posts will show in their entirety then the following posts will show as excerpts.
 
 === TO-DO ===
 [x] Review internationalization for proper support or possible removal (remove 'translation-ready' tag until decided)

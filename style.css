@@ -724,6 +724,14 @@ p img {
 	max-width: 638px;
 }
 
+.wp-caption.alignleft, .wp-caption.left {
+	margin-right: 10px;
+}
+
+.wp-caption.alignright, .wp-caption.right {
+	margin-left: 10px;
+}
+
 .wp-caption p.wp-caption-text {
 	color: #000000;
 	font-size: 75%;
@@ -814,12 +822,12 @@ ul.children {
 	padding-bottom: 5px;
 }
 
-.odd, comment-text-1 {
+.odd, .comment-text-1 {
 	background: #d69d5a;
 	margin-top: 1px;
 }
 
-.even, comment-text-2 {
+.even, .comment-text-2 {
 	background: #ba743d;
 	margin-top: 1px;
 }
