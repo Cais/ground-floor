@@ -1,7 +1,6 @@
 <?php
 /**
  * Archive Template
- *
  * Displays archives page is required to be displayed
  *
  * @package     GroundFloor
@@ -12,7 +11,7 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * Last revised April 16, 2012
  * @version     1.9

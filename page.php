@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @version     2.2
  * @date        March 11, 2013
@@ -49,9 +49,11 @@ get_header(); ?>
 
 							the_content( __( 'Read more ...', 'groundfloor' ) );
 
-							wp_link_pages( array( 'before'         => '<p><strong>Pages:</strong> ',
-												  'after'          => '</p>',
-												  'next_or_number' => 'number'
+							wp_link_pages(
+								array(
+									'before'         => '<p><strong>Pages:</strong> ',
+									'after'          => '</p>',
+									'next_or_number' => 'number'
 								)
 							); ?>
 

@@ -1,7 +1,6 @@
 <?php
 /**
  * Author Template
- *
  * Displays author page is required to be displayed
  *
  * @package     GroundFloor
@@ -12,7 +11,7 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @version     2.0
  * @date        July 6, 2012
@@ -121,9 +120,11 @@ $curauth = ( get_query_var( 'author_name ' ) ) ? get_user_by( 'id', get_query_va
 						<?php
 						if ( $count == 1 ) {
 							the_content();
-							wp_link_pages( array( 'before'         => '<p><strong>Pages:</strong> ',
-												  'after'          => '</p>',
-												  'next_or_number' => 'number'
+							wp_link_pages(
+								array(
+									'before'         => '<p><strong>Pages:</strong> ',
+									'after'          => '</p>',
+									'next_or_number' => 'number'
 								)
 							);
 						} else {

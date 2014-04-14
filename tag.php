@@ -1,7 +1,6 @@
 <?php
 /**
  * Tags Template
- *
  * Displays tags archive index page using a "mullet loop" of two full-style
  * content posts and the balance as excerpts of the remaining posts.
  *
@@ -13,7 +12,7 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * Last revised April 14, 2012
  * @version     1.9
@@ -103,9 +102,11 @@ $curr_tag = single_tag_title( '', false ); ?>
 						<?php
 						if ( ( $count <= 2 ) && ( $paged < 2 ) ) {
 							the_content();
-							wp_link_pages( array( 'before'         => '<p><strong>Pages:</strong> ',
-												  'after'          => '</p>',
-												  'next_or_number' => 'number'
+							wp_link_pages(
+								array(
+									'before'         => '<p><strong>Pages:</strong> ',
+									'after'          => '</p>',
+									'next_or_number' => 'number'
 								)
 							);
 						} else {

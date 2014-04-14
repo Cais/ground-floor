@@ -10,16 +10,16 @@
  * @since       1.0
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/fround-floor/
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
- * @version     2.2
- * @date        March 2013
+ * @version     2.2.3
+ * @date        April 2014
  * @internal    REQUIRES WordPress version 3.4
- * @internal    Tested up to WordPress version 3.5.1
+ * @internal    Tested up to WordPress version 3.9
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
@@ -54,6 +54,9 @@
  *
  * @version     2.2.1
  * @date        April 24, 2013
+ *
+ * @version     2.2.3
+ * @date        April 13, 2014
  */
 
 get_header(); ?>
@@ -115,9 +118,11 @@ get_header(); ?>
 
 						the_content( __( 'Read more... ', 'groundfloor' ) );
 
-						wp_link_pages( array( 'before'         => '<p><strong>Pages:</strong> ',
-											  'after'          => '</p>',
-											  'next_or_number' => 'number'
+						wp_link_pages(
+							array(
+								'before'         => '<p><strong>Pages:</strong> ',
+								'after'          => '</p>',
+								'next_or_number' => 'number'
 							)
 						); ?>
 

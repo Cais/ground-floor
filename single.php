@@ -1,7 +1,6 @@
 <?php
 /**
  * Single Template
- *
  * Displays single view of posts
  *
  * @package     GroundFloor
@@ -12,7 +11,7 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @version     2.2
  * @date        March 11, 2013
@@ -69,9 +68,11 @@ get_header(); ?>
 						<div class="clear"></div>
 						<!-- For inserted media at the end of the post -->
 
-						<?php wp_link_pages( array( 'before'         => '<p><strong>Pages:</strong> ',
-													'after'          => '</p>',
-													'next_or_number' => 'number'
+						<?php wp_link_pages(
+							array(
+								'before'         => '<p><strong>Pages:</strong> ',
+								'after'          => '</p>',
+								'next_or_number' => 'number'
 							)
 						); ?>
 

@@ -7,14 +7,14 @@
  * @since       2.2
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/fround-floor/
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @internal    REQUIRES WordPress version 3.4
- * @internal    Tested up to WordPress version 3.5.1
+ * @internal    Tested up to WordPress version 3.9
  *
  * This file is part of Ground Floor.
  *

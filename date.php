@@ -1,7 +1,6 @@
 <?php
 /**
  * Date Template
- *
  * Displays date archive page if required to be displayed
  *
  * @package     GroundFloor
@@ -12,7 +11,7 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * Last revised April 19, 2012
  * @version     2.0
@@ -108,9 +107,11 @@ get_header(); ?>
 						<?php
 						if ( ( $count <= 3 ) && ( $paged < 2 ) ) {
 							the_content();
-							wp_link_pages( array( 'before'         => '<p><strong>Pages:</strong> ',
-												  'after'          => '</p>',
-												  'next_or_number' => 'number'
+							wp_link_pages(
+								array(
+									'before'         => '<p><strong>Pages:</strong> ',
+									'after'          => '</p>',
+									'next_or_number' => 'number'
 								)
 							);
 						} else {

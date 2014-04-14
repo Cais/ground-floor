@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @version     2.2
  * @date        March 11, 2013
@@ -45,7 +45,7 @@ function comment_add_microid( $classes ) {
 	$c_email = get_comment_author_email();
 	$c_url   = get_comment_author_url();
 	if ( ! empty( $c_email ) && ! empty( $c_url ) ) {
-		$microid = 'microid-mailto+http:sha1:' . sha1( sha1( 'mailto:' . $c_email ) . sha1( $c_url ) );
+		$microid   = 'microid-mailto+http:sha1:' . sha1( sha1( 'mailto:' . $c_email ) . sha1( $c_url ) );
 		$classes[] = $microid;
 	}
 
