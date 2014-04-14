@@ -214,7 +214,13 @@ a:hover {
 }
 
 abbr, acronym {
+	border-bottom: dotted 2px #000000;
 	cursor: help;
+}
+
+address {
+	margin-left: 10px;
+	font-family: "Courier New", Courier, monospace;
 }
 
 em {
@@ -712,6 +718,10 @@ p img {
 /*-- Captions --*/
 .wp-caption {
 	max-width: 100%;
+}
+
+.wp-caption-text a {
+	color: inherit;
 }
 
 .wp-caption img {
