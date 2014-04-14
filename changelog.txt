@@ -13,6 +13,7 @@ Changelog as of April 13, 2014
 * Added `Textdomain` to theme header block
 * Added FAQ: Why are not all of the archive posts showing an excerpt only?
 * Changed theme tag `fixed-width` to `fixed-layout`
+* Replace `screenshot.png` with a 880 x 660 pixel version
 * Update Copyright years
 
 /** ------------------------------------------------------------------------- */
