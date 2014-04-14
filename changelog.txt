@@ -12,6 +12,7 @@ Changelog as of April 13, 2014
 = Miscellaneous =
 * Added `Textdomain` to theme header block
 * Added FAQ: Why are not all of the archive posts showing an excerpt only?
+* Changed theme tag `fixed-width` to `fixed-layout`
 * Update Copyright years
 
 /** ------------------------------------------------------------------------- */
