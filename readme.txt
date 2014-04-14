@@ -39,3 +39,4 @@ The archive templates are created to show as "mullet" loops where the first few 
 * http://themes.trac.wordpress.org/ticket/11663 - version 2.2 - March 2013
 * http://themes.trac.wordpress.org/ticket/13433 - version 2.2.1 - July 2013
 * http://themes.trac.wordpress.org/ticket/15297 - version 2.2.2 - November 2013
+* https://themes.trac.wordpress.org/ticket/17977 - version 2.2.3 - April 2014
