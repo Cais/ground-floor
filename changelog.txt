@@ -1,7 +1,10 @@
 === Ground Floor ===
-Changelog as of November 16, 2013
-== Version 2.2.3-alpha ==
+Changelog as of April 13, 2014
+
+== Version 2.2.3 ==
 = Code =
+* Reformatted code to better meet WordPress Coding Standards
+
 = CSS =
 = Miscellaneous =
 

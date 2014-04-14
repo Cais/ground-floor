@@ -41,109 +41,121 @@
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * @version 2.1
- * @date    December 9, 2012
+ * @version     2.1
+ * @date        December 9, 2012
  * Fixed spacing issue in meta details if post has no tags
  *
- * @version 2.2
- * @date    March 13, 2013
+ * @version     2.2
+ * @date        March 13, 2013
  * Added 'search' results template
  * Refactored code formatting and code block termination comments
  * Refactored post meta to be more i18n compatible
  * Removed 'searchform.php' in favor of using WordPress core version
  *
- * @version 2.2.1
- * @date    April 24, 2013
+ * @version     2.2.1
+ * @date        April 24, 2013
  */
 
 get_header(); ?>
 
-<div id="main-blog">
+	<div id="main-blog">
 
-    <div id="content">
+		<div id="content">
 
-        <?php
-        if ( have_posts() ) {
+			<?php
+			if ( have_posts() ) {
 
-            while ( have_posts() ) {
-                the_post(); ?>
+				while ( have_posts() ) {
+					the_post(); ?>
 
-                <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-                    <h2>
-                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'groundfloor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                    </h2>
+						<h2>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'groundfloor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+						</h2>
 
-                    <div class="post-details">
+						<div class="post-details">
 
-                        <?php
-                        printf( __( '%1$s by %2$s on %3$s', 'groundfloor' ),
-                            gf_use_posted(),
-                            get_the_author(),
-                            get_the_time( get_option( 'date_format' ) )
-                        );
-                        /** Hide Comment(s) if password required to read post */
-                        if ( ! post_password_required() ) {
-                            echo ' ';
-                            comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
-                        } /** End if - password protected post test */
+							<?php
+							printf(
+								__( '%1$s by %2$s on %3$s', 'groundfloor' ),
+								gf_use_posted(),
+								get_the_author(),
+								get_the_time( get_option( 'date_format' ) )
+							);
+							/** Hide Comment(s) if password required to read post */
+							if ( ! post_password_required() ) {
+								echo ' ';
+								comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
+							}
+							/** End if - password protected post test */
 
-                        edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
+							edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
 
-                        printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'groundfloor' ), get_the_category_list( ', ' ) ) ); ?>
+							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'groundfloor' ), get_the_category_list( ', ' ) ) ); ?>
 
-                        <?php
-                        $gf_post_tags = get_the_tags();
-                        /** If tags are used, display them */
-                        if ( $gf_post_tags ) {
-                            the_tags( __( 'as ', 'groundfloor' ), ', ', '' );
-                        } /** End if - post tags */ ?>
+							<?php
+							$gf_post_tags = get_the_tags();
+							/** If tags are used, display them */
+							if ( $gf_post_tags ) {
+								the_tags( __( 'as ', 'groundfloor' ), ', ', '' );
+							} /** End if - post tags */
+							?>
 
-                        <br />
+							<br />
 
-                    </div><!-- .post-details -->
+						</div>
+						<!-- .post-details -->
 
-                    <?php
-                    if ( has_post_thumbnail() ) {
-                        the_post_thumbnail( 'full', array( 'class' => 'aligncenter' ) );
-                    } /** End if - has post thumbnail */
+						<?php
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail( 'full', array( 'class' => 'aligncenter' ) );
+						}
+						/** End if - has post thumbnail */
 
-                    the_content( __( 'Read more... ', 'groundfloor' ) );
+						the_content( __( 'Read more... ', 'groundfloor' ) );
 
-                    wp_link_pages( array( 'before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number' ) ); ?>
+						wp_link_pages( array( 'before'         => '<p><strong>Pages:</strong> ',
+											  'after'          => '</p>',
+											  'next_or_number' => 'number'
+							)
+						); ?>
 
-                    <div class="clear"></div><!-- For inserted media at the end of the post -->
+						<div class="clear"></div>
+						<!-- For inserted media at the end of the post -->
 
-                </div><!-- post_class -->
+					</div><!-- post_class -->
 
-            <?php } /** End while - have posts */ ?>
+				<?php } /** End while - have posts */ ?>
 
-            <div id="nav-global" class="navigation">
-                <div class="left">
-                    <?php next_posts_link( __( '&laquo; Previous entries ', 'groundfloor' ) ); ?>
-                </div>
-                <div class="right">
-                    <?php previous_posts_link( __( ' Next entries &raquo;', 'groundfloor' ) ); ?>
-                </div>
-            </div><!-- .navigation -->
+				<div id="nav-global" class="navigation">
+					<div class="left">
+						<?php next_posts_link( __( '&laquo; Previous entries ', 'groundfloor' ) ); ?>
+					</div>
+					<div class="right">
+						<?php previous_posts_link( __( ' Next entries &raquo;', 'groundfloor' ) ); ?>
+					</div>
+				</div><!-- .navigation -->
 
-            <div class="clear"></div>
+				<div class="clear"></div>
 
-        <?php } else { ?>
+			<?php } else { ?>
 
-            <h2>
-                <?php printf( __( 'Search Results for: %s', 'groundfloor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
-            </h2>
-            <p><?php _e( 'Sorry, but you are looking for something that is not here.', 'groundfloor' ); ?></p>
+				<h2>
+					<?php printf( __( 'Search Results for: %s', 'groundfloor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+				</h2>
+				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'groundfloor' ); ?></p>
 
-            <?php
-            get_search_form();
+				<?php
+				get_search_form();
 
-        } /** End if - have posts */ ?>
+			} /** End if - have posts */
+			?>
 
-    </div><!-- #content -->
+		</div>
+		<!-- #content -->
 
-</div><!-- #main-blog -->
+	</div><!-- #main-blog -->
 
 <?php
 get_sidebar();

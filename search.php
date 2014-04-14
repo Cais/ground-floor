@@ -44,83 +44,90 @@
 
 get_header(); ?>
 
-    <div id="main-blog">
+	<div id="main-blog">
 
-        <div id="content">
+		<div id="content">
 
-            <?php
-            if ( have_posts() ) {
+			<?php
+			if ( have_posts() ) {
 
-                printf( '<h2 id="search-results-success-title">%1$s</h2>', sprintf( __( 'You searched for %1$s ...', 'groundfloor' ), get_search_query() ) );
-                printf( '<span id="search-results-found-message">%1$s</span>', __( '... and we found what you were looking for! These are the results:', 'groundfloor' ) );
+				printf( '<h2 id="search-results-success-title">%1$s</h2>', sprintf( __( 'You searched for %1$s ...', 'groundfloor' ), get_search_query() ) );
+				printf( '<span id="search-results-found-message">%1$s</span>', __( '... and we found what you were looking for! These are the results:', 'groundfloor' ) );
 
-                while ( have_posts() ) {
-                    the_post(); ?>
-                    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+				while ( have_posts() ) {
+					the_post(); ?>
+					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-                        <h2>
-                            <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'groundfloor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                        </h2>
+						<h2>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'groundfloor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+						</h2>
 
-                        <div class="post-details">
+						<div class="post-details">
 
-                            <?php
-                            printf( __( '%1$s by %2$s on %3$s', 'groundfloor' ),
-                                gf_use_posted(),
-                                get_the_author(),
-                                get_the_time( get_option( 'date_format' ) )
-                            );
+							<?php
+							printf(
+								__( '%1$s by %2$s on %3$s', 'groundfloor' ),
+								gf_use_posted(),
+								get_the_author(),
+								get_the_time( get_option( 'date_format' ) )
+							);
 
-                            if ( ! post_password_required() && ( 'page' !== get_post_type() ) ) {
-                                echo ' ';
-                                comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
-                            } /** End if - password protected post test and not a page */
+							if ( ! post_password_required() && ( 'page' !== get_post_type() ) ) {
+								echo ' ';
+								comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
+							}
+							/** End if - password protected post test and not a page */
 
-                            edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
+							edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
 
-                            if ( 'page' !== get_post_type() ) {
-                                printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'groundfloor' ), get_the_category_list( ', ' ) ) );
-                                the_tags( __( 'as ', 'groundfloor' ), ', ', '' );
-                            } /** End if - page is not the post type */ ?>
+							if ( 'page' !== get_post_type() ) {
+								printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'groundfloor' ), get_the_category_list( ', ' ) ) );
+								the_tags( __( 'as ', 'groundfloor' ), ', ', '' );
+							} /** End if - page is not the post type */
+							?>
 
-                            <br />
+							<br />
 
-                        </div><!-- .post-details -->
+						</div>
+						<!-- .post-details -->
 
-                        <?php the_excerpt(); ?>
+						<?php the_excerpt(); ?>
 
-                        <div class="clear"></div><!-- For inserted media at the end of the post -->
+						<div class="clear"></div>
+						<!-- For inserted media at the end of the post -->
 
-                    </div><!-- post_class -->
+					</div><!-- post_class -->
 
-                <?php } /** end while - have posts */ ?>
+				<?php } /** end while - have posts */ ?>
 
-                <div id="nav-global" class="navigation">
-                    <div class="left">
-                        <?php next_posts_link( __( '&laquo; Previous entries ', 'groundfloor' ) ); ?>
-                    </div>
-                    <div class="right">
-                        <?php previous_posts_link( __( ' Next entries &raquo;', 'groundfloor' ) ); ?>
-                    </div>
-                </div><!-- .navigation -->
+				<div id="nav-global" class="navigation">
+					<div class="left">
+						<?php next_posts_link( __( '&laquo; Previous entries ', 'groundfloor' ) ); ?>
+					</div>
+					<div class="right">
+						<?php previous_posts_link( __( ' Next entries &raquo;', 'groundfloor' ) ); ?>
+					</div>
+				</div><!-- .navigation -->
 
-                <div class="clear"></div>
+				<div class="clear"></div>
 
-            <?php } else { ?>
+			<?php } else { ?>
 
-                <h2>
-                    <?php printf( __( 'Search Results for: %s', 'groundfloor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
-                </h2>
-                <p><?php _e( 'Sorry, but you are looking for something that is not here.', 'groundfloor' ); ?></p>
+				<h2>
+					<?php printf( __( 'Search Results for: %s', 'groundfloor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+				</h2>
+				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'groundfloor' ); ?></p>
 
-                <?php
-                get_search_form();
+				<?php
+				get_search_form();
 
-            } /** End if - have posts */ ?>
+			} /** End if - have posts */
+			?>
 
-        </div> <!-- #content -->
+		</div>
+		<!-- #content -->
 
-    </div> <!-- #main-blog -->
+	</div> <!-- #main-blog -->
 
 <?php
 get_sidebar();
