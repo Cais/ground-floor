@@ -20,12 +20,12 @@
 
 /** Do not delete these lines */
 if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
-	die ( __( 'Please do not load this page directly. Thanks!', 'groundfloor' ) );
+	die ( __( 'Please do not load this page directly. Thanks!', 'ground-floor' ) );
 }
 /** End if - not empty */
 if ( post_password_required() ) {
 	?>
-	<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'groundfloor' ); ?></p>
+	<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'ground-floor' ); ?></p>
 	<?php
 	return;
 }
@@ -94,14 +94,14 @@ add_filter( 'comment_class', 'comment_add_userid' ); ?>
 		?>
 
 		<h4 id="comments">
-			<?php comments_number( __( 'No Comments', 'groundfloor' ), __( 'One Comment', 'groundfloor' ), __( '% Comments', 'groundfloor' ) ); ?>
+			<?php comments_number( __( 'No Comments', 'ground-floor' ), __( 'One Comment', 'ground-floor' ), __( '% Comments', 'ground-floor' ) ); ?>
 		</h4><!-- #comments -->
 
 		<ul class="commentlist" id="singlecomments">
 			<?php wp_list_comments(
 				array(
 					'avatar_size' => 60,
-					'reply_text'  => __( '&raquo; Reply to this Comment &laquo;', 'groundfloor' )
+					'reply_text'  => __( '&raquo; Reply to this Comment &laquo;', 'ground-floor' )
 				)
 			); ?>
 		</ul><!-- commentlist -->

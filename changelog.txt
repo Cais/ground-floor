@@ -1,6 +1,15 @@
 === Ground Floor ===
-Changelog as of April 13, 2014
+Changelog as of November 1, 2014
 
+== Version 2.3 ==
+= Code =
+* Set i18n textdomain references to match theme slug
+
+= CSS =
+
+= Miscellaneous =
+
+/** ------------------------------------------------------------------------- */
 == Version 2.2.3 ==
 = Code =
 * Reformatted code to better meet WordPress Coding Standards

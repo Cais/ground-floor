@@ -53,8 +53,8 @@ define( 'GF_HOME_URL', 'BuyNowShop.com' );
 function gf_widgets() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Sidebar 1', 'groundfloor' ),
-			'description'   => __( 'The first sidebar widget area. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'groundfloor' ),
+			'name'          => __( 'Sidebar 1', 'ground-floor' ),
+			'description'   => __( 'The first sidebar widget area. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'ground-floor' ),
 			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -64,8 +64,8 @@ function gf_widgets() {
 
 	register_sidebar(
 		array(
-			'name'          => __( 'Sidebar 2', 'groundfloor' ),
-			'description'   => __( 'The second sidebar widget area. This is empty by default.', 'groundfloor' ),
+			'name'          => __( 'Sidebar 2', 'ground-floor' ),
+			'description'   => __( 'The second sidebar widget area. This is empty by default.', 'ground-floor' ),
 			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -75,8 +75,8 @@ function gf_widgets() {
 
 	register_sidebar(
 		array(
-			'name'          => __( 'Sidebar 3', 'groundfloor' ),
-			'description'   => __( 'The third sidebar widget area. This is empty by default.', 'groundfloor' ),
+			'name'          => __( 'Sidebar 3', 'ground-floor' ),
+			'description'   => __( 'The third sidebar widget area. This is empty by default.', 'ground-floor' ),
 			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -87,7 +87,7 @@ function gf_widgets() {
 	register_sidebar(
 		array(
 			'name'          => 'Footer Left',
-			'description'   => __( 'Footer widget area found at the bottom of the theme on the left side.', 'groundfloor' ),
+			'description'   => __( 'Footer widget area found at the bottom of the theme on the left side.', 'ground-floor' ),
 			'id'            => 'footer-left',
 			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
 			'after_widget'  => '</div><!-- .footer-widget --><div class="widget-bottom"></div>',
@@ -99,7 +99,7 @@ function gf_widgets() {
 	register_sidebar(
 		array(
 			'name'          => 'Footer Middle',
-			'description'   => __( 'Footer widget area found at the bottom of the theme in the middle.', 'groundfloor' ),
+			'description'   => __( 'Footer widget area found at the bottom of the theme in the middle.', 'ground-floor' ),
 			'id'            => 'footer-middle',
 			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
 			'after_widget'  => '</div><!-- .footer-widget --><div class="widget-bottom"></div>',
@@ -111,7 +111,7 @@ function gf_widgets() {
 	register_sidebar(
 		array(
 			'name'          => 'Footer Right',
-			'description'   => __( 'Footer widget area found at the bottom of the theme on the right side.', 'groundfloor' ),
+			'description'   => __( 'Footer widget area found at the bottom of the theme on the right side.', 'ground-floor' ),
 			'id'            => 'footer-right',
 			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
 			'after_widget'  => '</div><!--.footer-widget --><div class="widget-bottom"></div>',
@@ -157,7 +157,7 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 
 		/** Start common copyright notice */
 		empty( $args['start'] )
-			? $output .= sprintf( __( 'Copyright', 'groundfloor' ) )
+			? $output .= sprintf( __( 'Copyright', 'ground-floor' ) )
 			: $output .= $args['start'];
 
 		/* Calculate Copyright Years; and, prefix with Copyright Symbol */
@@ -193,10 +193,10 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 			: $output .= ' ' . $args['url'];
 		/** End common copyright notice */
 		empty( $args['end'] )
-			? $output .= ' ' . sprintf( __( 'All rights reserved.', 'groundfloor' ) )
+			? $output .= ' ' . sprintf( __( 'All rights reserved.', 'ground-floor' ) )
 			: $output .= ' ' . $args['end'];
 		/** Construct and sprintf the copyright notice */
-		$output = sprintf( __( '<span id="gf-dynamic-copyright"> %1$s </span><!-- #gf-dynamic-copyright -->', 'groundfloor' ), $output );
+		$output = sprintf( __( '<span id="gf-dynamic-copyright"> %1$s </span><!-- #gf-dynamic-copyright -->', 'ground-floor' ), $output );
 
 		echo apply_filters( 'gf_dynamic_copyright', $output, $args );
 
@@ -241,7 +241,7 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
 			echo apply_filters(
 				'gf_child_theme_version_text',
 				sprintf(
-					__( '<br /><span id="gf-theme-version">The %1$s (v%2$s) theme is built on the %3$s theme (v%4$s) by %5$s.</span>', 'groundfloor' ),
+					__( '<br /><span id="gf-theme-version">The %1$s (v%2$s) theme is built on the %3$s theme (v%4$s) by %5$s.</span>', 'ground-floor' ),
 					$active_theme_data['Name'],
 					$active_theme_data['Version'],
 					$parent_theme_data['Name'],
@@ -253,7 +253,7 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
 			echo apply_filters(
 				'gf_parent_theme_version_text',
 				sprintf(
-					__( '<br /><span id="gf-theme-version">Made with the %1$s theme (v%2$s) from %3$s.</span>', 'groundfloor' ),
+					__( '<br /><span id="gf-theme-version">Made with the %1$s theme (v%2$s) from %3$s.</span>', 'ground-floor' ),
 					$active_theme_data['Name'],
 					$active_theme_data['Version'],
 					'<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>'
@@ -437,7 +437,7 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 				<?php } else { ?>
 					<ul class="nav-menu">
 						<li>
-							<a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Home', 'groundfloor' ) ?></a>
+							<a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Home', 'ground-floor' ) ?></a>
 						</li>
 						<?php wp_list_pages( 'title_li=' ); ?>
 					</ul>
@@ -448,7 +448,7 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 			/** End function - list pages */
 		}
 		/** End if - function exists */
-		register_nav_menu( 'top-menu', __( 'Top Menu', 'groundfloor' ) );
+		register_nav_menu( 'top-menu', __( 'Top Menu', 'ground-floor' ) );
 
 		/**
 		 * Make theme available for translation.
@@ -488,8 +488,8 @@ if ( ! function_exists( 'gf_use_posted' ) ) {
 	function gf_use_posted() {
 		$gf_no_title = get_the_title();
 		empty( $gf_no_title )
-			? $gf_no_title = '<span class="no-title"><a href="' . get_permalink() . '" title="' . get_the_excerpt() . '">' . __( 'Posted', 'groundfloor' ) . '</span></a>'
-			: $gf_no_title = __( 'Posted', 'groundfloor' );
+			? $gf_no_title = '<span class="no-title"><a href="' . get_permalink() . '" title="' . get_the_excerpt() . '">' . __( 'Posted', 'ground-floor' ) . '</span></a>'
+			: $gf_no_title = __( 'Posted', 'ground-floor' );
 		$gf_no_title = apply_filters( 'dmm_use_posted', $gf_no_title );
 
 		return $gf_no_title;
@@ -535,7 +535,7 @@ if ( ! function_exists( 'gf_wp_title' ) ) {
 
 		/** Add a page number if necessary */
 		if ( $paged >= 2 || $page >= 2 ) {
-			$gf_title_text .= $sep . sprintf( __( 'Page %s', 'groundfloor' ), max( $paged, $page ) );
+			$gf_title_text .= $sep . sprintf( __( 'Page %s', 'ground-floor' ), max( $paged, $page ) );
 		}
 
 		/** End if - paged */

@@ -36,8 +36,8 @@ get_header(); ?>
 							</h1>
 
 							<div id="page-meta">
-								<?php comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '', 'groundfloor' ) ); ?>
-								<?php edit_post_link( __( 'Edit this page', 'groundfloor' ), __( '&gt ', 'groundfloor' ), __( '', 'groundfloor' ) ); ?>
+								<?php comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '', 'ground-floor' ) ); ?>
+								<?php edit_post_link( __( 'Edit this page', 'ground-floor' ), __( '&gt ', 'ground-floor' ), __( '', 'ground-floor' ) ); ?>
 							</div>
 							<!-- #page-meta -->
 
@@ -47,7 +47,7 @@ get_header(); ?>
 							}
 							/** End if - has post thumbnails */
 
-							the_content( __( 'Read more ...', 'groundfloor' ) );
+							the_content( __( 'Read more ...', 'ground-floor' ) );
 
 							wp_link_pages(
 								array(
@@ -75,9 +75,9 @@ get_header(); ?>
 				?>
 
 				<h2>
-					<?php printf( __( 'Search Results for: %s', 'groundfloor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+					<?php printf( __( 'Search Results for: %s', 'ground-floor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
 				</h2>
-				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'groundfloor' ); ?></p>
+				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'ground-floor' ); ?></p>
 
 				<?php
 				get_search_form();

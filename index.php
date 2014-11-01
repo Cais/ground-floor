@@ -16,10 +16,10 @@
  * @link        https://github.com/Cais/fround-floor/
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
- * @version     2.2.3
- * @date        April 2014
+ * @version     2.3
+ * @date        November 2014
  * @internal    REQUIRES WordPress version 3.4
- * @internal    Tested up to WordPress version 3.9
+ * @internal    Tested up to WordPress version 4.1
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
@@ -41,10 +41,6 @@
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * @version     2.1
- * @date        December 9, 2012
- * Fixed spacing issue in meta details if post has no tags
- *
  * @version     2.2
  * @date        March 13, 2013
  * Added 'search' results template
@@ -57,6 +53,9 @@
  *
  * @version     2.2.3
  * @date        April 13, 2014
+ *
+ * @version     2.3
+ * @date        November 2014
  */
 
 get_header(); ?>
@@ -74,14 +73,14 @@ get_header(); ?>
 					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 						<h2>
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'groundfloor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'ground-floor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 						</h2>
 
 						<div class="post-details">
 
 							<?php
 							printf(
-								__( '%1$s by %2$s on %3$s', 'groundfloor' ),
+								__( '%1$s by %2$s on %3$s', 'ground-floor' ),
 								gf_use_posted(),
 								get_the_author(),
 								get_the_time( get_option( 'date_format' ) )
@@ -89,19 +88,19 @@ get_header(); ?>
 							/** Hide Comment(s) if password required to read post */
 							if ( ! post_password_required() ) {
 								echo ' ';
-								comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
+								comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '(Comments Closed)', 'ground-floor' ) );
 							}
 							/** End if - password protected post test */
 
-							edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
+							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
 
-							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'groundfloor' ), get_the_category_list( ', ' ) ) ); ?>
+							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) ); ?>
 
 							<?php
 							$gf_post_tags = get_the_tags();
 							/** If tags are used, display them */
 							if ( $gf_post_tags ) {
-								the_tags( __( 'as ', 'groundfloor' ), ', ', '' );
+								the_tags( __( 'as ', 'ground-floor' ), ', ', '' );
 							} /** End if - post tags */
 							?>
 
@@ -116,7 +115,7 @@ get_header(); ?>
 						}
 						/** End if - has post thumbnail */
 
-						the_content( __( 'Read more... ', 'groundfloor' ) );
+						the_content( __( 'Read more... ', 'ground-floor' ) );
 
 						wp_link_pages(
 							array(
@@ -135,10 +134,10 @@ get_header(); ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
-						<?php next_posts_link( __( '&laquo; Previous entries ', 'groundfloor' ) ); ?>
+						<?php next_posts_link( __( '&laquo; Previous entries ', 'ground-floor' ) ); ?>
 					</div>
 					<div class="right">
-						<?php previous_posts_link( __( ' Next entries &raquo;', 'groundfloor' ) ); ?>
+						<?php previous_posts_link( __( ' Next entries &raquo;', 'ground-floor' ) ); ?>
 					</div>
 				</div><!-- .navigation -->
 
@@ -147,9 +146,9 @@ get_header(); ?>
 			<?php } else { ?>
 
 				<h2>
-					<?php printf( __( 'Search Results for: %s', 'groundfloor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+					<?php printf( __( 'Search Results for: %s', 'ground-floor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
 				</h2>
-				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'groundfloor' ); ?></p>
+				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'ground-floor' ); ?></p>
 
 				<?php
 				get_search_form();

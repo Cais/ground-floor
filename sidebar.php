@@ -37,7 +37,7 @@
 
 				<div class="widget-top"></div>
 				<div class="widget">
-					<h2 class="widget-title"><?php _e( 'Calendar', 'groundfloor' ); ?></h2>
+					<h2 class="widget-title"><?php _e( 'Calendar', 'ground-floor' ); ?></h2>
 
 					<div align="center">
 						<?php get_calendar( 0 ); ?>
@@ -53,7 +53,7 @@
 
 				<div class="widget-top"></div>
 				<div class="widget">
-					<h2 class="widget-title"><?php _e( 'Categories', 'groundfloor' ); ?></h2>
+					<h2 class="widget-title"><?php _e( 'Categories', 'ground-floor' ); ?></h2>
 					<ul>
 						<?php wp_list_categories( 'title_li=&show_count=1' ); ?>
 					</ul>
@@ -62,7 +62,7 @@
 
 				<div class="widget-top"></div>
 				<div class="widget">
-					<h2 class="widget-title"><?php _e( 'Archives', 'groundfloor' ); ?></h2>
+					<h2 class="widget-title"><?php _e( 'Archives', 'ground-floor' ); ?></h2>
 					<ul>
 						<?php wp_get_archives( 'type=monthly&show_post_count=1' ); ?>
 					</ul>
@@ -71,7 +71,7 @@
 
 				<div class="widget-top"></div>
 				<div class="widget">
-					<h2 class="widget-title"><?php _e( 'Meta', 'groundfloor' ); ?></h2>
+					<h2 class="widget-title"><?php _e( 'Meta', 'ground-floor' ); ?></h2>
 					<ul>
 						<?php wp_register(); ?>
 						<li><?php wp_loginout(); ?></li>

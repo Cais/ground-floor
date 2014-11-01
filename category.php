@@ -26,8 +26,8 @@
 get_header();
 
 /** used to create dynamic category link */
-$curr_cat = single_cat_title( '', false );
-$cat_id = get_cat_ID( $curr_cat );
+$curr_cat      = single_cat_title( '', false );
+$cat_id        = get_cat_ID( $curr_cat );
 $category_link = get_category_link( $cat_id ); ?>
 
 	<div id="main-blog">
@@ -39,9 +39,9 @@ $category_link = get_category_link( $cat_id ); ?>
 				<?php
 				global $paged;
 				if ( $paged < 2 ) {
-					printf( __( 'First page of the %1$s archive.', 'groundfloor' ), '<span id="category-name"><a href="' . $category_link . '" title="' . $curr_cat . '">' . single_cat_title( '', false ) . '</a></span>' );
+					printf( __( 'First page of the %1$s archive.', 'ground-floor' ), '<span id="category-name"><a href="' . $category_link . '" title="' . $curr_cat . '">' . single_cat_title( '', false ) . '</a></span>' );
 				} else {
-					printf( __( 'Page %1$s of the %2$s archive.', 'groundfloor' ), $paged, '<span id="category-name"><a href="' . $category_link . '" title="' . $curr_cat . '">' . single_cat_title( '', false ) . '</a></span>' );
+					printf( __( 'Page %1$s of the %2$s archive.', 'ground-floor' ), $paged, '<span id="category-name"><a href="' . $category_link . '" title="' . $curr_cat . '">' . single_cat_title( '', false ) . '</a></span>' );
 				} /** End if - paged less than 2 */
 				?>
 
@@ -64,14 +64,14 @@ $category_link = get_category_link( $cat_id ); ?>
 					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 						<h2>
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'groundfloor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'ground-floor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 						</h2>
 
 						<div class="post-details">
 
 							<?php
 							printf(
-								__( '%1$s by %2$s on %3$s', 'groundfloor' ),
+								__( '%1$s by %2$s on %3$s', 'ground-floor' ),
 								gf_use_posted(),
 								get_the_author(),
 								get_the_time( get_option( 'date_format' ) )
@@ -79,15 +79,15 @@ $category_link = get_category_link( $cat_id ); ?>
 
 							if ( ! post_password_required() ) {
 								echo ' ';
-								comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
+								comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '(Comments Closed)', 'ground-floor' ) );
 							}
 							/** End if - password protected post test */
 
-							edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
+							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
 
-							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'groundfloor' ), get_the_category_list( ', ' ) ) ); ?>
+							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) ); ?>
 
-							<?php the_tags( __( 'as ', 'groundfloor' ), ', ', '' ); ?>
+							<?php the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
 
 							<br />
 
@@ -118,10 +118,10 @@ $category_link = get_category_link( $cat_id ); ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
-						<?php next_posts_link( __( '&laquo; Previous entries ', 'groundfloor' ) ); ?>
+						<?php next_posts_link( __( '&laquo; Previous entries ', 'ground-floor' ) ); ?>
 					</div>
 					<div class="right">
-						<?php previous_posts_link( __( ' Next entries &raquo;', 'groundfloor' ) ); ?>
+						<?php previous_posts_link( __( ' Next entries &raquo;', 'ground-floor' ) ); ?>
 					</div>
 				</div><!-- .navigation -->
 
@@ -130,9 +130,9 @@ $category_link = get_category_link( $cat_id ); ?>
 			<?php } else { ?>
 
 				<h2>
-					<?php printf( __( 'Search Results for: %s', 'groundfloor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+					<?php printf( __( 'Search Results for: %s', 'ground-floor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
 				</h2>
-				<p><?php _e( 'Sorry, there are no posts in this category.', 'groundfloor' ); ?></p>
+				<p><?php _e( 'Sorry, there are no posts in this category.', 'ground-floor' ); ?></p>
 
 				<?php
 				get_search_form();

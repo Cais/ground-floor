@@ -51,22 +51,22 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) {
 
-				printf( '<h2 id="search-results-success-title">%1$s</h2>', sprintf( __( 'You searched for %1$s ...', 'groundfloor' ), get_search_query() ) );
-				printf( '<span id="search-results-found-message">%1$s</span>', __( '... and we found what you were looking for! These are the results:', 'groundfloor' ) );
+				printf( '<h2 id="search-results-success-title">%1$s</h2>', sprintf( __( 'You searched for %1$s ...', 'ground-floor' ), get_search_query() ) );
+				printf( '<span id="search-results-found-message">%1$s</span>', __( '... and we found what you were looking for! These are the results:', 'ground-floor' ) );
 
 				while ( have_posts() ) {
 					the_post(); ?>
 					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 						<h2>
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'groundfloor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'ground-floor' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 						</h2>
 
 						<div class="post-details">
 
 							<?php
 							printf(
-								__( '%1$s by %2$s on %3$s', 'groundfloor' ),
+								__( '%1$s by %2$s on %3$s', 'ground-floor' ),
 								gf_use_posted(),
 								get_the_author(),
 								get_the_time( get_option( 'date_format' ) )
@@ -74,15 +74,15 @@ get_header(); ?>
 
 							if ( ! post_password_required() && ( 'page' !== get_post_type() ) ) {
 								echo ' ';
-								comments_popup_link( __( 'with No Comments', 'groundfloor' ), __( 'with 1 Comment', 'groundfloor' ), __( 'with % Comments', 'groundfloor' ), '', __( '(Comments Closed)', 'groundfloor' ) );
+								comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '(Comments Closed)', 'ground-floor' ) );
 							}
 							/** End if - password protected post test and not a page */
 
-							edit_post_link( __( 'Edit', 'groundfloor' ), __( ' &#124; ', 'groundfloor' ), __( '', 'groundfloor' ) );
+							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
 
 							if ( 'page' !== get_post_type() ) {
-								printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'groundfloor' ), get_the_category_list( ', ' ) ) );
-								the_tags( __( 'as ', 'groundfloor' ), ', ', '' );
+								printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) );
+								the_tags( __( 'as ', 'ground-floor' ), ', ', '' );
 							} /** End if - page is not the post type */
 							?>
 
@@ -102,10 +102,10 @@ get_header(); ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
-						<?php next_posts_link( __( '&laquo; Previous entries ', 'groundfloor' ) ); ?>
+						<?php next_posts_link( __( '&laquo; Previous entries ', 'ground-floor' ) ); ?>
 					</div>
 					<div class="right">
-						<?php previous_posts_link( __( ' Next entries &raquo;', 'groundfloor' ) ); ?>
+						<?php previous_posts_link( __( ' Next entries &raquo;', 'ground-floor' ) ); ?>
 					</div>
 				</div><!-- .navigation -->
 
@@ -114,9 +114,9 @@ get_header(); ?>
 			<?php } else { ?>
 
 				<h2>
-					<?php printf( __( 'Search Results for: %s', 'groundfloor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+					<?php printf( __( 'Search Results for: %s', 'ground-floor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
 				</h2>
-				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'groundfloor' ); ?></p>
+				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'ground-floor' ); ?></p>
 
 				<?php
 				get_search_form();
