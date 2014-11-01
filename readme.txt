@@ -1,15 +1,14 @@
 ==== readme.txt ====
-Updated April 13, 2014
+Updated November 1, 2014
 
 === Contents ===
 * Items of Note
 * F.A.Q.
-* TO-DO
+* Internal Code Conventions
 * Review Tickets
 
 === Items of Note ===
 * This Theme does not use Custom Header Images
-* Functions prefixed with 'bns_' are common to all themes created by myself and are representative of their home pages at http://BuyNowShop.com/themes/
 * Posts without titles can be reached by clicking on the linked 'Comment' reference
 * Posts without titles and password protected will not have a direct link to the single view of the post.
 * Author email link will only appear on 'author.php' rendered pages if their website URL has been added to their profile.
@@ -21,10 +20,10 @@ The update routine for WordPress themes overwrites the existing files with the f
 Q: Why are not all of the archive posts showing an excerpt only?
 The archive templates are created to show as "mullet" loops where the first few posts will show in their entirety then the following posts will show as excerpts.
 
-=== TO-DO ===
-[x] Review internationalization for proper support or possible removal (remove 'translation-ready' tag until decided)
-[ ] Review stylesheet for editor style (as needed?)
-[ ] Review posts without title and password protected ... expect as a very rare use-case and not an immediate requirement at this time
+=== Internal Code Conventions ===
+* Unique function prefix: `gf_`
+* Expected theme slug: `ground-floor`
+* Theme textdomain is expected to be the same as the theme slug: `ground-floor`
 
 === Review Tickets ===
 * http://themes.trac.wordpress.org/ticket/278

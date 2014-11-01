@@ -9,6 +9,7 @@ Changelog as of November 1, 2014
 
 = Miscellaneous =
 * Set i18n textdomain references to match theme slug
+* Updated `readme.txt` file with better details about the theme
 
 /** ------------------------------------------------------------------------- */
 == Version 2.2.3 ==

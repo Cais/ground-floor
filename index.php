@@ -1,10 +1,8 @@
 <?php
 /**
  * Ground Floor
- *
- * Theme Description: Richly toned wood floor background with bare-earth colored
- * widgetized sidebar and footer. A strong theme to begin with; grow into; and,
- * build on.
+ * Richly toned wood floor background with bare-earth colored widgetized sidebar
+ * and footer. A strong theme to begin with; grow into; and, build on.
  *
  * @package     GroundFloor
  * @since       1.0
@@ -40,22 +38,6 @@
  *
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * @version     2.2
- * @date        March 13, 2013
- * Added 'search' results template
- * Refactored code formatting and code block termination comments
- * Refactored post meta to be more i18n compatible
- * Removed 'searchform.php' in favor of using WordPress core version
- *
- * @version     2.2.1
- * @date        April 24, 2013
- *
- * @version     2.2.3
- * @date        April 13, 2014
- *
- * @version     2.3
- * @date        November 2014
  */
 
 get_header(); ?>
@@ -156,8 +138,7 @@ get_header(); ?>
 			} /** End if - have posts */
 			?>
 
-		</div>
-		<!-- #content -->
+		</div><!-- #content -->
 
 	</div><!-- #main-blog -->
 
