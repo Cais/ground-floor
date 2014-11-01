@@ -16,6 +16,10 @@
  * @date        July 6, 2012
  * Removed `function_exists` checks as should not be needed with current
  * WordPress version
+ *
+ * @version     2.3
+ * @date        November 1, 2014
+ * Removed `wp_list_bookmarks` call
  */
 ?>
 
@@ -42,12 +46,6 @@
 					<div align="center">
 						<?php get_calendar( 0 ); ?>
 					</div>
-				</div><!-- .widget -->
-				<div class="widget-bottom"></div>
-
-				<div class="widget-top"></div>
-				<div class="widget">
-					<?php wp_list_bookmarks( 'title_li=&title_before=<h2 class="widget-title">&title_after=</h2>&category_before=&category_after=' ); ?>
 				</div><!-- .widget -->
 				<div class="widget-bottom"></div>
 

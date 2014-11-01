@@ -3,11 +3,12 @@ Changelog as of November 1, 2014
 
 == Version 2.3 ==
 = Code =
-* Set i18n textdomain references to match theme slug
+* Removed `wp_list_bookmarks` call from the default sidebar widgets
 
 = CSS =
 
 = Miscellaneous =
+* Set i18n textdomain references to match theme slug
 
 /** ------------------------------------------------------------------------- */
 == Version 2.2.3 ==
