@@ -16,6 +16,10 @@
  * @date        March 11, 2013
  * Refactored code formatting and code block termination comments
  * Refactored yo be more i18n compatible
+ *
+ * @version 2.3
+ * @date    November 1, 2014
+ * Remove micro-ID class insertion into comment classes
  */
 
 /** Do not delete these lines */
@@ -31,32 +35,6 @@ if ( post_password_required() ) {
 }
 /** End if - post password required */
 
-/**
- * Comment Add Micro ID
- *
- * Add a micro ID class to all the comments
- *
- * @param $classes - existing CSS classes
- *
- * @return array
- */
-function comment_add_microid( $classes ) {
-
-	$c_email = get_comment_author_email();
-	$c_url   = get_comment_author_url();
-	if ( ! empty( $c_email ) && ! empty( $c_url ) ) {
-		$microid   = 'microid-mailto+http:sha1:' . sha1( sha1( 'mailto:' . $c_email ) . sha1( $c_url ) );
-		$classes[] = $microid;
-	}
-
-	/** End if - not empty */
-
-	return $classes;
-
-}
-
-/** End function - add micro ID */
-add_filter( 'comment_class', 'comment_add_microid' );
 
 /**
  * Comment Add User ID
@@ -113,6 +91,8 @@ add_filter( 'comment_class', 'comment_add_userid' ); ?>
 
 	<?php
 	} else {
+
+		global $post;
 
 		/** this is displayed if there are no comments so far */
 		if ( 'open' == $post->comment_status ) {

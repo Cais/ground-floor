@@ -5,6 +5,7 @@ Changelog as of November 1, 2014
 = Code =
 * Minor i18n corrections and updates
 * Removed `wp_list_bookmarks` call from the default sidebar widgets
+* Removed micro-ID class insertion into comment classes
 
 = CSS =
 
