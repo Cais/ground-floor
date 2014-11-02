@@ -17,8 +17,8 @@
  * Refactored code formatting and code block termination comments
  * Refactored yo be more i18n compatible
  *
- * @version 2.3
- * @date    November 1, 2014
+ * @version     2.3
+ * @date        November 1, 2014
  * Remove micro-ID class insertion into comment classes
  */
 
@@ -38,24 +38,48 @@ if ( post_password_required() ) {
 
 /**
  * Comment Add User ID
- *
  * Add a userid (if exists) to all the comments
+ *
+ * @package     Ground_Floor
+ * @sub-package Comments
  *
  * @param $classes - existing CSS classes
  *
+ * @uses        GLOBAL $comments
+ * @uses        user_can
+ *
  * @return array
+ *
+ * @version     2.3
+ * @date        November 1, 2014
+ * Re-factored to note various user roles as comment classes
  */
 function comment_add_userid( $classes ) {
 
 	global $comment;
+	/** Add classes based on user role */
+	if ( user_can( $comment->user_id, 'administrator' ) ) {
+		$classes[] = 'administrator';
+	} elseif ( user_can( $comment->user_id, 'editor' ) ) {
+		$classes[] = 'editor';
+	} elseif ( user_can( $comment->user_id, 'contributor' ) ) {
+		$classes[] = 'contributor';
+	} elseif ( user_can( $comment->user_id, 'subscriber' ) ) {
+		$classes[] = 'subscriber';
+	} else {
+		$classes[] = 'guest';
+	}
+	/** End if - user can */
+
+	/** Add user ID based classes */
 	if ( $comment->user_id == 1 ) {
-		/** Default Administrator Account */
-		$userid = "administrator user-id-1";
+		/** Administrator 'Prime' => first registered user ID */
+		$userid = "administrator-prime user-id-1";
 	} else {
 		/** All other users - NB: user-id-0 -> non-registered user */
 		$userid = "user-id-" . ( $comment->user_id );
 	}
-	/** End if - comment user ID is 1 */
+	/** End if - user id */
 	$classes[] = $userid;
 
 	return $classes;
