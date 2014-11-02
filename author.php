@@ -13,14 +13,14 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
- * @version     2.0
- * @date        July 6, 2012
- * Updates to i18n support
- *
  * @version     2.2
  * @date        March 11, 2013
  * Refactored code formatting and code block termination comments
  * Refactored post meta to be more i18n compatible
+ *
+ * @version     2.3
+ * @date        November 1, 2014
+ * Minor i18n corrections and updates
  */
 
 get_header();
@@ -122,7 +122,7 @@ $curauth = ( get_query_var( 'author_name ' ) ) ? get_user_by( 'id', get_query_va
 							the_content();
 							wp_link_pages(
 								array(
-									'before'         => '<p><strong>Pages:</strong> ',
+									'before'         => '<p><strong>' . __( 'Pages:', 'ground-floor' ) . '</strong> ',
 									'after'          => '</p>',
 									'next_or_number' => 'number'
 								)

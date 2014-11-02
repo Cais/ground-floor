@@ -14,14 +14,14 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
- * Last revised April 14, 2012
- * @version     1.9
- * Updated 'tag-title' block with better i18n support
- *
  * @version     2.2
  * @date        March 12, 2013
  * Refactored code formatting and code block termination comments
  * Refactored post meta to be more i18n compatible
+ *
+ * @version     2.3
+ * @date        November 1, 2014
+ * Minor i18n corrections and updates
  */
 
 get_header();
@@ -104,7 +104,7 @@ $curr_tag = single_tag_title( '', false ); ?>
 							the_content();
 							wp_link_pages(
 								array(
-									'before'         => '<p><strong>Pages:</strong> ',
+									'before'         => '<p><strong>' . __( 'Pages:', 'ground-floor' ) . '</strong> ',
 									'after'          => '</p>',
 									'next_or_number' => 'number'
 								)

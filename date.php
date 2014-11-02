@@ -13,14 +13,14 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
- * Last revised April 19, 2012
- * @version     2.0
- * Addressed `_e` and other output / i18n issues
- *
  * @version     2.2
  * @date        March 11, 2013
  * Refactored code formatting and code block termination comments
  * Refactored to be more i18n compatible
+ *
+ * @version     2.3
+ * @date        November 1, 2014
+ * Minor i18n corrections and updates
  */
 
 global $m;
@@ -109,7 +109,7 @@ get_header(); ?>
 							the_content();
 							wp_link_pages(
 								array(
-									'before'         => '<p><strong>Pages:</strong> ',
+									'before'         => '<p><strong>' . __( 'Pages:', 'ground-floor' ) . '</strong> ',
 									'after'          => '</p>',
 									'next_or_number' => 'number'
 								)

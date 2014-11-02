@@ -15,6 +15,10 @@
  * @version     2.2
  * @date        March 11, 2013
  * Refactored code formatting and code block termination comments
+ *
+ * @version     2.3
+ * @date        November 1, 2014
+ * Minor i18n corrections and updates
  */
 
 get_header(); ?>
@@ -51,7 +55,7 @@ get_header(); ?>
 
 							wp_link_pages(
 								array(
-									'before'         => '<p><strong>Pages:</strong> ',
+									'before'         => '<p><strong>' . __( 'Pages:', 'ground-floor' ) . '</strong> ',
 									'after'          => '</p>',
 									'next_or_number' => 'number'
 								)
