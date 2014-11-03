@@ -1,5 +1,5 @@
 ==== readme.txt ====
-Updated November 1, 2014
+Updated November 2, 2014
 
 === Contents ===
 * Items of Note
@@ -39,3 +39,4 @@ The archive templates are created to show as "mullet" loops where the first few 
 * http://themes.trac.wordpress.org/ticket/13433 - version 2.2.1 - July 2013
 * http://themes.trac.wordpress.org/ticket/15297 - version 2.2.2 - November 2013
 * https://themes.trac.wordpress.org/ticket/17977 - version 2.2.3 - April 2014
+* https://themes.trac.wordpress.org/ticket/21491 - version 2.3 - November 2014
