@@ -9,6 +9,7 @@ Changelog as of November 1, 2014
 * Removed micro-ID class insertion into comment classes
 
 = CSS =
+* Ensured embedded "tweets" are set to 100% width in the content area
 
 = Miscellaneous =
 * Set i18n textdomain references to match theme slug

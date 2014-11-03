@@ -1191,6 +1191,11 @@ div.widget div.textwidget div.wp-caption a img {
 	float: none;
 }
 
+/** ------------------------------------------------------------------------- */
+iframe.twitter-tweet.twitter-tweet-rendered {
+	width: 100% !important;
+}
+
 /* BNS Plugins */
 /*-= The Finish Line - All Your Edits Belong To Us! =-*/
 /* Testing, testing, testing ... */
