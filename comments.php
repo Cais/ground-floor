@@ -54,9 +54,11 @@ if ( post_password_required() ) {
  * @date        November 1, 2014
  * Re-factored to note various user roles as comment classes
  */
-function comment_add_userid( $classes ) {
+function gf_comment_add_userid( $classes ) {
 
+	/** Get the comment object */
 	global $comment;
+
 	/** Add classes based on user role */
 	if ( user_can( $comment->user_id, 'administrator' ) ) {
 		$classes[] = 'administrator';
@@ -87,7 +89,7 @@ function comment_add_userid( $classes ) {
 }
 
 /** End function - add user ID */
-add_filter( 'comment_class', 'comment_add_userid' ); ?>
+add_filter( 'comment_class', 'gf_comment_add_userid' ); ?>
 
 <div id="comments-main">
 
