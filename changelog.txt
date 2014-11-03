@@ -1,5 +1,5 @@
 === Ground Floor ===
-Changelog as of November 1, 2014
+Changelog as of November 2, 2014
 
 == Version 2.3 ==
 = Code =
@@ -7,6 +7,7 @@ Changelog as of November 1, 2014
 * Minor i18n corrections and updates
 * Removed `wp_list_bookmarks` call from the default sidebar widgets
 * Removed micro-ID class insertion into comment classes
+* Renamed `ground_floor_setup` to `gf_setup` to be more consistent
 
 = CSS =
 * Ensured embedded "tweets" are set to 100% width in the content area

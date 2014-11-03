@@ -3,6 +3,7 @@
  * Comments Template
  *
  * @package     GroundFloor
+ * @subpackage  Comments
  * @since       1.0
  *
  * @link        http://buynowshop.com/themes/ground-floor/
@@ -40,7 +41,7 @@ if ( post_password_required() ) {
  * Comment Add User ID
  * Add a userid (if exists) to all the comments
  *
- * @package     Ground_Floor
+ * @package     GroundFloor
  * @sub-package Comments
  *
  * @param $classes - existing CSS classes

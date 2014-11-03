@@ -361,7 +361,7 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 /** End if - function exists */
 
 
-if ( ! function_exists( 'ground_floor_setup' ) ) {
+if ( ! function_exists( 'gf_setup' ) ) {
 	/**
 	 * Ground Floor Setup
 	 * Adds various core functionality to the theme
@@ -394,8 +394,12 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 	 * @version 2.2.2
 	 * @date    November 16, 2013
 	 * Removed call to global `$wp_version`
+	 *
+	 * @version 2.3
+	 * @date    November 2, 2014
+	 * Renamed from `ground_floor_setup` to `gf_setup` to be more consistent
 	 */
-	function ground_floor_setup() {
+	function gf_setup() {
 		/** This theme uses post thumbnails */
 		add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 		/** Add default posts and comments RSS feed links to head */
@@ -453,11 +457,8 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 		/**
 		 * Make theme available for translation.
 		 * Translation files must be placed in the /languages/ directory
-		 *
-		 * Last revised April 19, 2012
-		 * @version 2.0 - changed TEMPLATEPATH to `get_template_directory()`
 		 */
-		load_theme_textdomain( 'groundfloor', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'ground-floor', get_template_directory() . '/languages' );
 		$locale      = get_locale();
 		$locale_file = get_template_directory() . "/languages/$locale.php";
 		if ( is_readable( $locale_file ) ) {
@@ -468,7 +469,7 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 	/** End function - setup */
 }
 /** End if - function exists */
-add_action( 'after_setup_theme', 'ground_floor_setup' );
+add_action( 'after_setup_theme', 'gf_setup' );
 
 
 /**
