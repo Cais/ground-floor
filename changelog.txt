@@ -1,6 +1,10 @@
 === Ground Floor ===
-Changelog as of November 2, 2014
+Changelog as of November 5, 2014
 
+== Version 2.3.1 ==
+* Reverted name change: `gf_setup` -> `ground_floor_setup`
+
+/** ------------------------------------------------------------------------- */
 == Version 2.3 ==
 = Code =
 * Re-factored `comment_add_userid` to note various user roles as comment classes

@@ -398,8 +398,12 @@ if ( ! function_exists( 'gf_setup' ) ) {
 	 * @version 2.3
 	 * @date    November 2, 2014
 	 * Renamed from `ground_floor_setup` to `gf_setup` to be more consistent
+	 *
+	 * @version 2.3.1
+	 * @date    November 5, 2014
+	 * Reverted name change: `gf_setup` -> `ground_floor_setup`
 	 */
-	function gf_setup() {
+	function ground_floor_setup() {
 		/** This theme uses post thumbnails */
 		add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 		/** Add default posts and comments RSS feed links to head */
