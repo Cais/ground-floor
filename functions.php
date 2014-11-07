@@ -361,7 +361,7 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 /** End if - function exists */
 
 
-if ( ! function_exists( 'gf_setup' ) ) {
+if ( ! function_exists( 'ground_floor_setup' ) ) {
 	/**
 	 * Ground Floor Setup
 	 * Adds various core functionality to the theme
@@ -473,7 +473,7 @@ if ( ! function_exists( 'gf_setup' ) ) {
 	/** End function - setup */
 }
 /** End if - function exists */
-add_action( 'after_setup_theme', 'gf_setup' );
+add_action( 'after_setup_theme', 'ground_floor_setup' );
 
 
 /**

@@ -1,5 +1,8 @@
 === Ground Floor ===
-Changelog as of November 5, 2014
+Changelog as of November 7, 2014
+
+== Version 2.3.1.1 ==
+* Additional reversion updates
 
 == Version 2.3.1 ==
 * Reverted name change: `gf_setup` -> `ground_floor_setup`
