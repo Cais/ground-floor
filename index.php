@@ -14,7 +14,7 @@
  * @link        https://github.com/Cais/fround-floor/
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
- * @version     2.3
+ * @version     2.3.1.1
  * @date        November 2014
  * @internal    REQUIRES WordPress version 3.4
  * @internal    Tested up to WordPress version 4.1
