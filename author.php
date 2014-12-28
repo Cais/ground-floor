@@ -109,7 +109,7 @@ $curauth = ( get_query_var( 'author_name ' ) ) ? get_user_by( 'id', get_query_va
 							}
 							/** password protected post test */
 							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
-							_e( '<br />in ', 'ground-floor' );?><?php the_category( ', ' ) ?>
+							_e( '<br />in ', 'ground-floor' ); ?><?php the_category( ', ' ) ?>
 							<br />
 							<?php the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
 							<br />

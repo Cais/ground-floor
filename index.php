@@ -5,7 +5,8 @@
  * and footer. A strong theme to begin with; grow into; and, build on.
  *
  * @package     GroundFloor
- * @since       1.0
+ * @version     2.3.2
+ * @date        December 2014
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2014, Edward Caissie
@@ -14,8 +15,6 @@
  * @link        https://github.com/Cais/fround-floor/
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
- * @version     2.3.1.1
- * @date        November 2014
  * @internal    REQUIRES WordPress version 3.4
  * @internal    Tested up to WordPress version 4.1
  *
@@ -38,10 +37,6 @@
  *
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * @version     2.3
- * @date        November 1, 2014
- * Minor i18n corrections and updates
  */
 
 get_header(); ?>

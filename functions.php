@@ -584,10 +584,39 @@ if ( ! function_exists( 'gf_enqueue_comment_reply' ) ) {
 add_action( 'comment_form_before', 'gf_enqueue_comment_reply' );
 
 
-/**
- * Set the content width based on the theme's design and stylesheet
- * Calculated from: #main-blog element in style.css
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 620;
-} /** End if - not isset */
+if ( ! function_exists( 'gf_content_width' ) ) {
+	/**
+	 * Content Width
+	 *
+	 * Set the content width based on the theme's design and stylesheet.
+	 * Used to set the width of images and content. Should be equal to the width the theme
+	 * is designed for, generally via the style.css stylesheet.
+	 *
+	 * @package GroundFloor
+	 * @since   2.3.2
+	 *
+	 * @uses    (GLOBAL) $content_width
+	 */
+	function gf_content_width() {
+
+		/** Get the global variable */
+		global $content_width;
+
+		/** Sanity check - if there is no value set */
+		if ( ! isset( $content_width ) ) {
+			$content_width = 620;
+		}
+		/** End if - not isset content width */
+
+	}
+	/** End functions - content width */
+
+}
+/** End if - function exists */
+add_action( 'admin_head', 'gf_content_width' );
+add_action( 'wp_head', 'gf_content_width', 0 );
+
+/** ------------------------------------------------------------------------- */
+
+/** BNS Login Compatibility - Use Dashicons instead of text links */
+add_filter( 'bns_login_dashed_set', '__return_true' );

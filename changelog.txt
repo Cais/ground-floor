@@ -1,6 +1,15 @@
 === Ground Floor ===
-Changelog as of November 7, 2014
+Changelog: December 28, 2014
+== Version 2.3.2 ==
+= Code =
+* Code formatting to better meet WordPress Coding Standards
+* Moved `$content_width` into callback function
 
+= CSS =
+= Miscellaneous =
+* Corrections to `readme.txt` to address mark-up issues
+
+/** ------------------------------------------------------------------------- */
 == Version 2.3.1.1 ==
 * Additional reversion updates
 
@@ -252,14 +261,14 @@ Changelog as of September 3, 2011
 
 = Version 1.1 =
   - re-work of the footer widget area into three (3) defined areas
-  -- removed the <table> structures
+  -- removed the `table` structures
   -- added BNS-Login plugin functionality to Middle Footer Widget as default.
   - improved IE6 compatibility
   - CSS: hr element -> edited properties: 'border: 1px solid black;' and 'background: #673000;'
   - CSS (new): added BNS Plugins section at end of style.css
 
 = Version 1.0.3 =
-  - added <div id="page-content"> and <div id="page-meta"> to page.php for more style control
+  - added `id="page-content"` and `id="page-meta" to page.php for more style control
   - CSS: .post-details -> added property 'padding-left: 18px'
   - CSS: .post -> added properties 'padding-bottom: 9px' and 'border-bottom: thick double Black;'
   - CSS (new): .post:hover -> semi-transparent background on all posts
