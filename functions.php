@@ -1,6 +1,7 @@
 <?php
 /**
  * Functions
+ *
  * General functions used with the Ground Floor theme.
  *
  * @package     GroundFloor
@@ -37,6 +38,7 @@ define( 'GF_HOME_URL', 'BuyNowShop.com' );
 
 /**
  * Ground Floor Widgets
+ *
  * Creating three (3) "sidebar" widget areas and three (3) "footer" widget areas
  *
  * @package GroundFloor
@@ -128,9 +130,12 @@ add_action( 'widgets_init', 'gf_widgets' );
 if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 	/**
 	 * Ground Floor Dynamic Copyright
-	 * Outputs a copyright notice with a beginning and ending date based on published posts.
+	 *
+	 * Outputs a copyright notice with a beginning and ending date based on
+	 * published posts.
 	 *
 	 * @package GroundFloor
+	 * @since   ...
 	 *
 	 * @uses    apply_filters
 	 * @uses    get_bloginfo
@@ -141,7 +146,8 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 	 *
 	 * @param string $args
 	 *
-	 * Last modified April 16, 2012
+	 * @version ...
+	 * @date    April 16, 2012
 	 * Changed from `bns_dynamic_copyright` to `gf_dynamic_copyright`
 	 */
 	function gf_dynamic_copyright( $args = '' ) {
@@ -210,12 +216,16 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 if ( ! function_exists( 'gf_theme_version' ) ) {
 	/**
 	 * Ground Floor Theme Version
-	 * Outputs the theme version and relevant details; if it is a Child-Theme it also outputs the Parent-Theme details
+	 *
+	 * Outputs the theme version and relevant details; if it is a Child-Theme it
+	 * also outputs the Parent-Theme details
 	 *
 	 * @package GroundFloor
 	 *
+	 * @uses    (CONSTANT) GF_HOME_URL
+	 * @uses    __
+	 * @uses    apply_filters
 	 * @uses    is_child_theme
-	 * @uses    parent
 	 * @uses    wp_get_theme
 	 *
 	 * @version 2.0
@@ -270,6 +280,7 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
 if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 	/**
 	 * Ground Floor Custom Background Callback
+	 *
 	 * Used specifically to set the CSS `background-attachment` property to
 	 * `fixed` by default.
 	 *
@@ -310,12 +321,11 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 			$repeat = get_theme_mod( 'background_repeat', 'repeat' );
 			if ( ! in_array(
 				$repeat, array(
-					'no-repeat',
-					'repeat-x',
-					'repeat-y',
-					'repeat'
-				)
-			)
+				'no-repeat',
+				'repeat-x',
+				'repeat-y',
+				'repeat'
+			) )
 			) {
 				$repeat = 'repeat';
 			}
@@ -364,6 +374,7 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 if ( ! function_exists( 'ground_floor_setup' ) ) {
 	/**
 	 * Ground Floor Setup
+	 *
 	 * Adds various core functionality to the theme
 	 *
 	 * @package GroundFloor
@@ -481,6 +492,7 @@ add_action( 'after_setup_theme', 'ground_floor_setup' );
 
 /**
  * Ground Floor Use Posted
+ *
  * This returns a URL to the post using the anchor text 'Posted' in the meta
  * details with the post excerpt as the URL title; or, returns the word 'Posted'
  * if the post title exists
@@ -490,11 +502,11 @@ add_action( 'after_setup_theme', 'ground_floor_setup' );
  *
  * @internal    Adapted from `dmm_use_posted` as found in Desk Mess Mirrored 2.0
  *
- * @uses    __
- * @uses    apply_filters
- * @uses    get_permalink
- * @uses    get_the_excerpt
- * @uses    get_the_title
+ * @uses        __
+ * @uses        apply_filters
+ * @uses        get_permalink
+ * @uses        get_the_excerpt
+ * @uses        get_the_title
  *
  * @return      string - URL|Posted
  */
@@ -516,6 +528,7 @@ if ( ! function_exists( 'gf_use_posted' ) ) {
 if ( ! function_exists( 'gf_wp_title' ) ) {
 	/**
 	 * Ground Floor WP Title
+	 *
 	 * Utilizes the `wp_title` filter to add text to the default output
 	 *
 	 * @package GroundFloor
@@ -523,6 +536,13 @@ if ( ! function_exists( 'gf_wp_title' ) ) {
 	 *
 	 * @link    http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 	 * @link    https://gist.github.com/1410493
+	 *
+	 * @uses    (GLOBAL) page
+	 * @uses    (GLOBAL) paged
+	 * @uses    __
+	 * @uses    get_bloginfo
+	 * @uses    is_front_page
+	 * @uses    is_home
 	 *
 	 * @param   string $old_title - default title text
 	 * @param   string $sep       - separator character
@@ -579,6 +599,7 @@ add_filter( 'wp_title', 'gf_wp_title', 10, 2 );
 
 /**
  * Enqueue Comment Reply Script
+ *
  * If the page being viewed is a single post/page; and, comments are open; and,
  * threaded comments are turned on then enqueue the built-in comment-reply
  * script.
@@ -586,7 +607,6 @@ add_filter( 'wp_title', 'gf_wp_title', 10, 2 );
  * @package GroundFloor
  * @since   2.0
  *
- * @uses    comments_open
  * @uses    get_option
  * @uses    is_singular
  * @uses    wp_enqueue_script

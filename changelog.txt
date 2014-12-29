@@ -4,6 +4,7 @@ Released December 2014
 = Code =
 * Added support for `add_theme_support( 'title-tag' )`
 * Code formatting to better meet WordPress Coding Standards
+* Miscellaneous inline documentation updates
 * Moved `$content_width` into callback function
 
 = CSS =
