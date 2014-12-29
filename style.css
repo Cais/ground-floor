@@ -1196,6 +1196,11 @@ iframe.twitter-tweet.twitter-tweet-rendered {
 	width: 100% !important;
 }
 
-/* BNS Plugins */
+/** BNS Plugins ------------------------------------------------------------- */
+/** BNS Theme Details */
+.page .widget.bns-theme-details {
+	background: none;
+}
+
 /*-= The Finish Line - All Your Edits Belong To Us! =-*/
 /* Testing, testing, testing ... */
