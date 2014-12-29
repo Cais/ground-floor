@@ -1,7 +1,8 @@
 === Ground Floor ===
-Changelog: December 28, 2014
 == Version 2.3.2 ==
+Released December 2014
 = Code =
+* Added support for `add_theme_support( 'title-tag' )`
 * Code formatting to better meet WordPress Coding Standards
 * Moved `$content_width` into callback function
 

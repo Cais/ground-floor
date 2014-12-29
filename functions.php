@@ -421,6 +421,9 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 			)
 		);
 
+		/** Add support for the `<title />` tag */
+		add_theme_support( 'title-tag' );
+
 		if ( ! function_exists( 'gf_nav_menu' ) ) {
 			/** Ground Floor Navigation Menu - adds wp_nav_menu() custom menu support */
 			function gf_nav_menu() {
@@ -487,6 +490,12 @@ add_action( 'after_setup_theme', 'ground_floor_setup' );
  *
  * @internal    Adapted from `dmm_use_posted` as found in Desk Mess Mirrored 2.0
  *
+ * @uses    __
+ * @uses    apply_filters
+ * @uses    get_permalink
+ * @uses    get_the_excerpt
+ * @uses    get_the_title
+ *
  * @return      string - URL|Posted
  */
 if ( ! function_exists( 'gf_use_posted' ) ) {
@@ -523,29 +532,44 @@ if ( ! function_exists( 'gf_wp_title' ) ) {
 	 * @version 2.2.2
 	 * @date    November 16, 2013
 	 * Removed unused `$sep_location` parameter
+	 *
+	 * @version 2.3.2
+	 * @date    December 28, 2014
+	 * Added support for `add_theme_support( 'title-tag' )`
 	 */
 	function gf_wp_title( $old_title, $sep ) {
-		global $page, $paged;
-		/** Set initial title text */
-		$gf_title_text = $old_title . get_bloginfo( 'name' );
-		/** Add wrapping spaces to separator character */
-		$sep = ' ' . $sep . ' ';
 
-		/** Add the blog description (tagline) for the home/front page */
-		$site_tagline = get_bloginfo( 'description', 'display' );
-		if ( $site_tagline && ( is_home() || is_front_page() ) ) {
-			$gf_title_text .= "$sep$site_tagline";
+		/** Sanity check for WordPress 4.1 `add_theme_support( 'title-tag' )` */
+		if ( ! function_exists( '_wp_render_title_tag' ) ) {
+
+			global $page, $paged;
+			/** Set initial title text */
+			$gf_title_text = $old_title . get_bloginfo( 'name' );
+			/** Add wrapping spaces to separator character */
+			$sep = ' ' . $sep . ' ';
+
+			/** Add the blog description (tagline) for the home/front page */
+			$site_tagline = get_bloginfo( 'description', 'display' );
+			if ( $site_tagline && ( is_home() || is_front_page() ) ) {
+				$gf_title_text .= "$sep$site_tagline";
+			}
+			/** End if - site tagline */
+
+			/** Add a page number if necessary */
+			if ( $paged >= 2 || $page >= 2 ) {
+				$gf_title_text .= $sep . sprintf( __( 'Page %s', 'ground-floor' ), max( $paged, $page ) );
+			}
+
+			/** End if - paged */
+
+			return $gf_title_text;
+
+		} else {
+
+			return null;
+
 		}
-		/** End if - site tagline */
 
-		/** Add a page number if necessary */
-		if ( $paged >= 2 || $page >= 2 ) {
-			$gf_title_text .= $sep . sprintf( __( 'Page %s', 'ground-floor' ), max( $paged, $page ) );
-		}
-
-		/** End if - paged */
-
-		return $gf_title_text;
 	}
 	/** End function - title */
 }

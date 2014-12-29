@@ -22,13 +22,22 @@
  * @date        March 12, 2013
  * Updated DOCTYPE and other related header elements
  * Code formatting to be more easily read
+ *
+ * @version     2.3.2
+ * @date        December 28, 2014
+ * Added WordPress 4.1 compatibility
  */
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+
+	<?php /** Check for WordPress 4.1 compatibility */
+	if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php } ?>
+
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
