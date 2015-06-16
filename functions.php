@@ -214,7 +214,7 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 			: $output .= ' ' . $args['end'];
 
 		/** Construct and sprintf the copyright notice */
-		$output = sprintf( __( '<span id="gf-dynamic-copyright"> %1$s </span><!-- #gf-dynamic-copyright -->', 'ground-floor' ), $output );
+		$output = '<span id="gf-dynamic-copyright">' . $output . '</span><!-- #gf-dynamic-copyright -->';
 
 		echo apply_filters( 'gf_dynamic_copyright', $output, $args );
 
@@ -265,7 +265,7 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
 			echo apply_filters(
 				'gf_child_theme_version_text',
 				sprintf(
-					__( '<br /><span id="gf-theme-version">The %1$s (v%2$s) theme is built on the %3$s theme (v%4$s) by %5$s.</span>', 'ground-floor' ),
+					'<br /><span id="gf-theme-version">' . __( 'The %1$s (v%2$s) theme is built on the %3$s theme (v%4$s) by %5$s.', 'ground-floor' ) . '</span>',
 					$active_theme_data['Name'],
 					$active_theme_data['Version'],
 					$parent_theme_data['Name'],
@@ -279,7 +279,7 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
 			echo apply_filters(
 				'gf_parent_theme_version_text',
 				sprintf(
-					__( '<br /><span id="gf-theme-version">Made with the %1$s theme (v%2$s) from %3$s.</span>', 'ground-floor' ),
+					'<br /><span id="gf-theme-version">' . __( 'Made with the %1$s theme (v%2$s) from %3$s.', 'ground-floor' ) . '</span>',
 					$active_theme_data['Name'],
 					$active_theme_data['Version'],
 					'<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>'
@@ -537,7 +537,7 @@ if ( ! function_exists( 'gf_use_posted' ) ) {
 		empty( $gf_no_title )
 			? $gf_no_title = '<span class="no-title"><a href="' . get_permalink() . '" title="' . get_the_excerpt() . '">' . __( 'Posted', 'ground-floor' ) . '</span></a>'
 			: $gf_no_title = __( 'Posted', 'ground-floor' );
-		$gf_no_title = apply_filters( 'dmm_use_posted', $gf_no_title );
+		$gf_no_title = apply_filters( 'gf_use_posted', $gf_no_title );
 
 		return $gf_no_title;
 

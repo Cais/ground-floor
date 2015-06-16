@@ -51,9 +51,9 @@ get_header(); ?>
 								get_the_time( get_option( 'date_format' ) )
 							);
 
-							edit_post_link( __( 'Edit', 'ground-floor' ), __( '&#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
+							edit_post_link( __( 'Edit', 'ground-floor' ), '&#124; ', '' );
 
-							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) );
+							printf( sprintf( '<div class="ground-floor-categories-list">' . __( 'in %1$s', 'ground-floor' ), get_the_category_list( ', ' ) ) . '</div>' );
 
 							the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
 

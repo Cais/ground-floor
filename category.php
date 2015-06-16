@@ -82,9 +82,9 @@ $category_link = get_category_link( $cat_id ); ?>
 								comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '(Comments Closed)', 'ground-floor' ) );
 							}
 
-							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
+							edit_post_link( __( 'Edit', 'ground-floor' ), ' &#124; ', '' );
 
-							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) );
+							printf( sprintf( '<div class="ground-floor-categories-list">' . __( 'in %1$s', 'ground-floor' ), get_the_category_list( ', ' ) ) . '</div>' );
 
 							the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
 
@@ -119,10 +119,10 @@ $category_link = get_category_link( $cat_id ); ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
-						<?php next_posts_link( __( '&laquo; Previous entries ', 'ground-floor' ) ); ?>
+						<?php next_posts_link( '&laquo; ' . __( 'Previous entries ', 'ground-floor' ) ); ?>
 					</div>
 					<div class="right">
-						<?php previous_posts_link( __( ' Next entries &raquo;', 'ground-floor' ) ); ?>
+						<?php previous_posts_link( ' ' . __( 'Next entries', 'ground-floor' ) . ' &raquo;' ); ?>
 					</div>
 				</div><!-- .navigation -->
 

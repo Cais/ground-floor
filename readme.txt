@@ -31,6 +31,7 @@ Released June 2015
 
 = Code =
 * Added `id` parameters to "sidebar" definitions
+* Improved i18n implementation
 * Minor code formatting to better meet WordPress Coding Standards guidelines
 
 = CSS =

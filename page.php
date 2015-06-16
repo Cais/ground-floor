@@ -42,7 +42,7 @@ get_header(); ?>
 
 							<div id="page-meta">
 								<?php comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '', 'ground-floor' ) ); ?>
-								<?php edit_post_link( __( 'Edit this page', 'ground-floor' ), __( '&gt ', 'ground-floor' ), __( '', 'ground-floor' ) ); ?>
+								<?php edit_post_link( __( 'Edit this page', 'ground-floor' ), '&gt ', '' ); ?>
 							</div>
 							<!-- #page-meta -->
 

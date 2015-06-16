@@ -102,7 +102,7 @@ add_filter( 'comment_class', 'gf_comment_add_userid' ); ?>
 			<?php wp_list_comments(
 				array(
 					'avatar_size' => 60,
-					'reply_text'  => __( '&raquo; Reply to this Comment &laquo;', 'ground-floor' )
+					'reply_text'  => '&raquo; ' . __( 'Reply to this Comment', 'ground-floor' ) . ' &laquo;'
 				)
 			); ?>
 		</ul><!-- commentlist -->
