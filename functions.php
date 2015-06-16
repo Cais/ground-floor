@@ -51,6 +51,10 @@ define( 'GF_HOME_URL', 'BuyNowShop.com' );
  * @version 2.1
  * @date    December 7, 2012
  * Refactored sidebar definitions to include names and descriptions
+ *
+ * @version 2.4
+ * @date    June 16, 2015
+ * Added `id` parameters to "sidebar" definitions
  */
 function gf_widgets() {
 
@@ -58,6 +62,7 @@ function gf_widgets() {
 		array(
 			'name'          => __( 'Sidebar 1', 'ground-floor' ),
 			'description'   => __( 'The first sidebar widget area. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'ground-floor' ),
+			'id'            => 'sidebar-1',
 			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -69,6 +74,7 @@ function gf_widgets() {
 		array(
 			'name'          => __( 'Sidebar 2', 'ground-floor' ),
 			'description'   => __( 'The second sidebar widget area. This is empty by default.', 'ground-floor' ),
+			'id'            => 'sidebar-2',
 			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -80,6 +86,7 @@ function gf_widgets() {
 		array(
 			'name'          => __( 'Sidebar 3', 'ground-floor' ),
 			'description'   => __( 'The third sidebar widget area. This is empty by default.', 'ground-floor' ),
+			'id'            => 'sidebar-3',
 			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div><!-- .widget --><div class="widget-bottom"></div>',
 			'before_title'  => '<h2 class="widget-title">',

@@ -30,6 +30,7 @@ The archive templates are created to show as "mullet" loops where the first few 
 Released June 2015
 
 = Code =
+* Added `id` parameters to "sidebar" definitions
 * Minor code formatting to better meet WordPress Coding Standards guidelines
 
 = CSS =
