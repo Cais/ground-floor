@@ -34,6 +34,7 @@ Released June 2015
 * Minor code formatting to better meet WordPress Coding Standards guidelines
 
 = CSS =
+* Added custom CSS for BNS Support to hide sidebar background in content areas
 
 = Miscellaneous =
 * Moved `changelog.txt` into `readme.txt` file

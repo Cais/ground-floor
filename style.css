@@ -1202,5 +1202,11 @@ iframe.twitter-tweet.twitter-tweet-rendered {
 	background: none;
 }
 
+/** BNS Support - hide sidebar background in content areas */
+.page > div.bns-support-shortcode > div.widget.bns-support,
+.post > div.bns-support-shortcode > div.widget.bns-support {
+	background: none;
+}
+
 /*-= The Finish Line - All Your Edits Belong To Us! =-*/
 /* Testing, testing, testing ... */
