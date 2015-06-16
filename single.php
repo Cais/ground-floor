@@ -11,7 +11,7 @@
  * @link        http://wordpress.org/extend/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2015, Edward Caissie
  *
  * @version     2.2
  * @date        March 11, 2013
@@ -30,9 +30,10 @@ get_header(); ?>
 
 		<div id="content">
 
-			<?php
-			if ( have_posts() ) {
+			<?php if ( have_posts() ) {
+
 				while ( have_posts() ) {
+
 					the_post(); ?>
 
 					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -43,8 +44,7 @@ get_header(); ?>
 
 						<div class="post-details">
 
-							<?php
-							printf(
+							<?php printf(
 								__( '%1$s by %2$s on %3$s', 'ground-floor' ),
 								gf_use_posted(),
 								get_the_author(),
@@ -53,19 +53,18 @@ get_header(); ?>
 
 							edit_post_link( __( 'Edit', 'ground-floor' ), __( '&#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
 
-							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) ); ?>
+							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) );
 
-							<?php the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
+							the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
+
 							<br />
 
 						</div>
 						<!-- .post-details -->
 
-						<?php
-						if ( has_post_thumbnail() ) {
+						<?php if ( has_post_thumbnail() ) {
 							the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
 						}
-						/** End if - has post thumbnail */
 
 						the_content( __( 'Read more ...', 'ground-floor' ) ); ?>
 
@@ -84,14 +83,11 @@ get_header(); ?>
 
 					</div><!-- post_class -->
 
-					<?php
-					comments_template();
+					<?php comments_template();
 
 				}
-				/** End while - have posts */
 
-			} else {
-				?>
+			} else { ?>
 
 				<h2>
 					<?php printf( __( 'Search Results for: %s', 'ground-floor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
@@ -101,8 +97,7 @@ get_header(); ?>
 				<?php
 				get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 
 		</div>
 		<!-- #content -->

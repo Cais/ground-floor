@@ -7,10 +7,10 @@
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/ground-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
+ * @link        https://wordpress.org/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2015, Edward Caissie
  *
  * @version     2.0
  * @date        July 6, 2012
@@ -20,8 +20,7 @@
  * @version     2.3
  * @date        November 1, 2014
  * Removed `wp_list_bookmarks` call
- */
-?>
+ */ ?>
 
 <div id="sidebar">
 	<div id="sidebar-inside">

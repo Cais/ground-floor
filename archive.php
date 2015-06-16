@@ -8,10 +8,10 @@
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/ground-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
+ * @link        https://wordpress.org/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2015, Edward Caissie
  *
  * Last revised April 16, 2012
  * @version     1.9
@@ -42,8 +42,7 @@ get_header(); ?>
 
 						<div class="post-details">
 
-							<?php
-							printf(
+							<?php printf(
 								__( '%1$s by %2$s on %3$s', 'ground-floor' ),
 								gf_use_posted(),
 								get_the_author(),
@@ -51,16 +50,17 @@ get_header(); ?>
 							);
 
 							if ( ! post_password_required() ) {
+
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '(Comments Closed)', 'ground-floor' ) );
+
 							}
-							/** End if - password protected post test */
 
 							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
 
-							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) ); ?>
+							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) );
 
-							<?php the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
+							the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
 
 							<br />
 
@@ -74,7 +74,7 @@ get_header(); ?>
 
 					</div><!-- post_class -->
 
-				<?php } /** end while - have posts */ ?>
+				<?php } ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
@@ -94,11 +94,9 @@ get_header(); ?>
 				</h2>
 				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'ground-floor' ); ?></p>
 
-				<?php
-				get_search_form();
+				<?php get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 
 		</div>
 		<!-- #content -->

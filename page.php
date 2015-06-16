@@ -7,10 +7,10 @@
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/ground-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
+ * @link        https://wordpress.org/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2015, Edward Caissie
  *
  * @version     2.2
  * @date        March 11, 2013
@@ -27,9 +27,10 @@ get_header(); ?>
 
 		<div id="content">
 
-			<?php
-			if ( have_posts() ) {
+			<?php if ( have_posts() ) {
+
 				while ( have_posts() ) {
+
 					the_post(); ?>
 					<div id="page-content">
 
@@ -45,11 +46,9 @@ get_header(); ?>
 							</div>
 							<!-- #page-meta -->
 
-							<?php
-							if ( has_post_thumbnail() ) {
+							<?php if ( has_post_thumbnail() ) {
 								the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
 							}
-							/** End if - has post thumbnails */
 
 							the_content( __( 'Read more ...', 'ground-floor' ) );
 
@@ -71,12 +70,9 @@ get_header(); ?>
 
 					</div><!-- #page-content -->
 
-				<?php
-				}
-				/** End while - have posts */
+				<?php }
 
-			} else {
-				?>
+			} else { ?>
 
 				<h2>
 					<?php printf( __( 'Search Results for: %s', 'ground-floor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
@@ -86,8 +82,7 @@ get_header(); ?>
 				<?php
 				get_search_form();
 
-			} /** end if - have posts */
-			?>
+			} ?>
 
 		</div>
 		<!-- #content -->

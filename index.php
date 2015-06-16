@@ -5,18 +5,15 @@
  * and footer. A strong theme to begin with; grow into; and, build on.
  *
  * @package     GroundFloor
- * @version     2.3.2
- * @date        December 2014
+ * @version     2.4
+ * @date        June 2015
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2015, Edward Caissie
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/fround-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
- *
- * @internal    REQUIRES WordPress version 3.4
- * @internal    Tested up to WordPress version 4.1
+ * @link        https://wordpress.org/themes/ground-floor/
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
@@ -68,33 +65,31 @@ get_header(); ?>
 							);
 							/** Hide Comment(s) if password required to read post */
 							if ( ! post_password_required() ) {
+
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '(Comments Closed)', 'ground-floor' ) );
+
 							}
-							/** End if - password protected post test */
 
 							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
 
 							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) ); ?>
 
-							<?php
-							$gf_post_tags = get_the_tags();
+							<?php $gf_post_tags = get_the_tags();
+
 							/** If tags are used, display them */
 							if ( $gf_post_tags ) {
 								the_tags( __( 'as ', 'ground-floor' ), ', ', '' );
-							} /** End if - post tags */
-							?>
+							} ?>
 
 							<br />
 
 						</div>
 						<!-- .post-details -->
 
-						<?php
-						if ( has_post_thumbnail() ) {
+						<?php if ( has_post_thumbnail() ) {
 							the_post_thumbnail( 'full', array( 'class' => 'aligncenter' ) );
 						}
-						/** End if - has post thumbnail */
 
 						the_content( __( 'Read more... ', 'ground-floor' ) );
 
@@ -134,8 +129,7 @@ get_header(); ?>
 				<?php
 				get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 
 		</div>
 		<!-- #content -->

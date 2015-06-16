@@ -8,10 +8,10 @@
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/ground-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
+ * @link        https://wordpress.org/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2015, Edward Caissie
  *
  * @version     2.2
  * @date        March 11, 2013
@@ -27,15 +27,14 @@
 if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 	die ( __( 'Please do not load this page directly. Thanks!', 'ground-floor' ) );
 }
-/** End if - not empty */
-if ( post_password_required() ) {
-	?>
-	<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'ground-floor' ); ?></p>
-	<?php
-	return;
-}
-/** End if - post password required */
 
+if ( post_password_required() ) { ?>
+
+	<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'ground-floor' ); ?></p>
+
+	<?php return;
+
+}
 
 /**
  * Comment Add User ID
@@ -72,7 +71,6 @@ function gf_comment_add_userid( $classes ) {
 	} else {
 		$classes[] = 'guest';
 	}
-	/** End if - user can */
 
 	/** Add user ID based classes */
 	if ( $comment->user_id == 1 ) {
@@ -82,21 +80,19 @@ function gf_comment_add_userid( $classes ) {
 		/** All other users - NB: user-id-0 -> non-registered user */
 		$userid = "user-id-" . ( $comment->user_id );
 	}
-	/** End if - user id */
+
 	$classes[] = $userid;
 
 	return $classes;
 
 }
 
-/** End function - add user ID */
 add_filter( 'comment_class', 'gf_comment_add_userid' ); ?>
 
 <div id="comments-main">
 
 	<?php /** show the comments */
-	if ( have_comments() ) {
-		?>
+	if ( have_comments() ) { ?>
 
 		<h4 id="comments">
 			<?php comments_number( __( 'No Comments', 'ground-floor' ), __( 'One Comment', 'ground-floor' ), __( '% Comments', 'ground-floor' ) ); ?>
@@ -116,8 +112,7 @@ add_filter( 'comment_class', 'gf_comment_add_userid' ); ?>
 			<div class="alignright"><?php next_comments_link() ?></div>
 		</div><!-- .navigation -->
 
-	<?php
-	} else {
+	<?php } else {
 
 		global $post;
 
@@ -127,10 +122,8 @@ add_filter( 'comment_class', 'gf_comment_add_userid' ); ?>
 		} else {
 			/** comments are closed */
 		}
-		/** End if - comments open */
 
 	}
-	/** End if - have comments */
 
 	comment_form(); ?>
 

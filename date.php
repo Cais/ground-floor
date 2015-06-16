@@ -8,10 +8,10 @@
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/ground-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
+ * @link        https://wordpress.org/extend/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2015, Edward Caissie
  *
  * @version     2.2
  * @date        March 11, 2013
@@ -28,6 +28,7 @@ $display_date = '';
 
 /** works for default permalinks only */
 if ( $m <> "" ) {
+
 	if ( strlen( $m ) == 8 ) {
 		$display_date = strftime( "%d %B %Y", strtotime( $m ) );
 	} elseif ( strlen( $m ) == 6 ) {
@@ -38,11 +39,11 @@ if ( $m <> "" ) {
 		/** Year only - no manipulation required */
 		$display_date = $m;
 	}
-	/** End if - string length is 8 */
+
 	/** @var $display_date - output variable */
 	$display_date = ": " . $display_date;
+
 }
-/** End if - month not empty */
 
 get_header(); ?>
 
@@ -52,23 +53,23 @@ get_header(); ?>
 
 			<div id="date-title">
 
-				<?php
-				global $paged;
+				<?php global $paged;
 				if ( $paged < 2 ) {
 					printf( __( 'Posts by date %1$s', 'ground-floor' ), $display_date );
 				} else {
 					printf( __( 'Page %1$s of posts by date %2$s.', 'ground-floor' ), $paged, $display_date );
-				} /** Enf if - paged less than 2 */
-				?>
+				} ?>
 
 			</div>
 			<!-- #date-title -->
 
 			<!-- start the Loop -->
-			<?php
-			if ( have_posts() ) {
+			<?php if ( have_posts() ) {
+
 				$count = 0;
+
 				while ( have_posts() ) {
+
 					the_post();
 					$count ++; ?>
 
@@ -80,32 +81,32 @@ get_header(); ?>
 
 						<div class="post-details">
 
-							<?php
-							printf(
+							<?php printf(
 								__( '%1$s by %2$s on %3$s', 'ground-floor' ),
 								gf_use_posted(),
 								get_the_author(),
 								get_the_time( get_option( 'date_format' ) )
 							);
+
 							/** Hide Comment(s) if password required to read post */
 							if ( ! post_password_required() ) {
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '(Comments Closed)', 'ground-floor' ) );
 							}
-							/** End if - password protected post test */
 
 							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
 
-							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) ); ?>
+							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) );
 
-							<?php the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
+							the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
+
 							<br />
 
 						</div>
 						<!-- .post-details -->
 
-						<?php
-						if ( ( $count <= 3 ) && ( $paged < 2 ) ) {
+						<?php if ( ( $count <= 3 ) && ( $paged < 2 ) ) {
+
 							the_content();
 							wp_link_pages(
 								array(
@@ -114,17 +115,19 @@ get_header(); ?>
 									'next_or_number' => 'number'
 								)
 							);
+
 						} else {
+
 							the_excerpt();
-						} /** End if - count is less than or equal to 3 */
-						?>
+
+						} ?>
 
 						<div class="clear"></div>
 						<!-- For inserted media at the end of the post -->
 
 					</div><!-- post_class -->
 
-				<?php } /** End while- have posts */ ?>
+				<?php } ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
@@ -147,8 +150,7 @@ get_header(); ?>
 				<?php
 				get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 			<!-- end the Loop -->
 
 		</div>

@@ -9,7 +9,7 @@
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/ground-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
+ * @link        https://wordpress.org/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2014, Edward Caissie
@@ -34,22 +34,28 @@ $curr_tag = single_tag_title( '', false ); ?>
 		<div id="content">
 
 			<div id="tag-title">
-				<?php
-				global $paged;
+
+				<?php global $paged;
+
 				$tag_link = '<span id="tag-name"><a href="' . get_home_url( '/?tag=' ) . $curr_tag . '" title="' . $curr_tag . '">' . $curr_tag . '</a></span>';
+
 				if ( $paged < 2 ) {
+
 					printf(
 						__( 'First page of the %1$s archive.', 'ground-floor' ),
 						$tag_link
 					);
+
 				} else {
+
 					printf(
 						__( 'Page %1$s of the %2$s archive.', 'ground-floor' ),
 						$paged,
 						$tag_link
 					);
-				} /** End if - paged less than 2 */
-				?>
+
+				} ?>
+
 			</div>
 			<!-- #tag-title -->
 
@@ -57,12 +63,12 @@ $curr_tag = single_tag_title( '', false ); ?>
 			<!-- #tag-description -->
 
 			<!-- start the Loop -->
-			<?php
-			if ( have_posts() ) {
+			<?php if ( have_posts() ) {
 
 				$count = 0;
 
 				while ( have_posts() ) :
+
 					the_post();
 					$count ++; ?>
 
@@ -74,8 +80,7 @@ $curr_tag = single_tag_title( '', false ); ?>
 
 						<div class="post-details">
 
-							<?php
-							printf(
+							<?php printf(
 								__( '%1$s by %2$s on %3$s', 'ground-floor' ),
 								gf_use_posted(),
 								get_the_author(),
@@ -83,24 +88,26 @@ $curr_tag = single_tag_title( '', false ); ?>
 							);
 
 							if ( ! post_password_required() ) {
+
 								/** Hide Comment(s) if password required to read post */
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '(Comments Closed)', 'ground-floor' ) );
+
 							}
-							/** End if - password protected post test */
 
 							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
 
-							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) ); ?>
+							printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) );
 
-							<?php the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
+							the_tags( __( 'as ', 'ground-floor' ), ', ', '' ); ?>
+
 							<br />
 
 						</div>
 						<!-- .post-details -->
 
-						<?php
-						if ( ( $count <= 2 ) && ( $paged < 2 ) ) {
+						<?php if ( ( $count <= 2 ) && ( $paged < 2 ) ) {
+
 							the_content();
 							wp_link_pages(
 								array(
@@ -109,10 +116,12 @@ $curr_tag = single_tag_title( '', false ); ?>
 									'next_or_number' => 'number'
 								)
 							);
+
 						} else {
+
 							the_excerpt();
-						} /** End if - count */
-						?>
+
+						} ?>
 
 						<div class="clear"></div>
 						<!-- For inserted media at the end of the post -->
@@ -141,8 +150,8 @@ $curr_tag = single_tag_title( '', false ); ?>
 
 				<?php
 				get_search_form();
-			} /** End if - have posts */
-			?>
+
+			} ?>
 			<!-- end the Loop -->
 
 		</div>

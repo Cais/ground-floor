@@ -28,9 +28,12 @@ The archive templates are created to show as "mullet" loops where the first few 
 === Changelog ===
 == Version 2.4 ==
 Released June 2015
+
 = Code =
 * Minor code formatting to better meet WordPress Coding Standards guidelines
+
 = CSS =
+
 = Miscellaneous =
 * Moved `changelog.txt` into `readme.txt` file
 * Updated copyright years

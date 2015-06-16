@@ -9,10 +9,10 @@
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/ground-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
+ * @link        https://wordpress.org/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2015, Edward Caissie
  *
  * @version     2.0
  * @date        July 5, 2012
@@ -26,11 +26,11 @@
  * @version     2.3.2
  * @date        December 28, 2014
  * Added WordPress 4.1 compatibility
- */
-?>
+ */ ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 
 	<?php /** Check for WordPress 4.1 compatibility */
@@ -42,6 +42,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>

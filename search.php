@@ -11,10 +11,10 @@
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/fround-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
+ * @link        https://wordpress.org/themes/ground-floor/
  *
  * @internal    REQUIRES WordPress version 3.4
- * @internal    Tested up to WordPress version 3.9
+ * @internal    Tested up to WordPress version 4.2.2
  *
  * This file is part of Ground Floor.
  *
@@ -48,13 +48,13 @@ get_header(); ?>
 
 		<div id="content">
 
-			<?php
-			if ( have_posts() ) {
+			<?php if ( have_posts() ) {
 
 				printf( '<h2 id="search-results-success-title">%1$s</h2>', sprintf( __( 'You searched for %1$s ...', 'ground-floor' ), get_search_query() ) );
 				printf( '<span id="search-results-found-message">%1$s</span>', __( '... and we found what you were looking for! These are the results:', 'ground-floor' ) );
 
 				while ( have_posts() ) {
+
 					the_post(); ?>
 					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
@@ -76,15 +76,15 @@ get_header(); ?>
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'ground-floor' ), __( 'with 1 Comment', 'ground-floor' ), __( 'with % Comments', 'ground-floor' ), '', __( '(Comments Closed)', 'ground-floor' ) );
 							}
-							/** End if - password protected post test and not a page */
 
 							edit_post_link( __( 'Edit', 'ground-floor' ), __( ' &#124; ', 'ground-floor' ), __( '', 'ground-floor' ) );
 
 							if ( 'page' !== get_post_type() ) {
+
 								printf( sprintf( __( '<div class="ground-floor-categories-list">in %1$s</div>', 'ground-floor' ), get_the_category_list( ', ' ) ) );
 								the_tags( __( 'as ', 'ground-floor' ), ', ', '' );
-							} /** End if - page is not the post type */
-							?>
+
+							} ?>
 
 							<br />
 
@@ -98,7 +98,7 @@ get_header(); ?>
 
 					</div><!-- post_class -->
 
-				<?php } /** end while - have posts */ ?>
+				<?php } ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
@@ -121,8 +121,7 @@ get_header(); ?>
 				<?php
 				get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 
 		</div>
 		<!-- #content -->

@@ -9,10 +9,10 @@
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/ground-floor/
- * @link        http://wordpress.org/extend/themes/ground-floor/
+ * @link        https://wordpress.org/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2015, Edward Caissie
  *
  * @version     2.1
  * @date        December 9, 2012
@@ -53,6 +53,7 @@ define( 'GF_HOME_URL', 'BuyNowShop.com' );
  * Refactored sidebar definitions to include names and descriptions
  */
 function gf_widgets() {
+
 	register_sidebar(
 		array(
 			'name'          => __( 'Sidebar 1', 'ground-floor' ),
@@ -123,11 +124,11 @@ function gf_widgets() {
 	);
 }
 
-/** End function - widgets */
 add_action( 'widgets_init', 'gf_widgets' );
 
 
 if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
+
 	/**
 	 * Ground Floor Dynamic Copyright
 	 *
@@ -151,6 +152,7 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 	 * Changed from `bns_dynamic_copyright` to `gf_dynamic_copyright`
 	 */
 	function gf_dynamic_copyright( $args = '' ) {
+
 		/** Initialize variables */
 		$initialize_values = array(
 			'start'      => '',
@@ -168,6 +170,7 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 
 		/* Calculate Copyright Years; and, prefix with Copyright Symbol */
 		if ( empty( $args['copy_years'] ) ) {
+
 			/** Get all posts */
 			$all_posts = get_posts( 'post_status=publish&order=ASC' );
 			/** Get first post */
@@ -179,7 +182,7 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 			if ( $first_year == '' ) {
 				$first_year = date( 'Y' );
 			}
-			/** End if - first year */
+
 			/** Add to output string */
 			if ( $first_year == date( 'Y' ) ) {
 				/** Only use current year if no posts in previous years */
@@ -187,33 +190,34 @@ if ( ! function_exists( 'gf_dynamic_copyright' ) ) {
 			} else {
 				$output .= ' &copy; ' . $first_year . "-" . date( 'Y' );
 			}
-			/** End if - first year - date */
+
 		} else {
+
 			$output .= ' &copy; ' . $args['copy_years'];
+
 		}
-		/** End if - empty copy years */
 
 		/** Create URL to link back to home of website */
 		empty( $args['url'] )
 			? $output .= ' <a href="' . home_url( '/' ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name', 'display' ) . '</a>  '
 			: $output .= ' ' . $args['url'];
-		/** End common copyright notice */
+
 		empty( $args['end'] )
 			? $output .= ' ' . sprintf( __( 'All rights reserved.', 'ground-floor' ) )
 			: $output .= ' ' . $args['end'];
+
 		/** Construct and sprintf the copyright notice */
 		$output = sprintf( __( '<span id="gf-dynamic-copyright"> %1$s </span><!-- #gf-dynamic-copyright -->', 'ground-floor' ), $output );
 
 		echo apply_filters( 'gf_dynamic_copyright', $output, $args );
 
 	}
-	/** End function - dynamic copyright */
 
 }
-/** End if - function exists */
 
 
 if ( ! function_exists( 'gf_theme_version' ) ) {
+
 	/**
 	 * Ground Floor Theme Version
 	 *
@@ -242,9 +246,12 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
 	 * Applied 'GF_HOME_URL' as appropriate
 	 */
 	function gf_theme_version() {
+
 		/** @var $active_theme_data - array object containing the current theme's data */
 		$active_theme_data = wp_get_theme();
+
 		if ( is_child_theme() ) {
+
 			/** @var $parent_theme_data - array object containing the Parent Theme's data */
 			$parent_theme_data = $active_theme_data->parent();
 			/** @noinspection PhpUndefinedMethodInspection - IDE commentary */
@@ -259,7 +266,9 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
 					'<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>'
 				)
 			);
+
 		} else {
+
 			echo apply_filters(
 				'gf_parent_theme_version_text',
 				sprintf(
@@ -269,15 +278,16 @@ if ( ! function_exists( 'gf_theme_version' ) ) {
 					'<a href="http://' . GF_HOME_URL . '" title="' . GF_HOME_URL . '">' . GF_HOME_URL . '</a>'
 				)
 			);
+
 		}
-		/** End if - is child theme */
+
 	}
-	/** End function - theme version */
+
 }
-/** End if - function exists */
 
 
 if ( ! function_exists( 'gf_custom_background_cb' ) ) {
+
 	/**
 	 * Ground Floor Custom Background Callback
 	 *
@@ -297,17 +307,17 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 	 * @uses     set_url_scheme
 	 */
 	function gf_custom_background_cb() {
+
 		/** @var $background - custom image, or the default image. */
 		$background = set_url_scheme( get_background_image() );
 
-		// A default has to be specified in style.css. It will not be printed here.
+		/** A default has to be specified in style.css. It will not be printed here. */
 		/** @var $color - custom color. */
 		$color = get_theme_mod( 'background_color' );
 
 		if ( ! $background && ! $color ) {
 			return;
 		}
-		/** End if - no background or color */
 
 		/** @var $style - color setting */
 		$style = $color
@@ -315,6 +325,7 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 			: '';
 
 		if ( $background ) {
+
 			$image = " background-image: url('$background');";
 
 			/** @var $repeat - background repeat value */
@@ -329,7 +340,6 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 			) {
 				$repeat = 'repeat';
 			}
-			/** End if - repeat value */
 
 			/** @var $repeat */
 			$repeat = " background-repeat: $repeat;";
@@ -339,7 +349,6 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 			if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) ) {
 				$position = 'left';
 			}
-			/** End if - default position */
 
 			/** @var $position */
 			$position = " background-position: top $position;";
@@ -349,14 +358,13 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 			if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
 				$attachment = 'fixed';
 			}
-			/** End if - default attachment */
 
 			/** @var $attachment */
 			$attachment = " background-attachment: $attachment;";
 
 			$style .= $image . $repeat . $position . $attachment;
-		} /** End if - background */
-		?>
+
+		} ?>
 
 		<style type="text/css" id="custom-background-css">
 			body.custom-background {
@@ -364,14 +372,12 @@ if ( ! function_exists( 'gf_custom_background_cb' ) ) {
 			}
 		</style>
 
-	<?php
-	}
-	/** End function - custom background */
+	<?php }
 }
-/** End if - function exists */
 
 
 if ( ! function_exists( 'ground_floor_setup' ) ) {
+
 	/**
 	 * Ground Floor Setup
 	 *
@@ -415,6 +421,7 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 	 * Reverted name change: `gf_setup` -> `ground_floor_setup`
 	 */
 	function ground_floor_setup() {
+
 		/** This theme uses post thumbnails */
 		add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 		/** Add default posts and comments RSS feed links to head */
@@ -436,6 +443,7 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 		add_theme_support( 'title-tag' );
 
 		if ( ! function_exists( 'gf_nav_menu' ) ) {
+
 			/** Ground Floor Navigation Menu - adds wp_nav_menu() custom menu support */
 			function gf_nav_menu() {
 				wp_nav_menu(
@@ -446,30 +454,35 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 					)
 				);
 			}
+
 		}
-		/** End if - function exists */
+
 		if ( ! function_exists( 'gf_list_pages' ) ) {
+
 			/** Ground Floor List Pages - used as callback function `gf_nav_menu` */
 			function gf_list_pages() {
-				if ( is_home() || is_front_page() ) {
-					?>
+
+				if ( is_home() || is_front_page() ) { ?>
+
 					<ul class="nav-menu">
 						<?php wp_list_pages( 'title_li=' ); ?>
 					</ul>
+
 				<?php } else { ?>
+
 					<ul class="nav-menu">
 						<li>
 							<a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Home', 'ground-floor' ) ?></a>
 						</li>
 						<?php wp_list_pages( 'title_li=' ); ?>
 					</ul>
-				<?php
-				}
-				/** End of - is home */
+
+				<?php }
+
 			}
-			/** End function - list pages */
+
 		}
-		/** End if - function exists */
+
 		register_nav_menu( 'top-menu', __( 'Top Menu', 'ground-floor' ) );
 
 		/**
@@ -482,36 +495,37 @@ if ( ! function_exists( 'ground_floor_setup' ) ) {
 		if ( is_readable( $locale_file ) ) {
 			require_once( $locale_file );
 		}
-		/** End if - is readable */
+
 	}
-	/** End function - setup */
+
 }
-/** End if - function exists */
+
 add_action( 'after_setup_theme', 'ground_floor_setup' );
 
 
-/**
- * Ground Floor Use Posted
- *
- * This returns a URL to the post using the anchor text 'Posted' in the meta
- * details with the post excerpt as the URL title; or, returns the word 'Posted'
- * if the post title exists
- *
- * @package     GroundFloor
- * @since       1.9
- *
- * @internal    Adapted from `dmm_use_posted` as found in Desk Mess Mirrored 2.0
- *
- * @uses        __
- * @uses        apply_filters
- * @uses        get_permalink
- * @uses        get_the_excerpt
- * @uses        get_the_title
- *
- * @return      string - URL|Posted
- */
 if ( ! function_exists( 'gf_use_posted' ) ) {
+
+	/**
+	 * Ground Floor Use Posted
+	 *
+	 * This returns a URL to the post using the anchor text 'Posted' in the meta
+	 * details with the post excerpt as the URL title; or, returns the word
+	 * 'Posted' if the post title exists. Adapted from `dmm_use_posted` as found
+	 * in Desk Mess Mirrored 2.0
+	 *
+	 * @package     GroundFloor
+	 * @since       1.9
+	 *
+	 * @uses        __
+	 * @uses        apply_filters
+	 * @uses        get_permalink
+	 * @uses        get_the_excerpt
+	 * @uses        get_the_title
+	 *
+	 * @return      string - URL|Posted
+	 */
 	function gf_use_posted() {
+
 		$gf_no_title = get_the_title();
 		empty( $gf_no_title )
 			? $gf_no_title = '<span class="no-title"><a href="' . get_permalink() . '" title="' . get_the_excerpt() . '">' . __( 'Posted', 'ground-floor' ) . '</span></a>'
@@ -519,13 +533,14 @@ if ( ! function_exists( 'gf_use_posted' ) ) {
 		$gf_no_title = apply_filters( 'dmm_use_posted', $gf_no_title );
 
 		return $gf_no_title;
+
 	}
-	/** End function - use posted */
+
 }
-/** End if - function exists */
 
 
 if ( ! function_exists( 'gf_wp_title' ) ) {
+
 	/**
 	 * Ground Floor WP Title
 	 *
@@ -573,14 +588,11 @@ if ( ! function_exists( 'gf_wp_title' ) ) {
 			if ( $site_tagline && ( is_home() || is_front_page() ) ) {
 				$gf_title_text .= "$sep$site_tagline";
 			}
-			/** End if - site tagline */
 
 			/** Add a page number if necessary */
 			if ( $paged >= 2 || $page >= 2 ) {
 				$gf_title_text .= $sep . sprintf( __( 'Page %s', 'ground-floor' ), max( $paged, $page ) );
 			}
-
-			/** End if - paged */
 
 			return $gf_title_text;
 
@@ -591,44 +603,47 @@ if ( ! function_exists( 'gf_wp_title' ) ) {
 		}
 
 	}
-	/** End function - title */
+
 }
-/** End if - function exists */
+
 add_filter( 'wp_title', 'gf_wp_title', 10, 2 );
 
 
-/**
- * Enqueue Comment Reply Script
- *
- * If the page being viewed is a single post/page; and, comments are open; and,
- * threaded comments are turned on then enqueue the built-in comment-reply
- * script.
- *
- * @package GroundFloor
- * @since   2.0
- *
- * @uses    get_option
- * @uses    is_singular
- * @uses    wp_enqueue_script
- *
- * @version 2.1
- * @date    December 7, 2012
- * Addressed conditional to display threaded comments if they are open or closed
- */
 if ( ! function_exists( 'gf_enqueue_comment_reply' ) ) {
+
+	/**
+	 * Enqueue Comment Reply Script
+	 *
+	 * If the page being viewed is a single post/page; and, comments are open; and,
+	 * threaded comments are turned on then enqueue the built-in comment-reply
+	 * script.
+	 *
+	 * @package GroundFloor
+	 * @since   2.0
+	 *
+	 * @uses    get_option
+	 * @uses    is_singular
+	 * @uses    wp_enqueue_script
+	 *
+	 * @version 2.1
+	 * @date    December 7, 2012
+	 * Addressed conditional to display threaded comments if they are open or closed
+	 */
 	function gf_enqueue_comment_reply() {
+
 		if ( is_singular() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-		/** End if - is singular */
+
 	}
-	/** End function - enqueue comment reply */
+
 }
-/** End if - function exists */
+
 add_action( 'comment_form_before', 'gf_enqueue_comment_reply' );
 
 
 if ( ! function_exists( 'gf_content_width' ) ) {
+
 	/**
 	 * Content Width
 	 *
@@ -650,13 +665,11 @@ if ( ! function_exists( 'gf_content_width' ) ) {
 		if ( ! isset( $content_width ) ) {
 			$content_width = 620;
 		}
-		/** End if - not isset content width */
 
 	}
-	/** End functions - content width */
 
 }
-/** End if - function exists */
+
 add_action( 'admin_head', 'gf_content_width' );
 add_action( 'wp_head', 'gf_content_width', 0 );
 
