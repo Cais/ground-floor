@@ -1,0 +1,311 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ground Floor\n"
+"POT-Creation-Date: 2015-06-19 15:31-0500\n"
+"PO-Revision-Date: 2015-06-19 15:32-0500\n"
+"Last-Translator: Edward Caissie <edward.caissie@gmail.com>\n"
+"Language-Team: Edward Caissie <edward.caissie@gmail.com>\n"
+"Language: en_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: archive.php:40 author.php:104 category.php:68 date.php:79 index.php:54
+#: search.php:62 single.php:42 tag.php:78
+msgid "Permanent Link to"
+msgstr "Permanent Link to"
+
+#: archive.php:46 category.php:74 date.php:85 index.php:61 search.php:69
+#: single.php:48 tag.php:84
+#, php-format
+msgid "%1$s by %2$s on %3$s"
+msgstr "%1$s by %2$s on %3$s"
+
+#: archive.php:55 author.php:113 category.php:82 date.php:94 index.php:70
+#: page.php:44 search.php:77 tag.php:94
+msgid "with No Comments"
+msgstr " with No Comments"
+
+#: archive.php:55 author.php:113 category.php:82 date.php:94 index.php:70
+#: page.php:44 search.php:77 tag.php:94
+msgid "with 1 Comment"
+msgstr " with 1 Comment"
+
+#: archive.php:55 author.php:113 category.php:82 date.php:94 index.php:70
+#: page.php:44 search.php:77 tag.php:94
+msgid "with % Comments"
+msgstr "with % Comments"
+
+#: archive.php:55 author.php:113 category.php:82 date.php:94 index.php:70
+#: search.php:77 tag.php:94
+msgid "(Comments Closed)"
+msgstr "(Comments Closed)"
+
+#: archive.php:59 author.php:116 category.php:85 date.php:97 index.php:74
+#: search.php:80 single.php:54 tag.php:98
+msgid "Edit"
+msgstr "Edit"
+
+#: archive.php:61 category.php:87 date.php:99 index.php:76 search.php:84
+#: single.php:56 tag.php:100
+#, php-format
+msgid "in %1$s"
+msgstr "in %1$s"
+
+#: archive.php:63 author.php:119 category.php:89 date.php:101 index.php:82
+#: search.php:85 single.php:58 tag.php:102
+msgid "as "
+msgstr "as "
+
+#: author.php:59
+#, php-format
+msgid "About %1$s"
+msgstr "About %1$s"
+
+#: author.php:66
+#, php-format
+msgid "Website: %1$s or %2$s"
+msgstr "Website: %1$s or %2$s"
+
+#: author.php:68
+msgid "email"
+msgstr "email"
+
+#: author.php:77
+#, php-format
+msgid "Biography: %1$s"
+msgstr "Biography: %1$s"
+
+#: author.php:88
+#, php-format
+msgid "Posts by %1$s:"
+msgstr "Posts by %1$s:"
+
+#: author.php:109
+#, php-format
+msgid "%1$s on %2$s"
+msgstr "%1$s on %2$s"
+
+#: author.php:117
+msgid "in"
+msgstr "in"
+
+#: author.php:130 category.php:101 date.php:113 index.php:98 page.php:57
+#: single.php:76 tag.php:114
+msgid "Pages:"
+msgstr "Pages:"
+
+#: category.php:42 tag.php:45
+#, php-format
+msgid "First page of the %1$s archive."
+msgstr "First page of the %1$s archive."
+
+#: category.php:44 tag.php:52
+#, php-format
+msgid "Page %1$s of the %2$s archive."
+msgstr "Page %1$s of the %2$s archive."
+
+#: comments.php:28
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Please do not load this page directly. Thanks!"
+
+#: comments.php:33
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "This post is password protected. Enter the password to view comments."
+
+#: comments.php:98
+msgid "No Comments"
+msgstr "No Comments"
+
+#: comments.php:98
+msgid "One Comment"
+msgstr "One Comment"
+
+#: comments.php:98
+msgid "% Comments"
+msgstr "% Comments"
+
+#: comments.php:105
+msgid "Reply to this Comment"
+msgstr "Reply to this Comment"
+
+#: content-navigation.php:20
+msgid "Previous entries "
+msgstr "Previous entries"
+
+#: content-navigation.php:23
+msgid "Next entries"
+msgstr "Next entries"
+
+#: content-no_posts.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Search Results for: %s"
+
+#: content-no_posts.php:24
+msgid "Sorry, but you are looking for something that is not here."
+msgstr "Sorry, but you are looking for something that is not here."
+
+#: date.php:58
+#, php-format
+msgid "Posts by date %1$s"
+msgstr "Posts by date %1$s"
+
+#: date.php:60
+#, php-format
+msgid "Page %1$s of posts by date %2$s."
+msgstr "Page %1$s of posts by date %2$s."
+
+#: functions.php:63
+msgid "Sidebar 1"
+msgstr "Sidebar 1"
+
+#: functions.php:64
+msgid ""
+"The first sidebar widget area. This contains the default theme sidebar "
+"widgets. Drag and drop a widget into this to clear *ALL* of the default "
+"widgets of the theme."
+msgstr ""
+"The first sidebar widget area. This contains the default theme sidebar "
+"widgets. Drag and drop a widget into this to clear *ALL* of the default "
+"widgets of the theme."
+
+#: functions.php:75
+msgid "Sidebar 2"
+msgstr "Sidebar 2"
+
+#: functions.php:76
+msgid "The second sidebar widget area. This is empty by default."
+msgstr "The second sidebar widget area. This is empty by default."
+
+#: functions.php:87
+msgid "Sidebar 3"
+msgstr "Sidebar 3"
+
+#: functions.php:88
+msgid "The third sidebar widget area. This is empty by default."
+msgstr "The third sidebar widget area. This is empty by default."
+
+#: functions.php:100
+msgid "Footer widget area found at the bottom of the theme on the left side."
+msgstr "Footer widget area found at the bottom of the theme on the left side."
+
+#: functions.php:112
+msgid "Footer widget area found at the bottom of the theme in the middle."
+msgstr "Footer widget area found at the bottom of the theme in the middle."
+
+#: functions.php:124
+msgid "Footer widget area found at the bottom of the theme on the right side."
+msgstr "Footer widget area found at the bottom of the theme on the right side."
+
+#: functions.php:175
+msgid "Copyright"
+msgstr "Copyright"
+
+#: functions.php:213
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+#: functions.php:268
+#, php-format
+msgid "The %1$s (v%2$s) theme is built on the %3$s theme (v%4$s) by %5$s."
+msgstr "The %1$s (v%2$s) theme is built on the %3$s theme (v%4$s) by %5$s."
+
+#: functions.php:282
+#, php-format
+msgid "Made with the %1$s theme (v%2$s) from %3$s."
+msgstr "Made with the %1$s theme (v%2$s) from %3$s."
+
+#: functions.php:482
+msgid "Home"
+msgstr "Home"
+
+#: functions.php:493
+msgid "Top Menu"
+msgstr "Top Menu"
+
+#: functions.php:538 functions.php:539
+msgid "Posted"
+msgstr "Posted"
+
+#: functions.php:601
+#, php-format
+msgid "Page %s"
+msgstr "Page %s"
+
+#: index.php:94
+msgid "Read more... "
+msgstr "Read more… "
+
+#: page.php:45
+msgid "Edit this page"
+msgstr "Edit This Page"
+
+#: page.php:53 single.php:69
+msgid "Read more ..."
+msgstr "Read more… "
+
+#: search.php:53
+#, php-format
+msgid "You searched for %1$s ..."
+msgstr "You searched for %1$s …"
+
+#: search.php:54
+msgid "... and we found what you were looking for! These are the results:"
+msgstr "… and we found what you were looking for! These are the results:"
+
+#: sidebar.php:43
+msgid "Calendar"
+msgstr "Calendar"
+
+#: sidebar.php:53
+msgid "Categories"
+msgstr "Categories"
+
+#: sidebar.php:62
+msgid "Archives"
+msgstr "Archives"
+
+#: sidebar.php:71
+msgid "Meta"
+msgstr "Meta"
+
+#: single.php:82
+msgid "... other posts by "
+msgstr "… other posts by "
+
+#. Theme Name of the plugin/theme
+msgid "Ground Floor"
+msgstr "Ground Floor"
+
+#. Theme URI of the plugin/theme
+msgid "http://buynowshop.com/themes/ground-floor/"
+msgstr "http://buynowshop.com/themes/ground-floor/"
+
+#. Description of the plugin/theme
+msgid ""
+"Richly toned wood floor background with bare-earth colored widgetized "
+"sidebar and footer (six widget areas in total). A strong theme to begin "
+"with; grow into; and, build on."
+msgstr ""
+"Richly toned wood floor background with bare-earth coloured widgetized "
+"sidebar and footer (six widget areas in total). A strong theme to begin "
+"with; grow into; and, build on."
+
+#. Author of the plugin/theme
+msgid "Edward Caissie"
+msgstr "Edward Caissie"
+
+#. Author URI of the plugin/theme
+msgid "http://edwardcaissie.com/"
+msgstr "http://edwardcaissie.com/"

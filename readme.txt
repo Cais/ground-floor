@@ -40,6 +40,7 @@ Released June 2015
 * Added custom CSS for BNS Support to hide sidebar background in content areas
 
 = Miscellaneous =
+* Added default `ground-floor.pot` file as well as English (Canada) translation files
 * Moved `changelog.txt` into `readme.txt` file
 * Updated copyright years
 
