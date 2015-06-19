@@ -115,16 +115,9 @@ $category_link = get_category_link( $cat_id ); ?>
 
 					</div><!-- post_class -->
 
-				<?php } ?>
+				<?php }
 
-				<div id="nav-global" class="navigation">
-					<div class="left">
-						<?php next_posts_link( '&laquo; ' . __( 'Previous entries ', 'ground-floor' ) ); ?>
-					</div>
-					<div class="right">
-						<?php previous_posts_link( ' ' . __( 'Next entries', 'ground-floor' ) . ' &raquo;' ); ?>
-					</div>
-				</div><!-- .navigation -->
+				get_template_part( 'content', 'navigation' ); ?>
 
 				<div class="clear"></div>
 
