@@ -72,15 +72,9 @@ get_header(); ?>
 
 				<?php }
 
-			} else { ?>
+			} else {
 
-				<h2>
-					<?php printf( __( 'Search Results for: %s', 'ground-floor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
-				</h2>
-				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'ground-floor' ); ?></p>
-
-				<?php
-				get_search_form();
+				get_template_part( 'content', 'no_posts' );
 
 			} ?>
 
