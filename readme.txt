@@ -31,7 +31,8 @@ Released June 2015
 
 = Code =
 * Added `id` parameters to "sidebar" definitions
-* Created `content-navigation.php` template file for DRY reasons; update other templates as appropriate
+* Created `content-navigation.php` template file for DRY reasons; update templates as appropriate
+* Created `content-no_posts.php` template file for DRY reasons; update templates as appropriate
 * Improved i18n implementation
 * Minor code formatting to better meet WordPress Coding Standards guidelines
 

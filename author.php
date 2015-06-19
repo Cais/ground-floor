@@ -150,14 +150,9 @@ $curauth = ( get_query_var( 'author_name ' ) ) ? get_user_by( 'id', get_query_va
 
 				<div class="clear"></div>
 
-			<?php } else { ?>
+			<?php } else {
 
-				<h2>
-					<?php printf( __( 'Search Results for: %s', 'ground-floor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
-				</h2>
-				<p><?php _e( 'Sorry, there are no posts by this author.', 'ground-floor' ); ?></p>
-
-				<?php get_search_form();
+				get_template_part( 'content', 'no_posts' );
 
 			} ?>
 			<!-- end the Loop -->

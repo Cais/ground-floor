@@ -134,15 +134,9 @@ $curr_tag = single_tag_title( '', false ); ?>
 
 				<div class="clear"></div>
 
-			<?php } else { ?>
+			<?php } else {
 
-				<h2>
-					<?php printf( __( 'Search Results for: %s', 'ground-floor' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
-				</h2>
-				<p><?php _e( 'Sorry, there are no posts with this tag.', 'ground-floor' ); ?></p>
-
-				<?php
-				get_search_form();
+				get_template_part( 'content', 'no_posts' );
 
 			} ?>
 			<!-- end the Loop -->

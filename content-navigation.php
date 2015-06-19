@@ -1,18 +1,18 @@
 <?php
 /**
- * Archive Template
+ * Template Part - Navigation
  *
- * Displays archives page is required to be displayed
+ * Displays navigation controls for moving between pages of posts
  *
  * @package     GroundFloor
- * @since       1.0
+ * @since       2.4
  *
  * @link        http://buynowshop.com/themes/ground-floor/
  * @link        https://github.com/Cais/ground-floor/
  * @link        https://wordpress.org/themes/ground-floor/
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2015, Edward Caissie
+ * @copyright   Copyright (c) 2015, Edward Caissie
  */ ?>
 
 <div id="nav-global" class="navigation">
