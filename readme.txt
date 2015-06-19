@@ -5,6 +5,7 @@ Updated June 19, 2015
 * Items of Note
 * F.A.Q.
 * Internal Code Conventions
+* Changelog
 * Review Tickets
 
 === Items of Note ===
