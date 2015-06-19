@@ -1,5 +1,5 @@
 ==== readme.txt ====
-Updated December 28, 2014
+Updated June 19, 2015
 
 === Contents ===
 * Items of Note
@@ -31,6 +31,7 @@ Released June 2015
 
 = Code =
 * Added `id` parameters to "sidebar" definitions
+* Created `content-navigation.php` template file for DRY reasons; update other templates as appropriate
 * Improved i18n implementation
 * Minor code formatting to better meet WordPress Coding Standards guidelines
 
