@@ -130,11 +130,9 @@ $curr_tag = single_tag_title( '', false ); ?>
 
 				<?php endwhile;
 
-				get_template_part( 'content', 'navigation' ); ?>
+				get_template_part( 'content', 'navigation' );
 
-				<div class="clear"></div>
-
-			<?php } else {
+			} else {
 
 				get_template_part( 'content', 'no_posts' );
 

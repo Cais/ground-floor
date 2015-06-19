@@ -146,11 +146,9 @@ $curauth = ( get_query_var( 'author_name ' ) ) ? get_user_by( 'id', get_query_va
 
 				<?php }
 
-				get_template_part( 'content', 'navigation' ); ?>
+				get_template_part( 'content', 'navigation' );
 
-				<div class="clear"></div>
-
-			<?php } else {
+			} else {
 
 				get_template_part( 'content', 'no_posts' );
 

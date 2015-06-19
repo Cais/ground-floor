@@ -76,11 +76,9 @@ get_header(); ?>
 
 				<?php }
 
-				get_template_part( 'content', 'navigation' ); ?>
+				get_template_part( 'content', 'navigation' );
 
-				<div class="clear"></div>
-
-			<?php } else {
+			} else {
 
 				get_template_part( 'content', 'no_posts' );
 

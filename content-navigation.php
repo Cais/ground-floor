@@ -23,3 +23,5 @@
 		<?php previous_posts_link( ' ' . __( 'Next entries', 'ground-floor' ) . ' &raquo;' ); ?>
 	</div>
 </div><!-- .navigation -->
+
+<div class="clear"></div>
