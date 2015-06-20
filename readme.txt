@@ -363,3 +363,4 @@ Changelog as of September 3, 2011
 * https://themes.trac.wordpress.org/ticket/17977 - version 2.2.3 - April 2014
 * https://themes.trac.wordpress.org/ticket/21491 - version 2.3 - November 2014
 * https://themes.trac.wordpress.org/ticket/22352 - version 2.3.2 - December 2014
+* https://themes.trac.wordpress.org/ticket/25508 - version 2.4 - June 2015
